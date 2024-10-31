@@ -54,6 +54,9 @@
     <header>
         
     </header>
+    {% block postloadjs %}
+        <script src="{% static 'static/js/base.js' %}"></script>
+    {% endblock %}
 </body>
 
 </html>

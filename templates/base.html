@@ -101,6 +101,12 @@
         </nav>
         <!-- End Navbar -->
     </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
     {% block postloadjs %}
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}

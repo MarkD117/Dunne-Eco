@@ -56,7 +56,10 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand me-auto" href="#">Dunne Eco</a>
+                <a class="navbar-brand me-auto p-0" href="#">
+                    <img class="site-logo d-none d-lg-block" src="{{ MEDIA_URL }}dunneeco-logo.png" alt="Dunne Eco Logo">
+                    <img class="site-icon d-lg-none" src="{{ MEDIA_URL }}dunneeco-icon.png" alt="Dunne Eco Logo">
+                </a>
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">

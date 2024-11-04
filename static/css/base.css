@@ -4,7 +4,8 @@
     /* --text: #050315; */
     --text: #3A3A3A;
     --background: #FDFDF1;
-    --primary: #0B00F7;
+    /* --primary: #0B00F7; */
+    --primary: #00ADEF;
     --secondary: #0059FF;
     --accent: #04E824;
     --font-base: 'Poppins', sans-serif;
@@ -63,9 +64,16 @@ img {
 
 .navbar-brand {
     font-weight: 500;
-    /* color: var(--primary); */
     font-size: 24px;
-    transition: 0.3s color;
+}
+
+.site-logo, .site-icon {
+    width: 100px;
+    height: 65px;
+}
+
+.site-icon {
+    width: 65px;
 }
 
 .contact-btn {

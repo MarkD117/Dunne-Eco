@@ -34,12 +34,6 @@ h1, h2, h3, h4, h5, h6,
 
 a {
     text-decoration: none;
-    color: var(--primary);
-    /* transition: var(--transition); */
-}
-
-a:hover {
-    color: var(--secondary)
 }
 
 img {
@@ -185,6 +179,17 @@ img {
     color: #b9b9b9;
 }
 
+.hero-section a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fbfbfe;
+    font-size: 24px;
+    border: 2px solid #fbfbfe;
+    padding: 14px 70px;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+
 /* ----- Media Queries ----- */
 
 @media (min-width: 991px) {
@@ -224,5 +229,41 @@ img {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.8s ease-in-out;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #b9b9b9;
+    }
+    
+    .hero-section a {
+        font-size: 18px;
+        padding: 10px 66px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+    
+    .hero-section h2 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #b9b9b9;
+    }
+    
+    .hero-section a {
+        font-size: 16px;
+        padding: 8px 62px;
     }
 }

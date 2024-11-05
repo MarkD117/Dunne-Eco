@@ -113,47 +113,6 @@ img {
     color: #000;
 }
 
-@media (min-width: 991px) {
-    .nav-link:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%);
-        width: 0;
-        height: 2px;
-        background-color: var(--primary);
-        visibility: hidden;
-        transition: 0.3s ease-in-out;
-    }
-    
-    .nav-link:hover:before, .nav-link.active:before {
-        width: 100%;
-        visibility: visible;
-    }    
-}
-
-/* Hide dropdown icons on large screens */
-@media (min-width: 991px) {
-    .dropdown-toggle {
-        display: none !important;
-    }
-
-    /* Open dropdown on hover for desktop */
-    .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .dropdown-menu {
-        display: none; /* Hide dropdown by default */
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.8s ease-in-out;
-    }
-}
-
 /* Flex styling for nav link and dropdown toggle on mobile */
 .nav-item.dropdown .d-flex {
     display: flex;
@@ -224,4 +183,46 @@ img {
     font-size: 2rem;
     font-weight: 400;
     color: #b9b9b9;
+}
+
+/* ----- Media Queries ----- */
+
+@media (min-width: 991px) {
+    /* nav link hover & active styles for large screens */
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-link:hover:before, .nav-link.active:before {
+        width: 100%;
+        visibility: visible;
+    }
+
+    /* Hide dropdown icons on large screens */
+    .dropdown-toggle {
+        display: none !important;
+    }
+
+    /* Open dropdown on hover for desktop */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide dropdown by default */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease-in-out;
+    }
 }

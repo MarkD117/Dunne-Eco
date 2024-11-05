@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6,
 a {
     text-decoration: none;
     color: var(--primary);
-    transition: var(--transition);
+    /* transition: var(--transition); */
 }
 
 a:hover {
@@ -131,6 +131,63 @@ img {
         width: 100%;
         visibility: visible;
     }    
+}
+
+/* Hide dropdown icons on large screens */
+@media (min-width: 991px) {
+    .dropdown-toggle {
+        display: none !important;
+    }
+
+    /* Open dropdown on hover for desktop */
+    .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-menu {
+        display: none; /* Hide dropdown by default */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.8s ease-in-out;
+    }
+}
+
+/* Flex styling for nav link and dropdown toggle on mobile */
+.nav-item.dropdown .d-flex {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+/* Additional styling for nav and dropdown on smaller screens */
+.nav-link, .dropdown-toggle {
+    color: #666777;
+    font-weight: 500;
+}
+
+.dropdown-toggle:hover {
+    color: #000;
+}
+
+/* Ensure dropdown shows and hides smoothly */
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-item:hover {
+    background-color: #e0e0e0
 }
 
 /* ----- Hero Section ----- */

@@ -11,7 +11,7 @@
     --secondary: #3A87C7;
     --accent: #04E824;
     --font-base: 'Poppins', sans-serif;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.88);
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.1);
     --transition: all 0.5s ease;
 }
 
@@ -47,6 +47,10 @@ img {
 .section-padding {
     padding-top: 140px;
     padding-bottom: 140px;
+}
+
+.theme-shadow {
+    box-shadow: var(--box-shadow);
 }
 
 /*  ----- Navbar -----  */
@@ -272,13 +276,10 @@ img {
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 3.5rem;
-        font-weight: bold;
     }
     
     .hero-section h2 {
         font-size: 1.5rem;
-        font-weight: 400;
-        color: #b9b9b9;
     }
     
     .hero-section a {
@@ -290,13 +291,10 @@ img {
 @media (max-width: 480px) {
     .hero-section h1 {
         font-size: 3.5rem;
-        font-weight: bold;
     }
     
     .hero-section h2 {
         font-size: 1.2rem;
-        font-weight: 400;
-        color: #b9b9b9;
     }
     
     .hero-section a {

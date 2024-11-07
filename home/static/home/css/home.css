@@ -57,3 +57,40 @@
     background-position: center;
     background-size: cover;
 }
+
+/* ----- Portfolio ----- */
+
+.portfolio-item .iconbox {
+    background-color: var(--primary);
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.portfolio-item:hover .iconbox {
+    opacity: 1;
+    top: 50%;
+}
+
+/* ----- Image Zoom ----- */
+
+.image-zoom {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-zoom-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-zoom-wrapper img {
+    transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper:hover {
+    transform: scale(1.1);
+}

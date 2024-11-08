@@ -157,12 +157,88 @@
         <!-- End Navbar -->
 
     </header>
-
+    <!-- Main Content -->
     <main>
         {% block content %}
         {% endblock %}
     </main>
+    <!-- End Main Content -->
 
+    <!-- Footer -->
+     <footer class="bg-dark">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content row gy-5">
+                    <!-- Tagline & Social links -->
+                    <div class="col-lg-3 col-sm-6">
+                        <a href="#"><img class="site-logo-footer" src="{{ MEDIA_URL }}dunneeco-logo.png" alt="Dunne Eco Logo"></a>
+                        <div class="line"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores perspiciatis rerum libero iste ipsum tempore repellat sit officia, quam atque cum.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                        </div>
+                    </div>
+                    <!-- Services -->
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">SERVICES</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li><a href="#">Windows</a></li>
+                            <li><a href="#">Doors</a></li>
+                            <li><a href="#">Stairs</a></li>
+                            <li><a href="#">Crittall</a></li>
+                        </ul>
+                    </div>
+                    <!-- Contact -->
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">CONTACT</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li class="mb-3">
+                              <p class="mb-1">Do you have any questions or suggestions?</p>
+                              <span><i class="fas fa-envelope"></i>
+                                <a href="#" aria-label="contact form link">Contact
+                                  Form</a></span>
+                            </li>
+                            <li class="mb-3">
+                              <p class="mb-1">Do you need assistance? Give us a call</p>
+                              <span><i class="fas fa-phone"></i> (057) 932 2468</span>
+                            </li>
+                          </ul>
+                    </div>
+                    <!-- Working Hours -->
+                    <div class="col-lg-3 col-sm-6">
+                        <h5 class="mb-0 text-white">WORKING HOURS</h5>
+                        <div class="line"></div>
+                        <ul>
+                            <li class="mb-3">
+                              <p>Monday - Friday: <span class="open-hours">9:00 a.m - 5:00 p.m</span></p>
+                            </li>
+                            <li class="mb-3">
+                              <p>Saturday: <span class="open-hours">9:00 a.m - 1:00 p.m</span></p>
+                            </li>
+                            <li class="mb-3">
+                              <p>Irish Standard Time</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Dunne Eco © 2024. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </footer>
+    <!-- End Footer -->
     {% block postloadjs %}
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}

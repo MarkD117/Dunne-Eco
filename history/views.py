@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    """ This view returns the history page """
+    return render(request, 'history/history.html')

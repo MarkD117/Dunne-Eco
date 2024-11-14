@@ -7,4 +7,21 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    #hero {
+        background-image: url('{{ MEDIA_URL }}history-hero-image.jpg');
+    }
+</style>
+<!-- Hero Section -->
+<section id="hero" class="text-center">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        <h1 class="text-uppercase" data-aos="fade-left">Welcome to the Museum</h1>
+        <h2 data-aos="fade-right">Over 100+ Years of History Over 3 Generations</h2>
+        <!-- <div data-aos="fade-up" data-aos-delay="50">
+            <a href="#" class="me-2">Get Started</a>
+            <a href="#" class="ms-2">Our Portfolio</a>
+        </div> -->
+    </div>
+</section>
+<!-- End Hero Section -->
 {% endblock %}

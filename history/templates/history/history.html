@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block history_active %}active{% endblock %}
 {% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'history/css/history.css' %}">
+{% endblock %}
+
 {% block content %}
 {% endblock %}

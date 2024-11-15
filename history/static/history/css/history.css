@@ -1,0 +1,116 @@
+/* ----- Variables ----- */
+
+:root {
+    /* --text: #050315; */
+    --text: #3A3A3A;
+    --background: #FAFAFA;
+    /* --primary: #0B00F7; */
+    --primary: #00ADEF;
+    --primary-rgb: 0, 173, 239;
+    /* --secondary: #0059FF; */
+    --secondary: #3A87C7;
+    --accent: #04E824;
+    --font-base: 'Poppins', sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.1);
+    --transition: all 0.5s ease;
+}
+
+/* ----- Timeline ----- */
+
+/* #timeline {
+    background: var(--primary);
+} */
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+/* Timeline center line */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    /* Start with height 0 */
+    height: 0;
+    background: #fff;
+    top: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 0;
+    /* Smooth height growth */
+    transition: height 8s ease;
+}
+
+/* Display line on scroll */
+.aos-animate .timeline::after {
+    /* Full height when triggered */
+    height: 100%;
+}
+
+.timeline-box-container {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+}
+
+.timeline-text-box {
+    padding: 20px 30px;
+    background: #fff;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.timeline-text-box h2 {
+    font-size: 1.5rem;
+}
+
+.timeline-text-box small {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.left-container {
+    left: 0;
+}
+
+.right-container {
+    left: 50%;
+}
+
+.timeline-box-container img {
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 2;
+}
+
+.right-container img {
+    left: -20px;
+}
+
+.left-timeline-arrow, .right-timeline-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.left-timeline-arrow {
+    border-left: 15px solid #fff;
+    right: -15px;
+}
+
+.right-timeline-arrow {
+    border-right: 15px solid #fff;
+    left: -15px;
+}

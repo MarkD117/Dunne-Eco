@@ -114,3 +114,45 @@
     border-right: 15px solid #fff;
     left: -15px;
 }
+
+@media (max-width: 600px){
+    .timeline {
+        margin: 50px auto;
+    }
+    
+    .timeline::after {
+        left: 31px
+    }
+
+    .timeline-box-container {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .timeline-text-box {
+        font-size: 13px;
+    }
+
+    .timeline-text-box h2 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-text-box small {
+        margin-bottom: 10px;
+    }
+    
+    .right-container {
+        left: 0;
+    }
+
+    .left-container img, .right-container img {
+        left: 10px;
+    }
+
+    .left-timeline-arrow, .right-timeline-arrow {
+        border-right: 15px solid #fff;
+        border-left: 0;
+        left: -15px;
+    }
+}

@@ -132,6 +132,38 @@
     top: 50%;
 }
 
+/* ----- Image Zoom ----- */
+
+.image-zoom {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-zoom-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom effect on hover */
+.image-zoom-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 991px){
+    .image-zoom-wrapper {
+        height: 200px;
+    }
+}
+
 @media (max-width: 600px){
     .timeline {
         margin: 50px auto;

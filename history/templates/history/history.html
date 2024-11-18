@@ -272,3 +272,10 @@
  </section>
 <!-- End Heritage Gallery Section -->
 {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+    <script>
+        // Initialize Fancy Box
+        Fancybox.bind("[data-fancybox='gallery']");
+    </script>
+{% endblock %}

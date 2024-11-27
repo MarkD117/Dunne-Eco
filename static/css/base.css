@@ -314,6 +314,19 @@ footer .line {
     color: white;
 }
 
+/* ----- Bootstrap Toasts ----- */
+
+.message-container {
+    position: fixed;
+    top: 120px;
+    right: 150px;
+    z-index: 1050;
+}
+
+.toast-container {
+    overflow: visible;
+}
+
 /* ----- Media Queries ----- */
 
 @media (max-width: 1200px) {

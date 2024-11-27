@@ -37,9 +37,9 @@
     {% endblock %}
 
     {% block corejs %}
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
     <script src="https://kit.fontawesome.com/324d5be901.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -265,8 +265,10 @@
     <script src="{% static 'js/base.js' %}"></script>
 
     <script>
-        // Shows all toasts rendered in messages container
-        $('.toast').toast('show');
+        document.querySelectorAll('.toast').forEach(toastElement => {
+            var toast = new bootstrap.Toast(toastElement);
+            toast.show();
+        });
     </script>
     {% endblock %}
 </body>

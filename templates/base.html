@@ -159,6 +159,26 @@
         <!-- End Navbar -->
 
     </header>
+    
+    {% if messages %}
+    <div class="message-container rounded">
+      {% for message in messages %}
+      <!-- Using djang message levels to display correct message type -->
+      {% with message.level as level %}
+      {% if level == 40 %}
+      {% include 'includes/toasts/toast_error.html' %}
+      {% elif level == 30 %}
+      {% include 'includes/toasts/toast_warning.html' %}
+      {% elif level == 25 %}
+      {% include 'includes/toasts/toast_success.html' %}
+      {% else %}
+      {% include 'includes/toasts/toast_info.html' %}
+      {% endif %}
+      {% endwith %}
+      {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- Main Content -->
     <main>
         {% block content %}
@@ -243,6 +263,11 @@
     <!-- End Footer -->
     {% block postloadjs %}
     <script src="{% static 'js/base.js' %}"></script>
+
+    <script>
+        // Shows all toasts rendered in messages container
+        $('.toast').toast('show');
+    </script>
     {% endblock %}
 </body>
 

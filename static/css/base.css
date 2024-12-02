@@ -318,13 +318,25 @@ footer .line {
 
 .message-container {
     position: fixed;
-    top: 120px;
-    right: 150px;
     z-index: 1050;
+    top: 110px;
+    right: 20px;
 }
 
 .toast-container {
+    position: fixed;
+    top: 110px;
+    right: 20px;
+    z-index: 1060;
+    max-width: 350px;
+    display: flex;
     overflow: visible;
+}
+.toast {
+    display: block;
+    width: auto;
+    height: auto;
+    z-index: 1085;
 }
 
 /* ----- Media Queries ----- */

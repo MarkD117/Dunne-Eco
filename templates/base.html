@@ -263,13 +263,6 @@
     <!-- End Footer -->
     {% block postloadjs %}
     <script src="{% static 'js/base.js' %}"></script>
-
-    <script>
-        document.querySelectorAll('.toast').forEach(toastElement => {
-            var toast = new bootstrap.Toast(toastElement);
-            toast.show();
-        });
-    </script>
     {% endblock %}
 </body>
 

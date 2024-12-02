@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Initialising Animate On Scroll
-
 AOS.init();
 
 AOS.init({
@@ -48,4 +47,11 @@ AOS.init({
   once: true, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+});
+
+
+// Initialise bootstrap toasts
+document.querySelectorAll('.toast').forEach(toastElement => {
+    var toast = new bootstrap.Toast(toastElement);
+    toast.show();
 });

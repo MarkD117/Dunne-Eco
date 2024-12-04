@@ -174,12 +174,12 @@ img {
 
 /* ----- Hero Section ----- */
 
-#hero {
+/* #hero {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
-}
+} */
 
 #hero:before {
     /* background-color: rgba(0, 173, 239, 0.3); */

@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Initialising Animate On Scroll
-AOS.init();
-
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
   offset: 120, // offset (in px) from the original trigger point

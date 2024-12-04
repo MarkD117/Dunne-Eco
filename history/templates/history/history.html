@@ -10,6 +10,10 @@
 <style>
     #hero {
         background-image: url('{{ MEDIA_URL }}history-hero-image.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 100%;
     }
 
     #timeline {
@@ -62,7 +66,7 @@
                 </p>
             </div>
             <div class="col-lg-6" data-aos="fade-down" data-aos-delay="150">
-                <img src="{{ MEDIA_URL }}index-about-image.png" alt="">
+                <img src="{{ MEDIA_URL }}index-about-image.png" loading="lazy" alt="">
                 <p><small>Ian Dunne: Managing Director</small></p>
             </div>
         </div>
@@ -75,7 +79,7 @@
     <div class="timeline-wrapper" data-aos="fade-down" data-aos-anchor-placement="top-center">
         <div class="timeline">
             <div class="timeline-box-container left-container" data-aos="fade-down" data-aos-delay="150">
-                <img src="{{ MEDIA_URL }}google.png" alt="">
+                <img src="{{ MEDIA_URL }}google.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Alphabet Inc.</h2>
                     <small>2018 - 2019</small>
@@ -85,7 +89,7 @@
                 </div>
             </div>
             <div class="timeline-box-container right-container" data-aos="fade-down" data-aos-delay="250">
-                <img src="{{ MEDIA_URL }}amazon.png" alt="">
+                <img src="{{ MEDIA_URL }}amazon.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Amazon Inc.</h2>
                     <small>2019 - 2020</small>
@@ -95,7 +99,7 @@
                 </div>
             </div>
             <div class="timeline-box-container left-container" data-aos="fade-down" data-aos-delay="350">
-                <img src="{{ MEDIA_URL }}tesla.png" alt="">
+                <img src="{{ MEDIA_URL }}tesla.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Tesla Inc.</h2>
                     <small>2020 - 2021</small>
@@ -105,7 +109,7 @@
                 </div>
             </div>
             <div class="timeline-box-container right-container" data-aos="fade-down" data-aos-delay="450">
-                <img src="{{ MEDIA_URL }}toyota.png" alt="">
+                <img src="{{ MEDIA_URL }}toyota.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Toyota</h2>
                     <small>2021 - 2022</small>
@@ -115,7 +119,7 @@
                 </div>
             </div>
             <div class="timeline-box-container left-container" data-aos="fade-down" data-aos-delay="550">
-                <img src="{{ MEDIA_URL }}flipkart.png" alt="">
+                <img src="{{ MEDIA_URL }}flipkart.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Flipkart</h2>
                     <small>2022 - 2023</small>
@@ -125,7 +129,7 @@
                 </div>
             </div>
             <div class="timeline-box-container right-container" data-aos="fade-down" data-aos-delay="650">
-                <img src="{{ MEDIA_URL }}youtube.png" alt="">
+                <img src="{{ MEDIA_URL }}youtube.png" loading="lazy" alt="">
                 <div class="timeline-text-box">
                     <h2>Youtube</h2>
                     <small>2023 - Present</small>
@@ -158,7 +162,7 @@
                 <div class="d-flex flex-column align-items-stretch">
                     <div class="heritage-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-1.png" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-1.png" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-1.png" data-fancybox="gallery"
                             data-caption="<b>Historic Door</b><br>A beautifully restored door from the 18th century."
@@ -166,7 +170,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-5.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-5.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-5.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -174,7 +178,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-6.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-6.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-6.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -182,7 +186,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-13.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-13.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-13.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -195,7 +199,7 @@
                 <div class="d-flex flex-column align-items-stretch">
                     <div class="heritage-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-2.png" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-2.png" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-2.png" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -203,7 +207,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-9.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-9.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-9.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -211,7 +215,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-10.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-10.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-10.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -219,7 +223,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-14.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-14.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-14.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -232,7 +236,7 @@
                 <div class="d-flex flex-column align-items-stretch">
                     <div class="heritage-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-3.png" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-3.png" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-3.png" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -240,7 +244,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-7.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-7.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-7.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -248,7 +252,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-11.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-11.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-11.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -256,7 +260,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-15.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-15.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-15.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -269,7 +273,7 @@
                 <div class="d-flex flex-column align-items-stretch">
                     <div class="heritage-item image-zoom">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-4.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-4.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-4.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -277,7 +281,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-8.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-8.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-8.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -285,7 +289,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-12.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-12.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-12.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"
@@ -293,7 +297,7 @@
                     </div>
                     <div class="heritage-item image-zoom mt-4">
                         <div class="image-zoom-wrapper">
-                            <img src="{{ MEDIA_URL }}history-img-16.jpg" alt="">
+                            <img src="{{ MEDIA_URL }}history-img-16.jpg" loading="lazy" alt="">
                         </div>
                         <a href="{{ MEDIA_URL }}history-img-16.jpg" data-fancybox="gallery"
                             data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper in magna sit amet rhoncus"

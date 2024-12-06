@@ -85,10 +85,12 @@
 .timeline-box-container img {
     position: absolute;
     width: 40px;
+    height: 40px;
     border-radius: 50%;
     right: -20px;
     top: 32px;
     z-index: 2;
+    border: solid white 6px;
 }
 
 .right-container img {

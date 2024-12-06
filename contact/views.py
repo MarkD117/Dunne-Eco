@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
 
-def index(request):
+def contact(request):
     """ This view returns the index page """
     return render(request, 'contact/contact.html')

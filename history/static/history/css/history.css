@@ -71,7 +71,7 @@
     height: 50px;
     border-radius: 50%;
     right: -25px;
-    top: 32px;
+    top: 26px;
     z-index: 2;
     border: solid white 6px;
 }
@@ -181,7 +181,7 @@
     }
 
     .left-container img, .right-container img {
-        left: 10px;
+        left: 7px;
     }
 
     .left-timeline-arrow, .right-timeline-arrow {

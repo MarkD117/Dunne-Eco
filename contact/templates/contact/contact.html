@@ -3,8 +3,38 @@
 {% load static %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock %}
 
 {% block content %}
-<h1>Hello World</h1>
+<section>
+    <!-- Background Image-->
+     <div class="bg-container">
+        <img class="bg-image" src="{{ MEDIA_URL }}pexels-jonathanborba-5570224.jpg" alt="">
+    </div>
+    <!-- Masthead-->
+    <div class="masthead">
+        <div class="masthead-content">
+            <div class="container-fluid px-4 px-lg-0">
+                <h2 class="lh-1 mb-4 text-uppercase">Get in touch</h2>
+                <!-- FORM -->
+                 <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form mb-2">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="text-center mt-5">
+                        <button class="btn btn-blue rounded-pill" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Social Icons-->
+    <div class="contact-social-icons">
+        <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</section>
 {% endblock %}

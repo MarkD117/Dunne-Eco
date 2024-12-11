@@ -1,0 +1,162 @@
+body {
+    height: 100%;
+    position: relative;
+}
+
+.bg-image {
+    position: fixed;
+    top: 50%;
+    left: 85%;
+    min-width: 80%;
+    min-height: 80%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%) scale(0.6);
+    z-index: -2;
+}
+
+.bg-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for translucency */
+    z-index: -1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+    body {
+        background: url("../assets/img/bg-mobile-fallback.jpg") #2a5555 no-repeat center center scroll;
+        background-size: cover;
+    }
+
+    body video {
+        display: none;
+    }
+}
+
+.masthead {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: rgb(43, 120, 228, 0.6); */
+    background: linear-gradient(to top right, #00c513, #2f91ff);
+}
+
+.masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.masthead .masthead-content h1, .masthead .masthead-content .h1 {
+    font-size: 2.5rem;
+}
+
+.masthead .masthead-content p {
+    font-size: 1.2rem;
+}
+
+.masthead .masthead-content p strong {
+    font-weight: 700;
+}
+
+.masthead .masthead-content .input-group-newsletter input {
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.masthead .masthead-content .input-group-newsletter button {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: calc(1rem + 2px);
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        height: 100%;
+        width: 75vw;
+        min-height: 0;
+        padding-bottom: 0;
+    }
+
+    .masthead:before {
+        transform: skewX(-9deg);
+        transform-origin: top right;
+    }
+
+    /* Clean up declarations */
+    .masthead .masthead-content {
+        border-radius: 25px;
+        background-color: white;
+        padding-top: 2rem;
+        padding-bottom: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-left: 2rem;
+        margin-right: 9rem;
+        margin-bottom: 5rem;
+    }
+
+    .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+        font-size: 3.5rem;
+    }
+
+    .masthead .masthead-content p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .masthead {
+        width: 65vw;
+}
+
+}
+.contact-social-icons {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-social-icons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100rem;
+}
+
+@media (min-width: 992px) {
+    .contact-social-icons {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        right: 2.5rem;
+        width: auto;
+    }
+}

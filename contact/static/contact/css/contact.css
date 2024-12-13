@@ -52,47 +52,37 @@ body {
 .masthead-content {
     position: relative;
     max-width: 40rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    border-radius: 25px;
+    background-color: white;
+    padding: 2rem 2rem 0 2rem;
 }
 
-.size1 {
+.contact-info-box {
     width: 355px;
     max-width: 100%;
-}
-
-.size2 {
-    width: calc(100% - 43px);
-}
-
-.p-b-47 {
     padding-bottom: 47px;
 }
 
-.p-r-25 {
-    padding-right: 25px;
-}
-
-.p-b-20 {
-    padding-bottom: 20px;
-}
-
-.txt1 {
+.contact-icon, .contact-heading {
     font-size: 18px;
     line-height: 1.2;
     color: #fff;
+    padding-right: 25px;
 }
 
-.txt2 {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #999;
+.contact-heading {
+    padding-right: 0;
+    padding-bottom: 20px;
 }
 
-.txt3 {
+.contact-content {
     font-size: 15px;
     line-height: 1.6;
     color: #00ad5f;
+}
+
+.location-grey-text {
+    color: #999;
 }
 
 @media (min-width: 992px) {
@@ -116,19 +106,43 @@ body {
     }
 }
 
+@media (max-width: 992px) {
+    
+    .bg-image {
+        /* position: fixed;
+        top: 100%;
+        left: 85%;
+        min-width: 80%;
+        min-height: 80%;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%) translateY(-50%) scale(0.6);
+        z-index: -2; */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -2;
+    }
+}
+
 @media (min-width: 1200px) {
     .masthead {
         width: 65vw;
     }
 }
 
-.social-info {
+.contact-info {
     position: relative;
     z-index: 2;
 }
 
 @media (min-width: 992px) {
-    .social-info {
+    .contact-info {
         position: absolute;
         height: 100%;
         top: -15%;
@@ -138,7 +152,8 @@ body {
 }
 
 @media (max-width: 1200px) {
-    .social-info {
+    .contact-info {
         right: 0;
+        margin: 60px 0 30px 0;
     }
 }

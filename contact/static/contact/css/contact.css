@@ -46,42 +46,14 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    /* background-color: rgb(43, 120, 228, 0.6); */
     background: linear-gradient(to top right, #00c513, #2f91ff);
 }
 
-.masthead .masthead-content {
+.masthead-content {
     position: relative;
     max-width: 40rem;
     padding-top: 5rem;
     padding-bottom: 5rem;
-}
-
-.masthead .masthead-content h1, .masthead .masthead-content .h1 {
-    font-size: 2.5rem;
-}
-
-.masthead .masthead-content p {
-    font-size: 1.2rem;
-}
-
-.masthead .masthead-content p strong {
-    font-weight: 700;
-}
-
-.masthead .masthead-content .input-group-newsletter input {
-    height: auto;
-    width: 100%;
-    font-size: 1rem;
-    padding: 1rem;
-}
-
-.masthead .masthead-content .input-group-newsletter button {
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: calc(1rem + 2px);
 }
 
 .size1 {
@@ -136,25 +108,11 @@ body {
         transform-origin: top right;
     }
 
-    /* Clean up declarations */
-    .masthead .masthead-content {
+    .masthead-content {
         border-radius: 25px;
         background-color: white;
-        padding-top: 2rem;
-        padding-bottom: 0;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        margin-left: 2rem;
-        margin-right: 9rem;
-        margin-bottom: 5rem;
-    }
-
-    .masthead .masthead-content h1, .masthead .masthead-content .h1 {
-        font-size: 3.5rem;
-    }
-
-    .masthead .masthead-content p {
-        font-size: 1.3rem;
+        padding: 2rem 2rem 0 2rem;
+        margin: 0 9rem 5rem 2rem;
     }
 }
 

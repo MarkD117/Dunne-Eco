@@ -109,22 +109,10 @@ body {
 @media (max-width: 992px) {
     
     .bg-image {
-        /* position: fixed;
-        top: 100%;
-        left: 85%;
-        min-width: 80%;
-        min-height: 80%;
-        width: auto;
-        height: auto;
-        transform: translateX(-50%) translateY(-50%) scale(0.6);
-        z-index: -2; */
-        position: fixed;
         top: 50%;
         left: 50%;
         min-width: 100%;
         min-height: 100%;
-        width: auto;
-        height: auto;
         transform: translateX(-50%) translateY(-50%);
         z-index: -2;
     }
@@ -153,6 +141,7 @@ body {
 
 @media (max-width: 1200px) {
     .contact-info {
+        top: -19%;
         right: 0;
         margin: 60px 0 30px 0;
     }

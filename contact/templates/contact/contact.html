@@ -10,7 +10,7 @@
 <section>
     <!-- Background Image-->
     <div class="bg-container">
-        <img class="bg-image" src="{{ MEDIA_URL }}pexels-jonathanborba-5570224.jpg" alt="">
+        <img class="bg-image" src="{{ MEDIA_URL }}form-bg-img.jpg" alt="">
     </div>
     <!-- Masthead-->
     <div class="masthead">
@@ -18,7 +18,7 @@
             <div class="container-fluid px-lg-0">
                 <h3 class="lh-1 mb-3 text-uppercase">Get in touch</h2>
                 <!-- FORM -->
-                <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form mb-2">
+                <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form">
                     {% csrf_token %}
                     <div id="div_id_name" class="form-group">
                         <label for="id_name" class="requiredField">Name<span class="asteriskField">*</span></label>
@@ -47,7 +47,7 @@
                         <textarea name="message" cols="40" rows="10" class="contact-form-input form-control"
                             placeholder="Type your message here" required id="id_message"></textarea>
                     </div>
-                    <div id="div_id_submit" class="form-group text-center mt-5">
+                    <div id="div_id_submit" class="form-group text-center mb-0">
                         <button type="submit" class="btn btn-primary w-100">Submit</button>
                     </div>
                 </form>                

@@ -9,22 +9,48 @@
 {% block content %}
 <section>
     <!-- Background Image-->
-     <div class="bg-container">
+    <div class="bg-container">
         <img class="bg-image" src="{{ MEDIA_URL }}pexels-jonathanborba-5570224.jpg" alt="">
     </div>
     <!-- Masthead-->
     <div class="masthead">
         <div class="masthead-content">
-            <div class="container-fluid px-4 px-lg-0">
-                <h2 class="lh-1 mb-4 text-uppercase">Get in touch</h2>
+            <div class="container-fluid px-lg-0">
+                <h3 class="lh-1 mb-3 text-uppercase">Get in touch</h2>
                 <!-- FORM -->
-                 <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form mb-2">
+                <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form mb-2">
                     {% csrf_token %}
-                    {{ form|crispy }}
-                    <div class="text-center mt-5">
-                        <button class="btn btn-blue rounded-pill" type="submit">Submit</button>
+                    <div id="div_id_name" class="form-group">
+                        <label for="id_name" class="requiredField">Name<span class="asteriskField">*</span></label>
+                        <input type="text" name="name" maxlength="50" class="contact-form-input form-control"
+                            placeholder="Enter your full name" required id="id_name">
                     </div>
-                </form>
+                    <div class="row">
+                        <div id="div_id_email" class="col-md-6 form-group">
+                            <label for="id_email" class="requiredField">Email<span class="asteriskField">*</span></label>
+                            <input type="email" name="email" maxlength="100" class="contact-form-input form-control"
+                                placeholder="Enter your email address" required id="id_email">
+                        </div>
+                        <div id="div_id_phone" class="col-md-6 form-group">
+                            <label for="id_phone">Phone</label>
+                            <input type="text" name="phone" maxlength="15" class="contact-form-input form-control"
+                                placeholder="Optional: Enter your phone number" id="id_phone">
+                        </div>
+                    </div>
+                    <div id="div_id_subject" class="form-group">
+                        <label for="id_subject" class="requiredField">Subject<span class="asteriskField">*</span></label>
+                        <input type="text" name="subject" maxlength="254" class="contact-form-input form-control"
+                            placeholder="Enter the subject of your message" required id="id_subject">
+                    </div>
+                    <div id="div_id_message" class="form-group">
+                        <label for="id_message" class="requiredField">Message<span class="asteriskField">*</span></label>
+                        <textarea name="message" cols="40" rows="10" class="contact-form-input form-control"
+                            placeholder="Type your message here" required id="id_message"></textarea>
+                    </div>
+                    <div id="div_id_submit" class="form-group text-center mt-5">
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    </div>
+                </form>                
             </div>
         </div>
     </div>

@@ -3,20 +3,17 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=254, unique=True, verbose_name="Programmatic Name")
-    friendly_name = models.CharField(max_length=254, verbose_name="Display Name")
-    slug = models.SlugField(max_length=254, unique=True, blank=True, verbose_name="URL Slug")
+    name = models.CharField(max_length=254, unique=True, verbose_name="Category Name")
+    slug = models.SlugField(max_length=254, unique=True, editable=False)
+
+    def save(self, *args, **kwargs):
+        # Generate slug from name if it is not set
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
-
-    def get_friendly_name(self):
-        return self.friendly_name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)  # Automatically generate a slug from the name
-        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name_plural = 'Categories'

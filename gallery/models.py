@@ -18,7 +18,7 @@ class Category(models.Model):
 class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False, blank=False, related_name="images")
     image = models.ImageField(upload_to="gallery/", null=False, blank=False)
-    title = models.CharField(max_length=254, blank=True, null=True)
+    title = models.CharField(max_length=254, blank=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

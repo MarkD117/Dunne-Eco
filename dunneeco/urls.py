@@ -25,5 +25,6 @@ urlpatterns = [
     path('', include('home.urls')),
     path('history', include('history.urls')),
     path('contact/', include('contact.urls')),
+    path('gallery/', include('gallery.urls')),
     # Using static function to add media url
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

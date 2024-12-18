@@ -1,10 +1,11 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Category(models.Model):
     name = models.CharField(max_length=254, unique=True, verbose_name="Programmatic Name")
     friendly_name = models.CharField(max_length=254, verbose_name="Display Name")
-
+    slug = models.SlugField(max_length=254, unique=True, blank=True, verbose_name="URL Slug")
 
     def __str__(self):
         return self.name
@@ -12,8 +13,14 @@ class Category(models.Model):
     def get_friendly_name(self):
         return self.friendly_name
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)  # Automatically generate a slug from the name
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name_plural = 'Categories'
+
 
 class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=False, blank=False, related_name="images")

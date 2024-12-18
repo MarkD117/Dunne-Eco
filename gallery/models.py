@@ -2,8 +2,9 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=254, unique=True)
-    friendly_name = models.CharField(max_length=254)
+    name = models.CharField(max_length=254, unique=True, verbose_name="Programmatic Name")
+    friendly_name = models.CharField(max_length=254, verbose_name="Display Name")
+
 
     def __str__(self):
         return self.name

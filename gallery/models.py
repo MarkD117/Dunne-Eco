@@ -3,7 +3,7 @@ from django.utils.text import slugify
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=254, unique=True, verbose_name="Category Name")
+    name = models.CharField(max_length=254, unique=True)
     slug = models.SlugField(max_length=254, unique=True, editable=False)
 
     def save(self, *args, **kwargs):

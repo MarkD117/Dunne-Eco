@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Brochure
+from .forms import BrochureForm
 
 
 def downloads_list(request):

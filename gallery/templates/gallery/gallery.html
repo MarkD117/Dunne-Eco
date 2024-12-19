@@ -1,5 +1,38 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
+
+{% endblock %}
 
 {% block content %}
-<h1>Hello World</h1>
+<section class="section-padding gallery-container">
+    <div class="container">
+        <h1 class="gallery-heading">Gallery</h1>
+        {% for category in categories %}
+        <div class="category-section my-5">
+            <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
+            <div class="gallery-grid">
+                {% for image in category.images.all %}
+                <div class="gallery-image-wrapper">
+                    <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.title }}">
+                        <div class="gallery-image-container">
+                            <img src="{{ image.image.url }}" alt="{{ image.title }}" class="gallery-image">
+                            {% if image.title %}
+                            <div class="gallery-title">{{ image.title }}</div>
+                            {% endif %}
+                        </div>
+                    </a>
+                </div>
+                {% empty %}
+                <p class="no-images">No images available for this category.</p>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="no-categories">No categories available yet.</p>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}

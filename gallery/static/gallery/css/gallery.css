@@ -1,0 +1,95 @@
+.gallery-container {
+    margin: 2rem auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* Light Bootstrap color */
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-heading {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.gallery-image-wrapper {
+    text-align: center;
+}
+
+.gallery-image-container {
+    /* Needed to position title over image */
+    position: relative; 
+    width: 100%;
+    /* Ratio can be adjusted to change image size (e.g., 16/9, 1/1 for square) */
+    aspect-ratio: 4 / 3; 
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-image-wrapper:hover {
+    transform: scale(1.05);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-image:hover {
+    /* Slight zoom on hover */
+    transform: scale(1.05); 
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    /* Ensures image fills container while maintaining aspect ratio */
+    object-fit: cover;
+    /* For zoom effect */
+    transition: transform 0.3s ease;
+}
+
+.gallery-image-wrapper:hover .gallery-image {
+    /* Subtle zoom effect */
+    transform: scale(1.1);
+}
+
+.gallery-title {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 0;
+    /* Hidden initially */
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    /* Prevent blocking the hover effect */
+    pointer-events: none;
+}
+
+.gallery-image-container:hover .gallery-title {
+    /* Shows title on hover */
+    opacity: 1;
+    /* Darkens background slightly */
+    background: rgba(0, 0, 0, 0.8); 
+}
+
+/* ----- Media Queries ----- */
+@media (max-width: 576px) {
+    .gallery-heading {
+        font-size: 1.5rem;
+    }
+}

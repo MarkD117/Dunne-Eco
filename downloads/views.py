@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Brochure
 
-# Create your views here.
+
+def downloads_list(request):
+    brochures = Brochure.objects.all()
+    return render(request, 'downloads/downloads_list.html', {'brochures': brochures})

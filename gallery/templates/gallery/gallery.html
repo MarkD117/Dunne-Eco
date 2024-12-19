@@ -36,3 +36,10 @@
     </div>
 </section>
 {% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    // Initialize Fancy Box
+    Fancybox.bind("[data-fancybox='gallery']");
+</script>
+{% endblock %}

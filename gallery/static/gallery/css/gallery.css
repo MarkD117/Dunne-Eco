@@ -87,9 +87,32 @@
     background: rgba(0, 0, 0, 0.8); 
 }
 
+/* Sort Selector Styling */
+.sort-selector {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.sort-selector select {
+    width: auto;
+    padding: 0.5rem 1rem;
+    /* Bootstrap border color */
+    border: 1px solid #ced4da; 
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1rem;
+    /* Bootstrap text color */
+    color: #495057;
+}
+
 /* ----- Media Queries ----- */
 @media (max-width: 576px) {
     .gallery-heading {
         font-size: 1.5rem;
+    }
+
+    .sort-selector {
+        justify-content: center;
     }
 }

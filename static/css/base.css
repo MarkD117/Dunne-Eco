@@ -314,6 +314,19 @@ footer .line {
     color: white;
 }
 
+.footer-site-links li {
+    margin-bottom: 5px;
+}
+
+.contact-info:hover, .footer-site-links a:hover {
+    color: white;
+    border-bottom: 2px solid var(--primary);
+}
+
+.contact-info a:hover {
+    color: white;
+}
+
 /* ----- Bootstrap Toasts ----- */
 
 .message-container {

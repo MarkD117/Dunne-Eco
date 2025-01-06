@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'downloads/css/downloads.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section-padding">
+    <div class="container">
+        <h1>Brochures</h1>
+        <div class="row">
+            {% for brochure in brochures %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ brochure.title }}</h5>
+                        <p class="card-text">{{ brochure.description }}</p>
+                        <a href="{{ brochure.brochure_file.url }}" class="btn btn-success" download>Download</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

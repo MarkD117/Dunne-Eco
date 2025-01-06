@@ -160,12 +160,12 @@
                         <h5 class="mb-0 text-white">LINKS</h5>
                         <div class="line"></div>
                         <ul class="footer-site-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Downloads</a></li>
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'home' %}#services">Services</a></li>
+                            <li><a href="{% url 'home' %}#reviews">Testimonials</a></li>
+                            <li><a href="{% url 'history' %}">History</a></li>
+                            <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                            <li><a href="{% url 'downloads-list' %}">Downloads</a></li>
                         </ul>
                     </div>
                     <!-- Contact -->
@@ -176,12 +176,13 @@
                             <li class="mb-3">
                               <p class="mb-1">Do you have any questions or suggestions?</p>
                               <span class="contact-info"><i class="fas fa-envelope"></i>
-                                <a href="#" aria-label="contact form link">Contact
+                                <a href="{% url 'contact-form' %}" aria-label="contact form link">Contact
                                   Form</a></span>
                             </li>
                             <li class="mb-3">
                               <p class="mb-1">Do you need assistance? Give us a call</p>
-                              <span class="contact-info"><i class="fas fa-phone"></i> (057) 932 2468</span>
+                              <span class="contact-info"><i class="fas fa-phone"></i>
+                                <a href="tel:0579322468">(057) 932 2468</a></span>
                             </li>
                           </ul>
                     </div>

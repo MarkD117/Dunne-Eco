@@ -323,6 +323,7 @@ footer .line {
     border-bottom: 2px solid var(--primary);
 }
 
+/* Needed to turn achor tag white with icon above */
 .contact-info a:hover {
     color: white;
 }

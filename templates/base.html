@@ -84,19 +84,19 @@
                                 <a class="nav-link mx-lg-2 {% block home_active %}{% endblock %}" aria-current="page" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2 {% block history_active %}{% endblock %}" href="{% url 'history' %}">History</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link mx-lg-2" href="{% url 'home' %}#services">Services</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mx-lg-2" href="{% url 'home' %}#reviews">Testimonials</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{% url 'gallery' %}">Gallery</a>
+                                <a class="nav-link mx-lg-2 {% block history_active %}{% endblock %}" href="{% url 'history' %}">History</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link mx-lg-2" href="{% url 'downloads-list' %}">Downloads</a>
+                                <a class="nav-link mx-lg-2 {% block gallery_active %}{% endblock %}" href="{% url 'gallery' %}">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 {% block downloads_active %}{% endblock %}" href="{% url 'downloads-list' %}">Downloads</a>
                             </li>
                         </ul>
                     </div>

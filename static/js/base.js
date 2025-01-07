@@ -1,3 +1,28 @@
+// Smooth scroll function for home page links
+document.addEventListener('DOMContentLoaded', () => {
+  const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+  smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+          // Prevent default link behavior
+          event.preventDefault();
+
+          // Get the target element
+          const targetId = link.getAttribute('href').split('#')[1];
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+              // Smooth scroll to the target element
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: 'smooth',
+              });
+          }
+      });
+  });
+});
+
+
 // Initialising Animate On Scroll
 AOS.init({
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:

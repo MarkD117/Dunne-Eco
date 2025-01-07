@@ -32,6 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
           console.error(counter.error);
         }
     }
+
+    // IntersectionObserver to detect when the counter section is in view
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start the counters when the section comes into view
+                initCounter('counter-1', 0, 2145);
+                initCounter('counter-2', 0, 5368);
+                initCounter('counter-3', 0, 7482);
+                initCounter('counter-4', 0, 100);
+                observer.unobserve(entry.target); // Stop observing once the counters are activated
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is in view
+    });
+
+    // Observe the counter section
+    const counterSection = document.querySelector('#counter');
+    observer.observe(counterSection);
 });
 
 // Initialising Animate On Scroll

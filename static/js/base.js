@@ -22,6 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to initialize the counter
+    function initCounter(id, startValue, endValue) {
+        const counter = new CountUp(id, startValue, endValue, 0, 2.5); // 2.5 seconds duration
+        if (!counter.error) {
+            counter.start();
+        } else {
+          console.error(counter.error);
+        }
+    }
+});
 
 // Initialising Animate On Scroll
 AOS.init({
@@ -34,7 +45,6 @@ AOS.init({
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
-
 
 // Initialise bootstrap toasts
 document.querySelectorAll('.toast').forEach(toastElement => {

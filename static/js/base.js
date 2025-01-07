@@ -24,10 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Function to initialize the counter
-    function initCounter(id, startValue, endValue) {
+    function initCounter(id, startValue, endValue, appendPlus = false) {
         const counter = new CountUp(id, startValue, endValue, 0, 2.5); // 2.5 seconds duration
         if (!counter.error) {
             counter.start();
+            // Callback function to append '+' after the counter animation completes
+            counter.callback = function () {
+                if (appendPlus) {
+                    document.getElementById(id).textContent += "+"; // Append '+' to the counter
+                }
+            };
         } else {
           console.error(counter.error);
         }
@@ -41,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 initCounter('counter-1', 0, 2145);
                 initCounter('counter-2', 0, 5368);
                 initCounter('counter-3', 0, 7482);
-                initCounter('counter-4', 0, 100);
+                initCounter('counter-4', 0, 100, true);
                 observer.unobserve(entry.target); // Stop observing once the counters are activated
             }
         });

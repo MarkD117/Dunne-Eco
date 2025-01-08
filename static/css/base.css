@@ -235,6 +235,10 @@ img {
     margin: 16px auto 24px auto;
 }
 
+.line-white {
+    background-color: #FFF !important;
+}
+
 .section-title p {
     max-width: 500px;
     margin-left: auto;

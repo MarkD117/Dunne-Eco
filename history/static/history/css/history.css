@@ -1,8 +1,16 @@
 /* ----- Timeline ----- */
 
-/* #timeline {
-    background: var(--primary);
-} */
+#timeline {
+    /* Complex Circle Gradient */
+    background-image: radial-gradient(circle at 21% 15%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1)
+    45%,transparent 45%, transparent 83%,transparent 83%, transparent 100%),radial-gradient(circle at 84% 23%,
+    hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 68%,transparent 68%, transparent 93%,transparent 93%, transparent
+    100%),radial-gradient(circle at 7% 76%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 52%,transparent 52%,
+    transparent 75%,transparent 75%, transparent 100%),radial-gradient(circle at 59% 77%, hsla(210,0%,82%,0.1) 0%,
+    hsla(210,0%,82%,0.1) 87%,transparent 87%, transparent 93%,transparent 93%, transparent 100%),radial-gradient(circle
+    at 59% 5%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 54%,transparent 54%, transparent 56%,transparent 56%,
+    transparent 100%),linear-gradient(60deg, rgb(0,197,19),rgb(47,145,255));
+}
 
 .timeline {
     position: relative;

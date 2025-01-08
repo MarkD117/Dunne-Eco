@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Handle hash fragment on page load
+    // Handle hash fragment in URL on page load
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1); // Get the hash without '#'
         const targetElement = document.getElementById(targetId);

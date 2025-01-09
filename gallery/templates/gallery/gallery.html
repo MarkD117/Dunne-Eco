@@ -4,13 +4,12 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}">
-
 {% endblock %}
 
 {% block content %}
-<section class="section-padding gallery-container">
+<section class="section-padding my-4 mx-auto px-3">
     <div class="container">
-        <h1 class="gallery-heading">Gallery</h1>
+        <h1 class="text-center mb-3">Gallery</h1>
         {% for category in categories %}
         <div class="category-section my-5">
             <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
@@ -32,7 +31,7 @@
             </div>
         </div>
         {% empty %}
-        <p class="no-categories">No categories available yet.</p>
+        <p>No categories available yet.</p>
         {% endfor %}
     </div>
 </section>

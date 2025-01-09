@@ -18,7 +18,7 @@
                 <div class="gallery-image-wrapper">
                     <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.title }}">
                         <div class="gallery-image-container">
-                            <img src="{{ image.image.url }}" alt="{{ image.title }}" class="gallery-image">
+                            <img src="{{ image.image.url }}" alt="{{ image.title|default:'Gallery Image' }}" class="gallery-image">
                             {% if image.title %}
                             <div class="gallery-title">{{ image.title }}</div>
                             {% endif %}

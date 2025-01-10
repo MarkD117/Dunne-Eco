@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 import logging
+from custom_storages import StaticStorage
 if os.path.isfile('env.py'):
     import env
 

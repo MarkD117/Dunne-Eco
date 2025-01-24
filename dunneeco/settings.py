@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -217,6 +218,8 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    django_heroku.settings(locals())
 
 # Email Config
 if 'DEVELOPMENT' in os.environ:

@@ -219,8 +219,6 @@ if 'USE_AWS' in os.environ:
 
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-    django_heroku.settings(locals())
-
 # Email Config
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -258,3 +256,5 @@ LOGGING = {
         },
     },
 }
+
+django_heroku.settings(locals(), staticfiles=False)

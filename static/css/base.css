@@ -112,7 +112,6 @@ img {
 
 .contact-btn:hover {
     background-color: #fff;
-    border: var(--primary) 1px solid;
     color: var(--primary);
 }
 
@@ -357,7 +356,7 @@ footer .line {
     z-index: 1085;
 }
 
-/* Error 404 */
+/* ----- Error 404 page ----- */
 
 #error404 {
     background-image: radial-gradient(circle at 21% 15%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1)
@@ -378,25 +377,75 @@ footer .line {
     min-height: 100vh;
   }
 
-  .error-content {
+.error-content {
     text-align: center;
-  }
+}
 
-  .error-content h1 {
-    font-size: 6rem;
+.error-content h1 {
+    font-size: 9rem;
     font-weight: bold;
-    margin-bottom: 1rem;
-  }
+    margin-bottom: 1.5rem;
+}
 
-  .error-content p {
+.error-content p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-  }
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
 
-  .lottie-animation {
+.error-home-btn,
+.error-contact-btn {
+    color: var(--primary);
+    background: var(--background);
+    display: inline-block;
+    font-weight: 700;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 40px;
+    margin: 7px 7px 24px 7px;
+    transition: 0.2s all;
+}
+
+.error-contact-btn {
+    border: 2px solid var(--background);
+    color: var(--background);
+    background-color: transparent;
+}
+
+
+.error-home-btn:hover,
+.error-contact-btn:hover {
+    scale: 1.1;
+}
+
+.error-social {
+    line-height: 1.4;
+    text-align: center;
+}
+
+.error-social a {
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+    font-size: 17.5px;
+    color: #FFF;
+    margin: 0px 6px;
+    transition: 0.2s all;
+}
+
+.error-social a:hover {
+    color: var(--primary);
+    background-color: var(--background);
+    border-radius: 50%;
+}
+
+.lottie-animation {
     max-width: 400px;
-    margin-bottom: 2rem;
-  }
+    margin-bottom: 1.5rem;
+}
 
 /* ----- Media Queries ----- */
 

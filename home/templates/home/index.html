@@ -4,19 +4,10 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
-<!-- <link rel="preload" href="{{ MEDIA_URL }}home/home-hero-image.jpg" as="image"> -->
 {% endblock %}
 
 {% block content %}
 <style>
-    /* #hero {
-        background-image: url('{{ MEDIA_URL }}home/home-hero-image.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 100%;
-    } */
-
     #counter {
         background: linear-gradient(rgba(var(--primary-rgb), 0.8), rgba(var(--primary-rgb), 0.8)),
         url('{{ MEDIA_URL }}home/counter-image.jpg');

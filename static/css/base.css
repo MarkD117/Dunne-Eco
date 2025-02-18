@@ -6,7 +6,7 @@
     /* --background: #FAFAFA; */
     --background: #FFF;
     /* --primary: #0B00F7; */
-    --primary: #00ADEF;
+    --primary: #00adef;
     --primary-rgb: 0, 173, 239;
     /* --secondary: #0059FF; */
     --secondary: #3A87C7;
@@ -181,7 +181,7 @@ img {
 }
 
 #hero-single:before {
-    background-color: rgba(0, 173, 239, 0.3);
+    /* background-color: rgba(0, 173, 239, 0.3); */
     background-color: rgba(0, 0, 0, 0.6);
     height: 100vh;
     content: "";
@@ -210,17 +210,29 @@ img {
     color: #FDFDF1;
 }
 
-/* #hero-single a {
+#hero .carousel-caption a {
     text-decoration: none;
     display: inline-block;
     color: #FDFDF1;
-    border: 2px solid #FDFDF1;
+    background-color: var(--primary);
+    border: 2px solid transparent;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     text-transform: uppercase;
-    padding: 10px 24px;
-} */
+    padding: 8px 22px;
+    text-shadow: none;
+    transition: var(--transition);
+}
+
+#hero .carousel-caption a:hover {
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+#hero .carousel-caption p {
+    font-size: 1.2rem;
+}
 
 #hero .carousel-item {
     position: relative;
@@ -234,8 +246,26 @@ img {
     object-fit: cover;
 }
 
-#hero .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.6);
+#hero .carousel-caption h1 {
+    font-size: 3.5rem;
+}
+
+.carousel-caption {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    margin-bottom: 12px;
+}
+
+/* Gradient overlay from bottom */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; /* Can adjust for more/less coverage */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    pointer-events: none;
 }
 
 /* ----- Section Title ----- */
@@ -485,6 +515,21 @@ footer .line {
     }
 }
 
+@media (max-width: 1007px) {
+    #hero .carousel-caption h1 {
+        font-size: 2rem;
+    }
+
+    #hero .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    #hero .carousel-caption a {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+}
+
 @media (min-width: 991px) {
     /* nav link hover & active styles for large screens */
     .nav-link:before {
@@ -534,9 +579,9 @@ footer .line {
         font-size: 1.5rem;
     }
     
-    #hero-single a {
-        font-size: 13px;
-        padding: 10px 18px;
+    #hero .carousel-caption a {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 
     #hero .carousel-inner {
@@ -547,18 +592,15 @@ footer .line {
         height: 50vh;
     }
 
-    #hero .carousel-caption h5 {
-        font-size: 17px;
-    }
-
-    #hero .carousel-caption a {
-        padding: 10px 15px;
+    #hero .carousel-caption h1 {
+        font-size: 22.5px;
     }
 
     #hero .carousel-caption p {
         width: 100%;
         line-height: 1.6;
         font-size: 12px;
+        margin-bottom: 8px;
     }
 }
 

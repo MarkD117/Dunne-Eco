@@ -83,6 +83,7 @@ img {
     margin: 20px;
     border-radius: 16px;
     padding: 0.5rem;
+    box-shadow: var(--box-shadow)
 }
 
 .navbar-brand {

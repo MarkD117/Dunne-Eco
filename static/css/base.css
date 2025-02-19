@@ -514,6 +514,10 @@ footer .line {
     #hero .carousel-inner {
         margin-top: 120px;
     }
+
+    .about-content-container {
+        margin-top: 1rem !important;
+    }
 }
 
 @media (max-width: 1007px) {

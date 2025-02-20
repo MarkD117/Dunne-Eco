@@ -64,6 +64,25 @@
     pointer-events: none;
 }
 
+.gallery-social-icons a {
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.gallery-social-icons a:hover {
+    background-color: var(--primary);
+    color: var(--background);
+    border-radius: 50%;
+}
+
 .gallery-image-container:hover .gallery-title {
     /* Shows title on hover */
     opacity: 1;
@@ -98,5 +117,12 @@
 
     .sort-selector {
         justify-content: center;
+    }
+
+    .gallery-social-icons a {
+        font-size: 30px;
+        width: 45px;
+        height: 45px;
+        margin: 0 10px;
     }
 }

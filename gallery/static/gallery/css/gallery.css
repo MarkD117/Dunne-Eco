@@ -4,6 +4,34 @@
     gap: 16px;
 }
 
+.gallery-category-heading-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.gallery-category-heading {
+    margin-bottom: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.category-hr-left,
+.category-hr-right {
+    flex-grow: 1;
+    height: 2px;
+}
+
+.category-hr-right {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+.category-hr-left {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
 .gallery-image-wrapper {
     text-align: center;
 }

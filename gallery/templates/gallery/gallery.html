@@ -9,25 +9,41 @@
 {% block content %}
 <section class="section-padding my-4 mx-auto px-3">
     <div class="container">
-        <h1 class="text-center mb-3">Gallery</h1>
-        {% for category in categories %}
-        <div class="category-section my-5">
-            <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
-            <div class="gallery-grid">
-                {% for image in category.images.all %}
-                <div class="gallery-image-wrapper">
-                    <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.title }}">
-                        <div class="gallery-image-container">
-                            <img src="{{ image.image.url }}" alt="{{ image.title|default:'Gallery Image' }}" class="gallery-image">
-                            {% if image.title %}
-                            <div class="gallery-title">{{ image.title }}</div>
-                            {% endif %}
-                        </div>
-                    </a>
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Our Work</h1>
+                    <div class="line"></div>
+                    <p>Head over to our socials to get a more in depth view of our most recent projects!</p>
+                    <div class="gallery-social-icons">
+                        <a href="https://www.instagram.com/dunneeco/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/dunneeco/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@dunneeco" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@dunneeco" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
-                {% empty %}
-                <p class="no-images">No images available for this category.</p>
-                {% endfor %}
+            </div>
+        </div>
+        {% for category in categories %}
+        <div class="row">
+            <div class="category-section my-5">
+                <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
+                <div class="gallery-grid">
+                    {% for image in category.images.all %}
+                    <div class="gallery-image-wrapper">
+                        <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.title }}">
+                            <div class="gallery-image-container">
+                                <img src="{{ image.image.url }}" alt="{{ image.title|default:'Gallery Image' }}" class="gallery-image">
+                                {% if image.title %}
+                                <div class="gallery-title">{{ image.title }}</div>
+                                {% endif %}
+                            </div>
+                        </a>
+                    </div>
+                    {% empty %}
+                    <p class="no-images">No images available for this category.</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% empty %}

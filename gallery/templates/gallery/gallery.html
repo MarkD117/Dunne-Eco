@@ -27,7 +27,11 @@
         {% for category in categories %}
         <div class="row">
             <div class="category-section my-5">
-                <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
+                <div class="gallery-category-heading-wrapper">
+                    <hr class="category-hr-left">
+                    <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
+                    <hr class="category-hr-right">
+                </div>
                 <div class="gallery-grid">
                     {% for image in category.images.all %}
                     <div class="gallery-image-wrapper">

@@ -23,8 +23,23 @@
                     </div>
                 </div>
             </div>
+            <!-- Sort Selector -->
+            <div class="sort-selector mb-4">
+                <form method="get">
+                    <select name="category" onchange="this.form.submit()">
+                        <option value="">All Categories</option>
+                        {% for category in categories %}
+                        <option value="{{ category.slug }}" {% if category.slug == selected_category %}selected{% endif %}>
+                            {{ category.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
         </div>
         {% for category in categories %}
+        <!-- If a category is selected, only show that category -->
+        {% if not selected_category or category.slug == selected_category %}
         <div class="row">
             <div class="category-section my-5">
                 <div class="gallery-category-heading-wrapper">
@@ -50,6 +65,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
         {% empty %}
         <p>No categories available yet.</p>
         {% endfor %}

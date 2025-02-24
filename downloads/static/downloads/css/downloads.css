@@ -51,6 +51,24 @@
     justify-content: center;
 }
 
+.view-full-image {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-full-image:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .card .btn {
     margin-top: auto;
 }

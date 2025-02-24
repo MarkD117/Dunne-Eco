@@ -40,7 +40,7 @@
         {% for category in categories %}
         <!-- If a category is selected, only show that category -->
         {% if not selected_category or category.slug == selected_category %}
-        <div class="row">
+        <div class="row" data-aos="fade-down" data-aos-delay="150">
             <div class="category-section my-5">
                 <div class="gallery-category-heading-wrapper">
                     <hr class="category-hr-left">

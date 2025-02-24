@@ -24,6 +24,9 @@
                     {% if brochure.thumbnail %}
                     <div class="img-container">
                         <img src="{{ brochure.thumbnail.url }}" class="card-img-top" alt="{{ brochure.title }}">
+                        <a data-fancybox href="{{ brochure.thumbnail.url }}" data-caption="{{ brochure.title }}">
+                            <button class="btn btn-primary view-full-image">View Full Image</button> 
+                        </a>
                     </div>
                     {% else %}
                     <div class="no-thumbnail text-center p-4">
@@ -49,4 +52,11 @@
         </div>
     </div>
 </section>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    // Initialize Fancy Box
+    Fancybox.bind("[data-fancybox]");
+</script>
 {% endblock %}

@@ -21,6 +21,15 @@
             {% for brochure in brochures %}
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card h-100 d-flex flex-column">
+                    {% if brochure.thumbnail %}
+                    <div class="img-container">
+                        <img src="{{ brochure.thumbnail.url }}" class="card-img-top" alt="{{ brochure.title }}">
+                    </div>
+                    {% else %}
+                    <div class="no-thumbnail text-center p-4">
+                        <i class="ri-file-text-line ri-4x text-muted"></i>
+                    </div>
+                    {% endif %}
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-center">{{ brochure.title }}</h5>
                         <p class="card-text description">{{ brochure.description }}</p>

@@ -209,11 +209,11 @@ if 'USE_AWS' in os.environ:
     # Static and media files
     STORAGES = {
         "default": {
-            "BACKEND" : "storages.backends.s3boto3.S3StaticStorage",
+            "BACKEND": "custom_storages.MediaStorage",  # Handles all media uploads
         },
-
-        "staticfiles":  {
-            "BACKEND" : "storages.backends.s3boto3.S3StaticStorage",
+        
+        "staticfiles": {
+            "BACKEND": "custom_storages.StaticStorage",  # Handles all static files
         },
     }
     STATICFILES_LOCATION = 'static'

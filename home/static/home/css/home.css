@@ -102,11 +102,11 @@
 
 /* ----- Reviews ----- */
 
-/* .review-person small {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--primary);
-} */
+.review p {
+    min-height: 100px;
+    max-height: 100px;
+    overflow-y: auto;
+}
 
 .review-head {
     position: relative;
@@ -120,4 +120,27 @@
     bottom: -14px;
     background-color: white;
     transform: rotate(45deg);
+}
+
+/* ----- Media Queries ----- */
+
+@media (max-width: 1200px) {
+    .review p {
+        min-height: 150px;
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .review p {
+        min-height: 110px;
+        max-height: 110px;
+    }
+}
+
+@media (max-width: 576px) {
+    .review p {
+        min-height: auto;
+        max-height: auto;
+    }
 }

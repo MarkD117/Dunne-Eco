@@ -72,7 +72,13 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: var(--transition);
     opacity: 0;
+}
+
+.portfolio-item .iconbox:hover {
+    background-color: white;
+    color: var(--primary);
 }
 
 .portfolio-item:hover .iconbox {
@@ -96,7 +102,7 @@
     transition: var(--transition);
 }
 
-.image-zoom:hover .image-zoom-wrapper:hover {
+.image-zoom-wrapper:hover img {
     transform: scale(1.1);
 }
 

@@ -24,8 +24,9 @@
                     {% if brochure.thumbnail %}
                     <div class="img-container">
                         <img src="{{ brochure.thumbnail.url }}" class="card-img-top" alt="{{ brochure.title }}">
-                        <a data-fancybox href="{{ brochure.thumbnail.url }}" data-caption="{{ brochure.title }}">
-                            <button class="btn btn-primary view-full-image">View Full Image</button> 
+                        <a data-fancybox href="{{ brochure.thumbnail.url }}" data-caption="{{ brochure.title }}" 
+                           class="btn btn-primary view-full-image" role="button">
+                            View Full Image
                         </a>
                     </div>
                     {% else %}

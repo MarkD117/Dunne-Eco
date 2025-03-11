@@ -10,10 +10,16 @@ def contact(request):
         if form.is_valid():
             form.save()
             messages.success(
-                request, 'Your message has been sent to the team!')
+                request,
+                'Your message has been sent to the team!'
+            )
             return redirect('home')
         else:
-            messages.error(request, 'There was an error with your submission. Please check the form and try again.')
+            messages.error(
+                request,
+                'There was an error with your submission. '
+                'Please check the form and try again.'
+            )
     else:
         form = ContactForm()
 

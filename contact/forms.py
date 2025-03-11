@@ -17,6 +17,11 @@ class ContactForm(forms.ModelForm):
             'message': 'Type your message here',
         }
         for field in self.fields:
-            self.fields[field].widget.attrs['class'] = 'contact-form-input'
+            self.fields[field].widget.attrs.update({
+                'class': 'contact-form-input'
+            })
+            
             if field in placeholders:
-                self.fields[field].widget.attrs['placeholder'] = placeholders[field]
+                self.fields[field].widget.attrs.update({
+                    'placeholder': placeholders[field]
+                })

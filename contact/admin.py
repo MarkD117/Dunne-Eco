@@ -6,7 +6,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'subject', 'created_at')
     search_fields = ('name', 'email', 'subject')
     list_filter = ('created_at',)
-    readonly_fields = ('name', 'email', 'phone', 'subject', 'message', 'created_at')
+    readonly_fields = ('name', 'email', 'phone', 'subject',
+                       'message', 'created_at')
 
     fieldsets = (
         ('Contact Details', {

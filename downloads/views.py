@@ -5,4 +5,5 @@ from .forms import BrochureForm
 
 def downloads_list(request):
     brochures = Brochure.objects.all()
-    return render(request, 'downloads/downloads_list.html', {'brochures': brochures})
+    context = {'brochures': brochures}
+    return render(request, 'downloads/downloads_list.html', context)

@@ -4,18 +4,14 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'history/css/history.css' %}">
-{% endblock %}
-
-{% block content %}
 <style>
     #hero-single {
         background-image: url('{{ MEDIA_URL }}history/history-hero-image.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        width: 100%;
     }
 </style>
+{% endblock %}
+
+{% block content %}
 <!-- Hero Section -->
 <section id="hero-single" class="text-center">
     <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">

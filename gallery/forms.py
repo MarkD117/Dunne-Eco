@@ -1,10 +1,12 @@
 from django import forms
 from .models import Category, Image
 
+
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
-        fields = ['name']  # Only the name field is editable; the slug is auto-generated
+        # Only the name field is editable; the slug is auto-generated
+        fields = ['name']
 
     def save(self, commit=True):
         """

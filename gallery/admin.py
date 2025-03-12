@@ -8,7 +8,7 @@ class CategoryAdmin(admin.ModelAdmin):
     # Slug read-only due to auto-generation
     readonly_fields = ('slug',)
     # Slug included as read-only in the form layout
-    fields = ('name', 'slug')  
+    fields = ('name', 'slug')
 
     def save_model(self, request, obj, form, change):
         """

@@ -144,9 +144,8 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     .review p {
         min-height: auto;
-        max-height: auto;
     }
 }

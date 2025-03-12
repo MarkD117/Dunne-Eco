@@ -4,15 +4,15 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
-{% endblock %}
-
-{% block content %}
 <style>
     #counter {
         background: linear-gradient(rgba(var(--primary-rgb), 0.8), rgba(var(--primary-rgb), 0.8)),
         url('{{ MEDIA_URL }}home/counter-image.jpg');
     }
 </style>
+{% endblock %}
+
+{% block content %}
 <!-- Hero Section -->
 <section id="hero" class="text-center">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">

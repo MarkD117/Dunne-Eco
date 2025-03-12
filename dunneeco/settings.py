@@ -33,7 +33,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-markd117-dunneeco-kumtz34i2zw.ws-eu118.gitpod.io', 'dunne-eco-669751d97c03.herokuapp.com', 'dunneeco.ie', 'www.dunneeco.ie']
+ALLOWED_HOSTS = [
+    '8000-markd117-dunneeco-kumtz34i2zw.ws-eu118.gitpod.io',
+    'dunne-eco-669751d97c03.herokuapp.com',
+    'dunneeco.ie',
+    'www.dunneeco.ie'
+]
 
 
 # Application definition
@@ -209,11 +214,13 @@ if 'USE_AWS' in os.environ:
     # Static and media files
     STORAGES = {
         "default": {
-            "BACKEND": "custom_storages.MediaStorage",  # Handles all media uploads
+            # Handles all media uploads
+            "BACKEND": "custom_storages.MediaStorage",
         },
-        
+
         "staticfiles": {
-            "BACKEND": "custom_storages.StaticStorage",  # Handles all static files
+            # Handles all static files
+            "BACKEND": "custom_storages.StaticStorage",
         },
     }
     STATICFILES_LOCATION = 'static'

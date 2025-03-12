@@ -37,7 +37,6 @@
 }
 
 .gallery-image-container {
-    /* Needed to position title over image */
     position: relative; 
     width: 100%;
     /* Ratio can be adjusted to change image size (e.g., 16/9, 1/1 for square) */
@@ -64,9 +63,7 @@
 .gallery-image {
     width: 100%;
     height: 100%;
-    /* Ensures image fills container while maintaining aspect ratio */
     object-fit: cover;
-    /* For zoom effect */
     transition: transform 0.3s ease;
 }
 
@@ -114,11 +111,10 @@
 .gallery-image-container:hover .gallery-title {
     /* Shows title on hover */
     opacity: 1;
-    /* Darkens background slightly */
     background: rgba(0, 0, 0, 0.8); 
 }
 
-/* Sort Selector Styling */
+/* ----- Sort Selector Styling ----- */
 .sort-selector {
     display: flex;
     justify-content: flex-end;

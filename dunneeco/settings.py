@@ -33,12 +33,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = [
-    '8000-markd117-dunneeco-kumtz34i2zw.ws-eu118.gitpod.io',
-    'dunne-eco-669751d97c03.herokuapp.com',
-    'dunneeco.ie',
-    'www.dunneeco.ie'
-]
+if 'DEVELOPMENT' in os.environ:
+    ALLOWED_HOSTS = [os.environ.get('LOCAL_HOSTNAME')]
+else:
+    ALLOWED_HOSTS = [
+        os.environ.get('HEROKU_HOSTNAME'),
+        os.environ.get('DOMAIN_HOSTNAME'),
+        os.environ.get('DOMAIN_PREFIX_HOSTNAME')
+    ]
 
 
 # Application definition

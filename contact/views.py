@@ -1,5 +1,6 @@
 import logging
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
@@ -15,7 +16,7 @@ def contact(request):
         if form.is_valid():
             contact_message = form.save()
 
-            # Send email
+            # Email to site owner
             subject = f"New Contact Form Submission: {contact_message.subject}"
             message = (
                 f"Name: {contact_message.name}\n"
@@ -29,10 +30,12 @@ def contact(request):
 
             try:
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+
+                # Send confirmation email to the user
+                _send_confirmation_email(contact_message)
+
                 messages.success(request, 'Your message has been sent to the team!')
-            except Exception as e:
-                # Log the error for debugging purposes
-                logger.error(f"Error sending email: {str(e)}")
+            except Exception:
                 messages.error(request, 'Error sending message. Please try again.')
 
             return redirect('home')
@@ -44,3 +47,29 @@ def contact(request):
 
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
+
+def _send_confirmation_email(contact_message):
+    """Send a confirmation email to the user who submitted the contact form."""
+    user_email = contact_message.email
+
+    subject = render_to_string(
+        'contact/email_templates/confirmation_email_subject.txt'
+    ).strip()
+
+    body = render_to_string(
+        'contact/email_templates/confirmation_email_body.txt',
+        {
+            'name': contact_message.name,
+            'subject': contact_message.subject,
+            'message': contact_message.message,
+            'contact_email': os.environ.get('EMAIL_HOST_USER'),
+        }
+    )
+
+    send_mail(
+        subject,
+        body,
+        os.environ.get('EMAIL_HOST_USER'),
+        [user_email],
+        fail_silently=False
+    )

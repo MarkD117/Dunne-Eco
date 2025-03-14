@@ -17,7 +17,7 @@ def contact(request):
 
         # Verify reCAPTCHA
         recaptcha_response = request.POST.get('g-recaptcha-response')
-        recaptcha_secret_key = os.environ.get('RECAPTCHA_SECRET_KEY')  # Private key from environment variables
+        recaptcha_secret_key = os.environ.get('RECAPTCHA_PRIVATE_KEY')  # Private key from environment variables
 
         # Send the request to the Google reCAPTCHA verification endpoint
         recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify'

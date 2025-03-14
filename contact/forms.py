@@ -1,8 +1,13 @@
 from django import forms
 from .models import Contact
+from django_recaptcha.fields import ReCaptchaField
+from django_recaptcha.widgets import ReCaptchaV3
 
 
 class ContactForm(forms.ModelForm):
+
+    captcha = ReCaptchaField(widget=ReCaptchaV3)
+
     class Meta:
         model = Contact
         fields = '__all__'

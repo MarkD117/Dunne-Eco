@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.conf import settings
 from .forms import ContactForm
 
 # Set up logging
@@ -64,7 +65,10 @@ def contact(request):
     else:
         form = ContactForm()
 
-    context = {'form': form}
+    context = {
+            'form': form,
+            'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY
+        }
     return render(request, 'contact/contact.html', context)
 
 def _send_confirmation_email(contact_message):

@@ -38,7 +38,6 @@
         <div class="masthead-content">
             <div class="container-fluid px-lg-0">
                 <h3 class="lh-1 mb-3 text-uppercase">Get in touch</h3>
-                <p>{{ RECAPTCHA_PUBLIC_KEY }}</p>
                 <!-- FORM -->
                 <form method="POST" action="{% url 'contact-form' %}" id="contact-form" class="form">
                     {% csrf_token %}

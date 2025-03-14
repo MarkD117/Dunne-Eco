@@ -26,7 +26,7 @@ def contact(request):
             )
             # Get the 'from' email address (with fallback)
             from_email = os.environ.get('EMAIL_HOST_USER', 'sandra@dunneeco.com')
-            recipient_list = ['sandra@dunneeco.com']
+            recipient_list = ['sandra@dunneeco.com', 'markdunne117@gmail.com']
 
             try:
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)

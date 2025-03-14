@@ -1,10 +1,11 @@
 import logging
+import os
+import requests
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
-import os
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -13,7 +14,22 @@ def contact(request):
     """ This view handles submitting the contact form and sending an email """
     if request.method == 'POST':
         form = ContactForm(request.POST)
-        if form.is_valid():
+
+        # Verify reCAPTCHA
+        recaptcha_response = request.POST.get('g-recaptcha-response')
+        recaptcha_secret_key = os.environ.get('RECAPTCHA_SECRET_KEY')  # Private key from environment variables
+
+        # Send the request to the Google reCAPTCHA verification endpoint
+        recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify'
+        recaptcha_data = {
+            'secret': recaptcha_secret_key,
+            'response': recaptcha_response
+        }
+
+        recaptcha_result = requests.post(recaptcha_url, data=recaptcha_data)
+        recaptcha_json = recaptcha_result.json()
+
+        if recaptcha_json.get('success') and form.is_valid():
             contact_message = form.save()
 
             # Email to site owner
@@ -40,7 +56,10 @@ def contact(request):
 
             return redirect('home')
         else:
-            messages.error(request, 'There was an error with your submission. Please try again.')
+            if not recaptcha_json.get('success'):
+                messages.error(request, 'reCAPTCHA validation failed. Please try again.')
+            else:
+                messages.error(request, 'There was an error with your submission. Please try again.')
 
     else:
         form = ContactForm()

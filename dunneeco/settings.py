@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     # Extra
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_recaptcha',
     'storages',
 ]
 
@@ -246,3 +247,6 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_SITE_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')

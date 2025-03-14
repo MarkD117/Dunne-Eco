@@ -6,6 +6,17 @@
 <link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
 {% endblock %}
 
+{% block extra_js %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ RECAPTCHA_PUBLIC_KEY }}"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute("{{ RECAPTCHA_PUBLIC_KEY }}", {action: "contact_form"}).then(function(token) {
+            document.getElementById("id_captcha").value = token;
+        });
+    });
+</script>
+{% endblock %}
+
 {% block content %}
 <section>
     <!-- Background Image-->
@@ -47,6 +58,7 @@
                         <textarea name="message" cols="40" rows="10" class="contact-form-input form-control"
                             placeholder="Type your message here" required id="id_message"></textarea>
                     </div>
+                    <input type="hidden" id="id_captcha" name="g-recaptcha-response">
                     <div id="div_id_submit" class="form-group text-center mb-0">
                         <button type="submit" class="btn btn-primary w-100">Submit</button>
                     </div>

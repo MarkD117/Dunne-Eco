@@ -1,89 +1,72 @@
 import logging
-import os
-import requests
+import requests  # Add this
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 from .forms import ContactForm
+import os
 
-# Set up logging
 logger = logging.getLogger(__name__)
 
 def contact(request):
     """ This view handles submitting the contact form and sending an email """
     if request.method == 'POST':
         form = ContactForm(request.POST)
+        if form.is_valid():
+            secret_key = settings.RECAPTCHA_PRIVATE_KEY  # Ensure key variable name is consistent
 
-        # Verify reCAPTCHA
-        recaptcha_response = request.POST.get('g-recaptcha-response')
-        recaptcha_secret_key = os.environ.get('RECAPTCHA_PRIVATE_KEY')  # Private key from environment variables
+            # Get reCAPTCHA response
+            recaptcha_response = request.POST.get('g-recaptcha-response')
+            data = {
+                'response': recaptcha_response,
+                'secret': secret_key
+            }
 
-        # Send the request to the Google reCAPTCHA verification endpoint
-        recaptcha_url = 'https://www.google.com/recaptcha/enterprise/verify'
-        recaptcha_data = {
-            'secret': recaptcha_secret_key,
-            'response': recaptcha_response,
-            'sitekey': os.environ.get('RECAPTCHA_PUBLIC_KEY')  # Required for Enterprise
-        }
+            # Verify reCAPTCHA
+            resp = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            result_json = resp.json()
 
-        try:
-            recaptcha_result = requests.post(recaptcha_url, data=recaptcha_data)
-            recaptcha_json = recaptcha_result.json()
+            print(result_json)  # Debugging, remove this in production
 
-            # Log the response for debugging
-            logger.info(f"reCAPTCHA response: {recaptcha_json}")
+            # Ensure reCAPTCHA passes
+            if not result_json.get('success') or result_json.get('score', 0) < 0.5:  # Adjust threshold if necessary
+                messages.error(request, 'ReCAPTCHA verification failed. Please try again.')
+                return redirect('contact-form')
 
-            # Extract score (Enterprise reCAPTCHA uses riskAnalysis)
-            score = recaptcha_json.get("riskAnalysis", {}).get("score", 0)
+            # Save form and send email
+            contact_message = form.save()
 
-            # Define a threshold (Google recommends 0.5+ as a safe score)
-            if recaptcha_json.get('success') and score >= 0.5 and form.is_valid():
-                contact_message = form.save()
+            # Email to site owner
+            subject = f"New Contact Form Submission: {contact_message.subject}"
+            message = (
+                f"Name: {contact_message.name}\n"
+                f"Email: {contact_message.email}\n"
+                f"Phone: {contact_message.phone or 'N/A'}\n"
+                f"Message:\n{contact_message.message}"
+            )
+            from_email = os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com')
+            recipient_list = [os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com')]
 
-                # Email to site owner
-                subject = f"New Contact Form Submission: {contact_message.subject}"
-                message = (
-                    f"Name: {contact_message.name}\n"
-                    f"Email: {contact_message.email}\n"
-                    f"Phone: {contact_message.phone or 'N/A'}\n"
-                    f"Message:\n{contact_message.message}"
-                )
-                from_email = os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com')
-                recipient_list = [os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com')]
+            try:
+                send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+                _send_confirmation_email(contact_message)
+                messages.success(request, 'Your message has been sent to the team!')
+            except Exception as e:
+                logger.error(f"Error sending email: {e}")
+                messages.error(request, 'Error sending message. Please try again.')
 
-                try:
-                    send_mail(subject, message, from_email, recipient_list, fail_silently=False)
-
-                    # Send confirmation email to the user
-                    _send_confirmation_email(contact_message)
-
-                    messages.success(request, 'Your message has been sent to the team!')
-                except Exception as e:
-                    logger.error(f"Error sending email: {e}")
-                    messages.error(request, 'Error sending message. Please try again.')
-
-                return redirect('home')
-
-            else:
-                if not recaptcha_json.get('success'):
-                    messages.error(request, 'reCAPTCHA validation failed. Please try again.')
-                elif score < 0.5:
-                    messages.error(request, 'Suspicious activity detected. Please try again later.')
-                else:
-                    messages.error(request, 'There was an error with your submission. Please try again.')
-
-        except Exception as e:
-            logger.error(f"Error verifying reCAPTCHA: {e}")
-            messages.error(request, 'reCAPTCHA verification failed. Please try again.')
+            return redirect('home')
+        else:
+            messages.error(request, 'There was an error with your submission. Please try again.')
 
     else:
         form = ContactForm()
 
     context = {
         'form': form,
-        'RECAPTCHA_PUBLIC_KEY': settings.RECAPTCHA_PUBLIC_KEY
+        'RECAPTCHA_SITE_KEY': settings.RECAPTCHA_PUBLIC_KEY
     }
     return render(request, 'contact/contact.html', context)
 

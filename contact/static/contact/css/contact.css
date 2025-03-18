@@ -121,6 +121,11 @@ button[type="submit"] {
     border-radius: 5px;
 }
 
+.grecaptcha-badge {
+    position: relative;
+    z-index: 9999;
+}
+
 /* ----- Media Queries ----- */
 
 @media (max-width:786px) {

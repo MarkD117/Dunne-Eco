@@ -10,21 +10,29 @@
 <script src="https://www.google.com/recaptcha/enterprise.js?render={{ RECAPTCHA_PUBLIC_KEY }}"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const form = document.getElementById("contact-form"); // Change to your form's ID
+        const form = document.getElementById("contact-form"); // Ensure this ID matches your form
     
         form.addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent normal form submission
-            
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Ensure grecaptcha is available
+            if (typeof grecaptcha === "undefined") {
+                console.error("reCAPTCHA not loaded");
+                return;
+            }
+
             grecaptcha.ready(function() {
                 grecaptcha.execute("{{ RECAPTCHA_PUBLIC_KEY }}", { action: "contact_form" })
                 .then(function(token) {
                     document.getElementById("recaptcha-token").value = token;
                     form.submit(); // Submit the form after setting the token
+                }).catch(function(error) {
+                    console.error("reCAPTCHA execution error:", error);
                 });
             });
         });
     });
-    </script>
+</script>
 {% endblock %}
 
 {% block content %}

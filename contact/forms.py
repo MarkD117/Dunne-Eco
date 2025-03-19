@@ -20,7 +20,7 @@ class ContactForm(forms.ModelForm):
             self.fields[field].widget.attrs.update({
                 'class': 'contact-form-input'
             })
-            
+
             if field in placeholders:
                 self.fields[field].widget.attrs.update({
                     'placeholder': placeholders[field]

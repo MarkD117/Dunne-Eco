@@ -15,3 +15,25 @@ document.querySelectorAll('.toast').forEach(toastElement => {
     var toast = new bootstrap.Toast(toastElement);
     toast.show();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  let cookieModal = new bootstrap.Modal(document.getElementById("cookieConsentModal"));
+
+  // Show modal only if user hasn't confirmed or closed it this session
+  if (!localStorage.getItem("cookieConsent") && !sessionStorage.getItem("cookieClosed")) {
+      cookieModal.show();
+  }
+
+  // When user clicks "Confirm", store in localStorage to never show again
+  document.getElementById("confirmCookies").addEventListener("click", function () {
+      localStorage.setItem("cookieConsent", "true"); 
+      sessionStorage.removeItem("cookieClosed"); // Remove session closed flag
+      cookieModal.hide(); // Hide the modal after confirming
+  });
+
+  // When user closes the modal, store in sessionStorage to not show again this session
+  document.getElementById("closeModal").addEventListener("click", function () {
+      sessionStorage.setItem("cookieClosed", "true");
+      cookieModal.hide(); // Hide the modal after closing
+  });
+});

@@ -417,6 +417,11 @@ footer .line {
     transparent 100%),linear-gradient(60deg, rgb(0,197,19),rgb(47,145,255));
 }
 
+.cookie-modal-footer {
+    align-items: center;
+    justify-content: center;
+}
+
 .cookie-modal-footer button,
 .cookie-modal-footer a {
     transition: var(--transition);

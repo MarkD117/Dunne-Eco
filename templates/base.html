@@ -117,7 +117,7 @@
     {% if messages %}
     <div class="message-container rounded">
       {% for message in messages %}
-      <!-- Using djang message levels to display correct message type -->
+      <!-- Using django message levels to display correct message type -->
       {% with message.level as level %}
       {% if level == 40 %}
       {% include 'includes/toasts/toast_error.html' %}
@@ -132,6 +132,34 @@
       {% endfor %}
     </div>
     {% endif %}
+
+    <!-- Bootstrap Cookie Consent Modal -->
+    <div class="modal fade" id="cookieConsentModal" tabindex="-1" aria-labelledby="cookieConsentLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog" data-aos="fade-down" data-aos-delay="50">
+            <div class="modal-content">
+                <div class="cookie-modal-header modal-header text-white">
+                    <h5 class="modal-title text-white" id="cookieConsentLabel">Cookies & Privacy</h5>
+                    <button type="button" class="btn-close" id="closeModal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-cookie-bite fa-4x text-primary"></i>
+                        </div>
+                        <div class="col-9">
+                            <p>
+                                This website uses Google reCAPTCHA to enhance security. By continuing, you acknowledge our use of reCAPTCHA for protection against spam and abuse.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cookie-modal-footer modal-footer">
+                    <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    <button type="button" class="btn btn-primary" id="confirmCookies">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main>

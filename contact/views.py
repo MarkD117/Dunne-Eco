@@ -1,5 +1,5 @@
 import logging
-import requests  # Add this
+import requests
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
@@ -10,12 +10,13 @@ import os
 
 logger = logging.getLogger(__name__)
 
+
 def contact(request):
     """ This view handles submitting the contact form and sending an email """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            secret_key = settings.RECAPTCHA_PRIVATE_KEY  # Ensure key variable name is consistent
+            secret_key = settings.RECAPTCHA_PRIVATE_KEY
 
             # Get reCAPTCHA response
             recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -25,14 +26,19 @@ def contact(request):
             }
 
             # Verify reCAPTCHA
-            resp = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+            resp = requests.post(
+                'https://www.google.com/recaptcha/api/siteverify',
+                data=data
+            )
             result_json = resp.json()
 
-            print(result_json)  # Debugging, remove this in production
-
-            # Ensure reCAPTCHA passes
-            if not result_json.get('success') or result_json.get('score', 0) < 0.5:  # Adjust threshold if necessary
-                messages.error(request, 'ReCAPTCHA verification failed. Please try again.')
+            # Ensure reCAPTCHA passes & can adjust threshold if necessary
+            recaptcha_passed = result_json.get('success')
+            recaptcha_score = result_json.get('score', 0) < 0.5
+            if not recaptcha_passed or recaptcha_score:
+                messages.error(
+                    request, 'ReCAPTCHA verification failed. Please try again.'
+                )
                 return redirect('contact-form')
 
             # Save form and send email
@@ -46,20 +52,37 @@ def contact(request):
                 f"Phone: {contact_message.phone or 'N/A'}\n"
                 f"Message:\n{contact_message.message}"
             )
-            from_email = os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com')
-            recipient_list = [os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com')]
+            from_email = os.environ.get(
+                'EMAIL_HOST_USER', 'noreply@dunneeco.com'
+            )
+            recipient_list = [
+                os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com')
+            ]
 
             try:
-                send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+                send_mail(
+                    subject,
+                    message,
+                    from_email,
+                    recipient_list,
+                    fail_silently=False
+                )
                 _send_confirmation_email(contact_message)
-                messages.success(request, 'Your message has been sent to the team!')
+                messages.success(
+                    request, 'Your message has been sent to the team!'
+                )
             except Exception as e:
                 logger.error(f"Error sending email: {e}")
-                messages.error(request, 'Error sending message. Please try again.')
+                messages.error(
+                    request, 'Error sending message. Please try again.'
+                )
 
             return redirect('home')
         else:
-            messages.error(request, 'There was an error with your submission. Please try again.')
+            messages.error(
+                request,
+                'There was an error with your submission. Please try again.'
+            )
 
     else:
         form = ContactForm()
@@ -69,6 +92,7 @@ def contact(request):
         'RECAPTCHA_SITE_KEY': settings.RECAPTCHA_PUBLIC_KEY
     }
     return render(request, 'contact/contact.html', context)
+
 
 def _send_confirmation_email(contact_message):
     """Send a confirmation email to the user who submitted the contact form."""
@@ -84,7 +108,9 @@ def _send_confirmation_email(contact_message):
             'name': contact_message.name,
             'subject': contact_message.subject,
             'message': contact_message.message,
-            'contact_email': os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com'),
+            'contact_email': os.environ.get(
+                'EMAIL_GENERAL_CONTACT', 'info@dunneeco.com'
+            ),
         }
     )
 

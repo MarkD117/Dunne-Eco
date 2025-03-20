@@ -16,24 +16,51 @@ document.querySelectorAll('.toast').forEach(toastElement => {
     toast.show();
 });
 
+// Cookie Consent Modal
 document.addEventListener("DOMContentLoaded", function () {
   let cookieModal = new bootstrap.Modal(document.getElementById("cookieConsentModal"));
 
-  // Show modal only if user hasn't confirmed or closed it this session
-  if (!localStorage.getItem("cookieConsent") && !sessionStorage.getItem("cookieClosed")) {
-      cookieModal.show();
+  function isPrivacyPolicyPage() {
+      return window.location.pathname.includes("/privacy-policy");
   }
+
+  // Show modal only if user hasn't confirmed cookies and isn't currently on the privacy policy page
+  if (!localStorage.getItem("cookieConsent") && !sessionStorage.getItem("cookieClosed")) {
+      if (!(sessionStorage.getItem("privacyPolicyRead") && isPrivacyPolicyPage())) {
+          cookieModal.show();
+      }
+  }
+
+  // When the user clicks "Learn More", store in sessionsStorage to not show until leaving the page
+  document.getElementById("privacyPolicyButton").addEventListener("click", function () {
+      sessionStorage.setItem("privacyPolicyRead", "true");
+      cookieModal.hide();
+  });
 
   // When user clicks "Confirm", store in localStorage to never show again
   document.getElementById("confirmCookies").addEventListener("click", function () {
-      localStorage.setItem("cookieConsent", "true"); 
+      localStorage.setItem("cookieConsent", "true");
       sessionStorage.removeItem("cookieClosed"); // Remove session closed flag
-      cookieModal.hide(); // Hide the modal after confirming
+      sessionStorage.removeItem("privacyPolicyRead"); // Remove policy read flag
+      cookieModal.hide();
   });
 
   // When user closes the modal, store in sessionStorage to not show again this session
   document.getElementById("closeModal").addEventListener("click", function () {
       sessionStorage.setItem("cookieClosed", "true");
-      cookieModal.hide(); // Hide the modal after closing
+      cookieModal.hide();
+  });
+
+  // Reappear modal on any other page (if consent not given)
+  window.addEventListener("pageshow", function () {
+      if (!localStorage.getItem("cookieConsent") && !isPrivacyPolicyPage()) {
+          if (sessionStorage.getItem("privacyPolicyRead")) {
+              sessionStorage.removeItem("privacyPolicyRead"); // Reset so it shows on next visit
+              if (!sessionStorage.getItem("cookieClosed")) {
+                  cookieModal.show();
+              }
+          }
+      }
   });
 });
+

@@ -12,4 +12,4 @@ Message:
 If you need further assistance, feel free to contact us at {{ contact_email }}.
 
 Best regards,  
-The DunneEco Team  
+The Dunne Eco Team

@@ -532,12 +532,18 @@ footer .line {
         box-shadow: var(--box-shadow)
     }
 
+    #navbarNav {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
     .nav-link:hover:before, .nav-link.active:before {
         width: 20%; /* Shorter underline on mobile */
     }
 
     .navbar-nav {
         text-align: center;
+        padding-bottom: 16px;
     }
     
     #hero-single h2 {
@@ -554,6 +560,12 @@ footer .line {
 
     .about-content-container {
         margin-top: 1rem !important;
+    }
+}
+
+@media (min-width: 991px) {
+    .navbar-nav {
+        padding-right: 1rem;
     }
 }
 

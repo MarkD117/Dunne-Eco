@@ -155,6 +155,39 @@ img {
     visibility: visible;
 }
 
+/* ----- Custom Hamburger Menu Icon ----- */
+
+.custom-toggler .toggler-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 23px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .custom-toggler .toggler-icon span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--text);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .custom-toggler.active .toggler-icon span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .custom-toggler.active .toggler-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .custom-toggler.active .toggler-icon span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
 /* ----- Hero Section ----- */
 
 #hero-single {

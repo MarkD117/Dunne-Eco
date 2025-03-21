@@ -68,48 +68,41 @@
     <header>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container-fluid">
-                <a class="navbar-brand me-auto p-0" href="{% url 'home' %}">
-                    <img class="site-logo d-none d-lg-block" src="{{ MEDIA_URL }}base/dunneeco-logo.png"
+            <div class="container-fluid nav-container">
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img class="site-logo d-none d-lg-block" src="{{ MEDIA_URL }}base/dunneeco-logo.png"
                         alt="Dunne Eco Logo">
-                    <img class="site-icon d-lg-none" src="{{ MEDIA_URL }}base/dunneeco-icon.png" loading="lazy" alt="Dunne Eco Logo">
-                </a>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                    aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dunne Eco</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 {% block home_active %}{% endblock %}" aria-current="page" href="{% url 'home' %}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#services">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#reviews">Testimonials</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 {% block history_active %}{% endblock %}" href="{% url 'history' %}">History</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 {% block gallery_active %}{% endblock %}" href="{% url 'gallery' %}">Gallery</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mx-lg-2 {% block downloads_active %}{% endblock %}" href="{% url 'downloads-list' %}">Downloads</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="{% url 'contact-form' %}" class="contact-btn">Contact</a>
-                <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <img class="site-icon d-lg-none" src="{{ MEDIA_URL }}base/dunneeco-icon.png" loading="lazy" alt="Dunne Eco Logo">
+              </a>
+              <a href="{% url 'contact-form' %}" class="contact-btn ms-auto d-lg-none">Contact</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse bg-white p-3 container-fluid" id="navbarNav">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 {% block home_active %}{% endblock %}" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#reviews">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 {% block history_active %}{% endblock %}" href="{% url 'history' %}">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 {% block gallery_active %}{% endblock %}" href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 {% block downloads_active %}{% endblock %}" href="{% url 'downloads-list' %}">Downloads</a>
+                    </li>
+                </ul>
+              </div>
+              <a href="{% url 'contact-form' %}" class="contact-btn ms-auto pe-3 d-none d-lg-block">Contact</a>
             </div>
-        </nav>
+          </nav>
         <!-- End Navbar -->
 
     </header>

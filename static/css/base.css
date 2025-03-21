@@ -538,7 +538,7 @@ footer .line {
     }
 
     .nav-link:hover:before, .nav-link.active:before {
-        width: 20%; /* Shorter underline on mobile */
+        width: 10%; /* Shorter underline on mobile */
     }
 
     .navbar-nav {
@@ -585,6 +585,11 @@ footer .line {
 }
 
 @media (max-width: 768px) {
+
+    .nav-link:hover:before, .nav-link.active:before {
+        width: 15%;
+    }
+
     #hero-single h1 {
         font-size: 4rem;
     }
@@ -619,6 +624,10 @@ footer .line {
 }
 
 @media (max-width: 575px) {
+
+    .nav-link:hover:before, .nav-link.active:before {
+        width: 20%;
+    }
     
     #hero .carousel-item img {
         height: 40vh;

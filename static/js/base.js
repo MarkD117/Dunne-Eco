@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Handles clicking hamburger nav menu icon on mobile screens
 document.addEventListener("DOMContentLoaded", function () {
-    
-    const toggler = document.querySelector(".custom-toggler");
+
+    const toggler = document.querySelector(".custom-nav-toggler");
 
     toggler.addEventListener("click", function () {
       this.classList.toggle("active");

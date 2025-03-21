@@ -157,7 +157,7 @@ img {
 
 /* ----- Custom Hamburger Menu Icon ----- */
 
-.custom-toggler .toggler-icon {
+.custom-nav-toggler .toggler-icon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -167,7 +167,7 @@ img {
     transition: transform 0.3s ease-in-out;
   }
   
-  .custom-toggler .toggler-icon span {
+  .custom-nav-toggler .toggler-icon span {
     display: block;
     width: 100%;
     height: 3px;
@@ -176,15 +176,15 @@ img {
     transition: all 0.3s ease-in-out;
   }
   
-  .custom-toggler.active .toggler-icon span:nth-child(1) {
+  .custom-nav-toggler.active .toggler-icon span:nth-child(1) {
     transform: translateY(10px) rotate(45deg);
   }
   
-  .custom-toggler.active .toggler-icon span:nth-child(2) {
+  .custom-nav-toggler.active .toggler-icon span:nth-child(2) {
     opacity: 0;
   }
   
-  .custom-toggler.active .toggler-icon span:nth-child(3) {
+  .custom-nav-toggler.active .toggler-icon span:nth-child(3) {
     transform: translateY(-10px) rotate(-45deg);
   }
 

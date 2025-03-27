@@ -49,6 +49,46 @@
     margin-top: 20px;
 }
 
+/* Features and Benefits */
+
+.feature-item {
+    display: flex;
+    align-items: stretch;
+    padding: 12px;
+}
+
+.feature-box {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 60px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.feature-title {
+    font-weight: 600;
+}
+
+.feature-description {
+    font-size: 1rem;
+}
+
 @media (max-width: 768px) {
     .nav-pills .nav-link {
         padding-left: 15px;
@@ -67,6 +107,11 @@
 
     .card-title {
         font-size: 16px;
+    }
+    
+    .feature-item {
+        width: 80%;
+        margin: auto;
     }
 }
 

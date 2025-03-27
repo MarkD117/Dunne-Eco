@@ -79,3 +79,19 @@ document.getElementById('backButton').addEventListener('click', () => {
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
     document.querySelector('.nav-link[data-filter="all"]').classList.add('active');
 });
+
+// Keep Features & Benefits boxes size consistent
+function equalizeFeatureHeights() {
+    let maxHeight = 0;
+    document.querySelectorAll('.feature-box').forEach(box => {
+        box.style.height = 'auto';
+        if (box.offsetHeight > maxHeight) {
+            maxHeight = box.offsetHeight;
+        }
+    });
+    document.querySelectorAll('.feature-box').forEach(box => {
+        box.style.height = maxHeight + 'px';
+    });
+}
+window.addEventListener('load', equalizeFeatureHeights);
+window.addEventListener('resize', equalizeFeatureHeights);

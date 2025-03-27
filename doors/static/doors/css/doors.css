@@ -1,3 +1,39 @@
 .section-subtitle {
     max-width: 800px !important;
 }
+
+/* ----- Availabel Products Section ----- */
+
+.door-item {
+    display: block;
+    cursor: pointer;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.nav-pills .nav-link {
+    background: #f8f9fa;
+    color: #333;
+    border-radius: 30px;
+    margin: 0 5px;
+}
+
+.nav-pills .nav-link.active {
+    background: #007bff;
+    color: white;
+}
+
+.detailed-view {
+    padding: 40px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}

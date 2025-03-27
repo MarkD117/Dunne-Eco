@@ -40,4 +40,74 @@
         </div>
     </div>
 </section>
+
+<!-- Available products -->
+
+<section id="product-variants" class="section-padding bg-light border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">What Do We Offer?</h1>
+                    <div class="line"></div>
+                    <p class="section-subtitle">Explore our range of high-quality doors, tailored to suit different styles and needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="doorFilter" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-filter="all">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="timber">Timber</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="pvc">PVC</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="aluminium">Aluminium</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="composite">Composite</button>
+            </li>
+        </ul>
+
+        <!-- Product Grid -->
+        <div class="row justify-content-center" id="doorGrid">
+            <div class="col-lg-3 col-md-6 col-sm-12 door-item timber" data-aos="fade-up">
+                <div class="card" data-type="timber">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Timber Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Timber Door</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 door-item pvc" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="pvc">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="PVC Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">PVC Door</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 door-item aluminium" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="aluminium">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Aluminium Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Aluminium Door</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 door-item composite" data-aos="fade-up" data-aos-delay="300">
+                <div class="card" data-type="composite">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Composite Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Composite Door</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 {% endblock %}

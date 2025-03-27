@@ -3,6 +3,13 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'doors/css/doors.css' %}">
+<!-- Flickity CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+{% endblock %}
+
+{% block extra_js %}
+<!-- Flickity JS -->
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -172,16 +179,16 @@
     </div>
 </section>
 
-<!-- Project Gallery -->
+<!-- Product Gallery -->
 
-<section id="project-gallery" class="section-padding bg-light">
+<section id="product-gallery" class="section-padding bg-light">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center" data-aos="fade-down">
                 <div class="section-title">
-                    <h1 class="display-4 fw-semibold">Project Gallery</h1>
+                    <h1 class="display-4 fw-semibold">Take A Look</h1>
                     <div class="line"></div>
-                    <p class="section-subtitle">Explore our completed projects and see the quality of our craftsmanship.</p>
+                    <p class="section-subtitle">Explore our range of doors and see the quality of our craftsmanship.</p>
                 </div>
             </div>
         </div>

@@ -47,3 +47,28 @@ document.querySelectorAll('.nav-link').forEach(button => {
         }
     });
 });
+
+// Product card click functionality to open detailed view
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+        const type = card.getAttribute('data-type');
+
+        // Check if the description exists for the type
+        const description = descriptions[type];
+        if (description) {
+            document.getElementById('detailImage').src = card.querySelector('img').src;
+            document.getElementById('detailTitle').textContent = card.querySelector('.card-title').textContent;
+            document.getElementById('detailDescription').textContent = description;
+
+            // Show detailed view and hide product grid
+            document.getElementById('doorGrid').style.display = 'none';
+            document.getElementById('detailedView').classList.remove('d-none');
+
+            // Set active class for the appropriate filter
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelector(`.nav-link[data-filter=${type}]`).classList.add('active');
+        } else {
+            document.getElementById('detailDescription').textContent = "No description available.";
+        }
+    });
+});

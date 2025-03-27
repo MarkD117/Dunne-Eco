@@ -19,16 +19,27 @@
     transform: scale(1.05);
 }
 
+.nav-link::before{
+    height: 0;    
+}
+
 .nav-pills .nav-link {
-    background: #f8f9fa;
     color: #333;
-    border-radius: 30px;
     margin: 0 5px;
+    padding: 10px 20px;
+    transition: var(--transition);
+}
+
+.nav-pills .nav-link:hover {
+    background: var(--primary);
+    color: white;
+    border-radius: 30px;
 }
 
 .nav-pills .nav-link.active {
-    background: #007bff;
+    background: var(--primary);
     color: white;
+    border-radius: 30px;
 }
 
 .detailed-view {
@@ -36,4 +47,31 @@
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-pills .nav-link {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .door-item {
+        width: 90% !important;
+        margin-bottom: 15px;
+    }
+
+    .card img {
+        max-height: 400px;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card img {
+        max-height: 300px;
+    }
 }

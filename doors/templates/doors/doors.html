@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'doors/css/doors.css' %}">
+{% endblock %}
+
+{% block content %}
+<style>
+    #hero-single {
+        background-image: url('{{ MEDIA_URL }}doors/doors-hero.jpg');
+    }
+</style>
+<!-- Hero Section -->
+<section id="hero-single" class="text-center">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        <h1 class="text-uppercase" data-aos="fade-left">Expertly Crafted Doors</h1>
+        <h2 data-aos="fade-right">Wooden, PVC, and composite doors tailored to perfection.</h2>
+        <div data-aos="fade-up" data-aos-delay="50">
+            <a href="#" class="me-2">Get A Quote</a>
+            <a href="#" class="ms-2 smooth-scroll">Our Range</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

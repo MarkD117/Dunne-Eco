@@ -1,3 +1,27 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll function for home page links
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Prevent default link behavior
+            event.preventDefault();
+
+            // Get the target element
+            const targetId = link.getAttribute('href').split('#')[1];
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Smooth scroll to the target element
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        });
+    });
+});
+
 // Descriptions for each type of door
 const descriptions = {
     timber: "Classic and durable, perfect for traditional and modern homes.",

@@ -49,7 +49,7 @@
     margin-top: 20px;
 }
 
-/* Features and Benefits */
+/* ----- Features & Benefits ----- */
 
 .feature-item {
     display: flex;
@@ -89,6 +89,31 @@
     font-size: 1rem;
 }
 
+/* ----- Product Gallery ----- */
+
+.carousel {
+    margin-top: 20px;
+}
+
+.carousel-cell {
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-cell img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
 @media (max-width: 768px) {
     .nav-pills .nav-link {
         padding-left: 15px;
@@ -108,7 +133,7 @@
     .card-title {
         font-size: 16px;
     }
-    
+
     .feature-item {
         width: 80%;
         margin: auto;

@@ -72,3 +72,12 @@ document.querySelectorAll('.card').forEach(card => {
         }
     });
 });
+
+// Back button to return to product grid
+document.getElementById('backButton').addEventListener('click', () => {
+    document.getElementById('doorGrid').style.display = 'flex';
+    document.getElementById('detailedView').classList.add('d-none');
+    // Reset all filters to show all cards
+    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelector('.nav-link[data-filter="all"]').classList.add('active');
+});

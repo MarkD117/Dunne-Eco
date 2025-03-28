@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var gallery = document.querySelector('.carousel');
     new Flickity(gallery, {
         wrapAround: true,
-        autoPlay: 3000,
+        autoPlay: false,
         cellAlign: 'center',
         contain: true
     });

@@ -4,12 +4,12 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'doors/css/doors.css' %}">
 <!-- Flickity CSS -->
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
 {% endblock %}
 
 {% block extra_js %}
 <!-- Flickity JS -->
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -227,6 +227,56 @@
     </div>
 </section>
 
+<!-- Door Builder -->
+
+<section id="build-your-door" class="section-padding border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Build Your Own Door</h1>
+                    <div class="line"></div>
+                    <p class="section-subtitle">Use our supplier configurators to design a door that perfectly matches your style and needs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <!-- Palladio Configurator -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
+                <div class="card text-center shadow-sm position-relative">
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Palladio Configurator">
+                        <div class="config-overlay">
+                            <img class="door-config-logo1" src="{{ MEDIA_URL }}doors/palladio-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Palladio Configurator</h5>
+                        <p class="card-text">Create a custom Palladio door to match your own style.</p>
+                        <a href="#" class="btn btn-primary">Start Designing</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Appeer Configurator -->
+            <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
+                <div class="card text-center shadow-sm position-relative">
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Appeer Configurator">
+                        <div class="config-overlay">
+                            <img class="door-config-logo2" src="{{ MEDIA_URL }}doors/apeer.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Appeer Configurator</h5>
+                        <p class="card-text">Personalize a custom Appeer door with multiple style options.</p>
+                        <a href="#" class="btn btn-primary">Start Designing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}

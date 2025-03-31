@@ -10,30 +10,27 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-// Ensure AOS refreshes once on first scroll, then disable further calls
+// Refresh AOS only if Flickity is available
 document.addEventListener("DOMContentLoaded", function () {
     // Check if Flickity is available before initializing
     if (typeof Flickity !== 'undefined') {
         var gallery = document.querySelector('.carousel');
         
-        if (gallery) { // Ensure the carousel element exists before initializing
-            new Flickity(gallery, {
+        // Ensure carousel element exists before initializing
+        if (gallery) { 
+            var flkty = new Flickity(gallery, {
                 wrapAround: true,
                 autoPlay: false,
                 cellAlign: 'center',
                 contain: true
             });
+
+            // Auto-refresh AOS after Flickity initializes (Ensures AOS runs even if Flickity is instantly ready)
+            setTimeout(() => {
+                AOS.refresh();
+            }, 100);
         }
     }
-
-    // Refresh AOS only once after first scroll
-    let aosRefreshed = false;
-    window.addEventListener('scroll', function () {
-        if (!aosRefreshed) {
-            AOS.refresh();
-            aosRefreshed = true; // Prevent further refresh calls
-        }
-    });
 });
 
 // Initialise bootstrap toasts

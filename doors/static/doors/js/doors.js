@@ -119,14 +119,3 @@ function equalizeFeatureHeights() {
 }
 window.addEventListener('load', equalizeFeatureHeights);
 window.addEventListener('resize', equalizeFeatureHeights);
-
-// Initialise flickity plugin
-document.addEventListener("DOMContentLoaded", function () {
-    var gallery = document.querySelector('.carousel');
-    new Flickity(gallery, {
-        wrapAround: true,
-        autoPlay: false,
-        cellAlign: 'center',
-        contain: true
-    });
-});

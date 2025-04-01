@@ -24,6 +24,12 @@
     transform: scale(1.05);
 }
 
+.card-img-top {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
 .nav-link::before {
     height: 0;
 }
@@ -181,6 +187,11 @@
 }
 
 @media (max-width: 991px) {
+    .nav-pills .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
     .page-contact-info {
         text-align: center;
     }

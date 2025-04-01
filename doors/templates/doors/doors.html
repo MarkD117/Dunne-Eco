@@ -68,50 +68,72 @@
                 <button class="nav-link active" data-filter="all">All</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" data-filter="timber">Timber</button>
+                <button class="nav-link" data-filter="internal">Internal</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" data-filter="pvc">PVC</button>
+                <button class="nav-link" data-filter="external">External</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" data-filter="aluminium">Aluminium</button>
+                <button class="nav-link" data-filter="bespoke">Bespoke</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" data-filter="composite">Composite</button>
+                <button class="nav-link" data-filter="bifolding">Bifolding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="sliding">Sliding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="french">French</button>
             </li>
         </ul>
 
         <!-- Product Grid -->
         <div class="row justify-content-center" id="doorGrid">
-            <div class="col-lg-3 col-md-6 col-sm-12 door-item timber" data-aos="fade-up">
-                <div class="card" data-type="timber">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Timber Door">
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item internal" data-aos="fade-up">
+                <div class="card" data-type="internal">
+                    <img src="{{ MEDIA_URL }}doors/internal-door.png" class="card-img-top" alt="internal Door">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Timber Door</h5>
+                        <h5 class="card-title">internal Door</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 door-item pvc" data-aos="fade-up" data-aos-delay="100">
-                <div class="card" data-type="pvc">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="PVC Door">
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item external" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="external">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="External Door">
                     <div class="card-body text-center">
-                        <h5 class="card-title">PVC Door</h5>
+                        <h5 class="card-title">External Door</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 door-item aluminium" data-aos="fade-up" data-aos-delay="200">
-                <div class="card" data-type="aluminium">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Aluminium Door">
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item bespoke" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="bespoke">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Bespoke Door">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Aluminium Door</h5>
+                        <h5 class="card-title">Bespoke Door</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 door-item composite" data-aos="fade-up" data-aos-delay="300">
-                <div class="card" data-type="composite">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Composite Door">
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item bifolding" data-aos="fade-up">
+                <div class="card" data-type="bifolding">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Bifolding Door">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Composite Door</h5>
+                        <h5 class="card-title">Bifolding Door</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item sliding" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="sliding">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Sliding Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sliding Door</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 door-item french" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="french">
+                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="French Door">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">French Door</h5>
                     </div>
                 </div>
             </div>

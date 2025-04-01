@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Descriptions for each type of door
 const descriptions = {
-    timber: "Classic and durable, perfect for traditional and modern homes.",
-    pvc: "Low-maintenance and energy-efficient, ideal for contemporary spaces.",
-    aluminium: "Sleek and modern, offering superior durability and security.",
-    composite: "A perfect blend of strength, insulation, and style."
+    internal: "Stylish and functional internal doors designed for modern homes.",
+    external: "Durable and secure external doors for safety and aesthetics.",
+    bespoke: "Custom-made doors tailored to your specific requirements.",
+    bifolding: "Space-saving bifolding doors for a seamless indoor-outdoor transition.",
+    sliding: "Elegant sliding doors that maximize space and light.",
+    french: "Classic French doors that bring timeless charm to any home."
 };
 
 // Filter functionality

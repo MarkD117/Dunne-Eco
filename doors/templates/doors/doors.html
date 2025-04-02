@@ -89,51 +89,63 @@
 
         <!-- Product Grid -->
         <div class="row justify-content-center" id="doorGrid">
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item internal" data-aos="fade-up">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item internal" data-aos="fade-up">
                 <div class="card" data-type="internal">
-                    <img src="{{ MEDIA_URL }}doors/internal-door.png" class="card-img-top" alt="internal Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">internal Door</h5>
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/internal-door.jpg" class="card-img-top" alt="Internal Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Internal Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item external" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item external" data-aos="fade-up" data-aos-delay="100">
                 <div class="card" data-type="external">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="External Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">External Door</h5>
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/external-door.jpg" class="card-img-top" alt="External Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">External Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item bespoke" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item bespoke" data-aos="fade-up" data-aos-delay="200">
                 <div class="card" data-type="bespoke">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Bespoke Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Bespoke Door</h5>
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/bespoke-door.jpg" class="card-img-top" alt="Bespoke Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Bespoke Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item bifolding" data-aos="fade-up">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item bifolding" data-aos="fade-up">
                 <div class="card" data-type="bifolding">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Bifolding Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Bifolding Door</h5>
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/bifolding-door.jpeg" class="card-img-top" alt="Bifolding Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Bifolding Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item sliding" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item sliding" data-aos="fade-up" data-aos-delay="100">
                 <div class="card" data-type="sliding">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Sliding Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Sliding Door</h5>
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/sliding-door.jpg" class="card-img-top" alt="Sliding Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Sliding Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 door-item french" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 door-item french" data-aos="fade-up" data-aos-delay="200">
                 <div class="card" data-type="french">
-                    <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="French Door">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">French Door</h5>
+                    <div class="image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/french-door2.jpg" class="card-img-top" alt="French Door">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">French Door</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,7 +279,7 @@
             <!-- Palladio Configurator -->
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
                 <div class="card text-center shadow-sm position-relative">
-                    <div class="image-wrapper">
+                    <div class="config-image-wrapper">
                         <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Palladio Configurator">
                         <div class="config-overlay">
                             <img class="door-config-logo1" src="{{ MEDIA_URL }}doors/palladio-logo.png" alt="">
@@ -284,7 +296,7 @@
             <!-- Appeer Configurator -->
             <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-delay="100">
                 <div class="card text-center shadow-sm position-relative">
-                    <div class="image-wrapper">
+                    <div class="config-image-wrapper">
                         <img src="{{ MEDIA_URL }}doors/test-door.jpg" class="card-img-top" alt="Appeer Configurator">
                         <div class="config-overlay">
                             <img class="door-config-logo2" src="{{ MEDIA_URL }}doors/apeer.png" alt="">

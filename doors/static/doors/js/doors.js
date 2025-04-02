@@ -61,7 +61,7 @@ document.querySelectorAll('.nav-link').forEach(button => {
             const description = descriptions[type];
             if (description) {
                 document.getElementById('detailImage').src = firstVisibleCard.querySelector('img').src;
-                document.getElementById('detailTitle').textContent = firstVisibleCard.querySelector('.card-title').textContent;
+                document.getElementById('detailTitle').textContent = firstVisibleCard.querySelector('.product-overlay-title').textContent;
                 document.getElementById('detailDescription').textContent = description;
 
                 // Show detailed view
@@ -81,7 +81,7 @@ document.querySelectorAll('.card').forEach(card => {
 
         // Set image, title, and description
         document.getElementById('detailImage').src = card.querySelector('img').src;
-        document.getElementById('detailTitle').textContent = card.querySelector('.card-title').textContent;
+        document.getElementById('detailTitle').textContent = card.querySelector('.product-overlay-title').textContent;
         document.getElementById('detailDescription').textContent = descriptions[type] || "No description available.";
 
         // Show detailed view and hide grid
@@ -89,7 +89,7 @@ document.querySelectorAll('.card').forEach(card => {
         document.getElementById('detailedView').classList.remove('d-none');
 
         // Scroll smoothly into the detailed view
-        document.getElementById('detailedView').scrollIntoView({ behavior: "smooth", block: "start" });
+        document.getElementById('detailedView').scrollIntoView({ behavior: "smooth", block: "center" });
 
         // Ensure the right filter is active
         document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));

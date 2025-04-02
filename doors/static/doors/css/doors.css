@@ -33,7 +33,7 @@
     overflow: hidden;
 }
 
-.card-img-top {
+.product-card-img {
     width: 100%;
     height: 500px;
     object-fit: cover;
@@ -155,6 +155,7 @@
 }
 
 .carousel-cell {
+    position: relative;
     width: 80%;
     max-width: 400px;
     text-align: center;
@@ -163,8 +164,28 @@
 
 .carousel-cell img {
     width: 100%;
+    height: 500px;
+    overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ribbon Label */
+.image-label {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgba(var(--primary-rgb), 0.9);
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+
+.image-label p {
+    margin: 0;
 }
 
 .image-caption {
@@ -174,6 +195,11 @@
 }
 
 /* ----- Door Builder ----- */
+.config-card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* Wrapper to control image and overlay positioning */
 .config-image-wrapper {
@@ -181,21 +207,24 @@
     display: flex;
 }
 
-/* Ensure image fills the container */
-.config-image-wrapper img {
+/* Logo Styling */
+.door-config-logo1 {
     width: 100%;
     height: auto;
-    display: block;
-}
-
-/* Logo Styling */
-.door-config-logo1, 
-.door-config-logo2 {
-    max-width: 7vw; /* Makes logo responsive */
-    min-width: 120px; /* Prevents logo from getting too small */
-    height: auto;
+    max-width: 40%;
+    min-width: 170px;
     padding-top: 20px;
 }
+
+.door-config-logo2 {
+    width: 100%;
+    height: auto;
+    max-width: 7vw; /* Makes logo responsive */
+    min-width: 120px; /* Prevents logo from getting too small */
+    padding-top: 30px;
+}
+
+
 
 /* ----- Contact Info ----- */
 
@@ -220,7 +249,7 @@
 }
 
 @media (max-width: 991px) {
-    .nav-pills .nav-link {
+    #available-products .nav-pills .nav-link {
         padding-left: 10px;
         padding-right: 10px;
     }
@@ -235,7 +264,7 @@
 }
 
 @media (max-width: 768px) {
-    .nav-pills .nav-link {
+    #available-products .nav-pills .nav-link {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -249,38 +278,12 @@
         margin-top: 20px;
     }
 
-    #build-your-door .card img {
-        max-height: 400px;
-        object-fit: cover;
-    }
-
-    #build-your-door .card-title {
-        font-size: 16px;
-    }
-
     .feature-item {
         width: 80%;
         margin: auto;
     }
 
-    .door-config-logo1 {
-        width: 180px;
-        height: 110px;
-    }
-}
-
-@media (max-width: 576px) {
-    #build-your-door .card img {
-        max-height: 300px;
-    }
-
-    .door-config-logo1 {
-        width: 140px;
-        height: 90px;
-    }
-
-    .door-config-logo2 {
-        width: 100px;
-        height: 80px;
+    .door-config-container {
+        width: 90%;
     }
 }

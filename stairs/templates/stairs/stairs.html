@@ -1,1 +1,14 @@
-Hello World
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'stairs/css/stairs.css' %}">
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'stairs/js/stairs.js' %}" defer></script>
+{% endblock %}

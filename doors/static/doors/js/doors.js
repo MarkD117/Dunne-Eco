@@ -24,12 +24,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Descriptions for each type of door
 const descriptions = {
-    internal: "Stylish and functional internal doors designed for modern homes.",
-    external: "Durable and secure external doors for safety and aesthetics.",
-    bespoke: "Custom-made doors tailored to your specific requirements.",
-    bifolding: "Space-saving bifolding doors for a seamless indoor-outdoor transition.",
-    sliding: "Elegant sliding doors that maximize space and light.",
-    french: "Classic French doors that bring timeless charm to any home."
+    internal: {
+        title: "Internal Doors",
+        description: "Our high-quality internal doors are designed for style and functionality, available in pre-hung kits for easy installation. Choose from traditional, classic, or modern designs, all crafted with premium timber, veneer and painted finishes.",
+        specs: [
+            "Available as FD30 & FD60 fire-rated doors",
+            "Custom finishes in painted or natural wood",
+            "Supplied as a complete kit with handles & architraves",
+            "Precision pre-hung for smooth operation"
+        ]
+    },
+    external: {
+        title: "External Doors",
+        description: "Built for durability and security, our external doors combine robust construction with aesthetic appeal. Available in a variety of finishes to suit any architectural style.",
+        specs: [
+            "Weather-resistant aluminium or composite options",
+            "Multi-point locking system for enhanced security",
+            "Custom glazing and panel configurations available",
+            "Thermally efficient for superior insulation"
+        ]
+    },
+    bespoke: {
+        title: "Bespoke Doors",
+        description: "Tailored to your unique specifications, our bespoke doors allow you to choose the materials, finishes, and designs that suit your project perfectly.",
+        specs: [
+            "Handcrafted to your precise measurements",
+            "Choice of premium hardwoods & finishes",
+            "Optional decorative glass and inlays",
+            "Designed for both modern and heritage properties"
+        ]
+    },
+    bifolding: {
+        title: "Bifolding Doors",
+        description: "Maximize space and natural light with our sleek bifolding doors. Ideal for open-plan living and creating seamless indoor-outdoor transitions.",
+        specs: [
+            "Smooth-glide track system for effortless operation",
+            "Aluminium or PVC frame options",
+            "High-security locking mechanisms",
+            "Custom sizes and configurations available"
+        ]
+    },
+    sliding: {
+        title: "Sliding Doors",
+        description: "Elegant and space-saving, our sliding doors are perfect for modern homes and commercial spaces, offering a seamless and minimalist aesthetic.",
+        specs: [
+            "Sliding and lift & slide mechanisms",
+            "Available in aluminium, and PVC options",
+            "Custom glazing options for improved insulation",
+            "Ideal for patios, interiors, or room dividers"
+        ]
+    },
+    french: {
+        title: "French Doors",
+        description: "Bring timeless elegance to your home with our classic French doors, perfect for adding natural light and a touch of sophistication.",
+        specs: [
+            "Available in aluminium or uPVC finishes",
+            "Double or single door configurations",
+            "Optional decorative glazing and side panels",
+            "Enhanced security with multi-point locking"
+        ]
+    }
 };
 
 // Filter functionality

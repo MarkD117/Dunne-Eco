@@ -86,19 +86,19 @@ const descriptions = {
     }
 };
 
-// Filter functionality
-document.querySelectorAll('.nav-link').forEach(button => {
+// Filter functionality for the first section only
+document.querySelectorAll('#available-products .nav-link').forEach(button => {
     button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
 
         // Remove active class from all buttons
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        document.querySelectorAll('#available-products .nav-link').forEach(link => link.classList.remove('active'));
 
         // Add active class to the clicked button
         button.classList.add('active');
 
-        // Show all cards and hide detailed view
-        document.querySelectorAll('.door-item').forEach(item => {
+        // Show all cards and hide detailed view in the first section
+        document.querySelectorAll('#available-products .door-item').forEach(item => {
             item.style.display = 'block';
         });
         document.getElementById('detailedView').classList.add('d-none');
@@ -107,7 +107,7 @@ document.querySelectorAll('.nav-link').forEach(button => {
         if (filter === 'all') return; // Don't do anything for 'All' filter
 
         // Show the detailed view of the first card matching the filter
-        const firstVisibleCard = document.querySelector(`.door-item.${filter}`);
+        const firstVisibleCard = document.querySelector(`#available-products .door-item.${filter}`);
         if (firstVisibleCard) {
             const type = firstVisibleCard.querySelector('.card').getAttribute('data-type');
             const details = descriptions[type] || {
@@ -149,8 +149,8 @@ document.querySelectorAll('.nav-link').forEach(button => {
     });
 });
 
-// Product card click functionality to open detailed view
-document.querySelectorAll('.card').forEach(card => {
+// Product card click functionality to open detailed view for the first section
+document.querySelectorAll('#available-products .card').forEach(card => {
     card.addEventListener('click', () => {
         const type = card.getAttribute('data-type');
         const details = descriptions[type] || {
@@ -191,19 +191,20 @@ document.querySelectorAll('.card').forEach(card => {
         document.getElementById('detailedView').scrollIntoView({ behavior: "smooth", block: "center" });
 
         // Ensure the right filter is active
-        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-        document.querySelector(`.nav-link[data-filter="${type}"]`).classList.add('active');
+        document.querySelectorAll('#available-products .nav-link').forEach(link => link.classList.remove('active'));
+        document.querySelector(`#available-products .nav-link[data-filter="${type}"]`).classList.add('active');
     });
 });
 
-// Back button to return to product grid
+// Back button to return to product grid for the first section
 document.getElementById('backButton').addEventListener('click', () => {
     document.getElementById('doorGrid').style.display = 'flex';
     document.getElementById('detailedView').classList.add('d-none');
     // Reset all filters to show all cards
-    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-    document.querySelector('.nav-link[data-filter="all"]').classList.add('active');
+    document.querySelectorAll('#available-products .nav-link').forEach(link => link.classList.remove('active'));
+    document.querySelector('#available-products .nav-link[data-filter="all"]').classList.add('active');
 });
+
 
 // Keep Features & Benefits boxes size consistent
 function equalizeFeatureHeights() {

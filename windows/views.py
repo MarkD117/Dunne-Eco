@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def windows(request):
+    """ This view returns the windows page """
+    return render(request, 'windows/windows.html')

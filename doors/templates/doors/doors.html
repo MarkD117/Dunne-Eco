@@ -25,7 +25,7 @@
         <h2 data-aos="fade-right">Wooden, PVC, and composite doors tailored to perfection.</h2>
         <div class="doors-hero-btn-container" data-aos="fade-up" data-aos-delay="50">
             <a href="{% url 'contact-form' %}" class="me-2">Get A Quote</a>
-            <a href="#product-gallery" class="ms-2 smooth-scroll">Our Range</a>
+            <a href="#available-products" class="ms-2 smooth-scroll">Our Range</a>
         </div>
     </div>
 </section>
@@ -38,8 +38,8 @@
                 <div class="section-title">
                     <h1 class="display-4 fw-semibold">Our Door Collection</h1>
                     <div class="line"></div>
-                    <p class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam in mi lacinia, placerat leo ac, sodales velit. Aenean vel auctor eros, id feugiat est. Nunc ultrices varius pharetra. Nunc eu aliquam neque. </p>
-                    <a href="{{ brochure.brochure_file.url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <p class="section-subtitle">Explore our extensive collection of high-quality doors, designed to complement any style and enhance the beauty of your home. From elegant internal doors to durable external options, our range includes bespoke and bifolding doors for unique spaces. Crafted with precision, each door combines functionality with aesthetic appeal, providing both security and style for every project.</p>
+                    <a href="{{ MEDIA_URL }}brochures/New_2024_Main_Brochure.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         View Brochure <i class="ps-1 fa-solid fa-file-pdf"></i>
                     </a>
                 </div>
@@ -345,7 +345,7 @@
                     <p><i class="fa-solid fa-location-dot"></i> Tanyard Lane, Tullamore, Co. Offaly</p>
                     <p><i class="fas fa-envelope"></i> info@dunneeco.ie</p>
                     <p><i class="fas fa-phone"></i></i> (057) 932 2468</p>
-                    <a href="#" class="btn btn-primary">Get A Quote</a>
+                    <a href="{% url 'contact-form' %}" class="btn btn-primary">Get A Quote</a>
                 </div>
             </div>
 

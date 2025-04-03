@@ -153,11 +153,35 @@ document.querySelectorAll('.nav-link').forEach(button => {
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
         const type = card.getAttribute('data-type');
+        const details = descriptions[type] || {
+            title: "No Title Available",
+            description: "No description available.",
+            specs: []
+        };
 
         // Set image, title, and description
         document.getElementById('detailImage').src = card.querySelector('img').src;
-        document.getElementById('detailTitle').textContent = card.querySelector('.product-overlay-title').textContent;
-        document.getElementById('detailDescription').textContent = descriptions[type] || "No description available.";
+        document.getElementById('detailTitle').textContent = details.title;
+        document.getElementById('detailDescription').textContent = details.description;
+
+        // Populate specs list
+        const specList = document.createElement('ul');
+        specList.classList.add("list-unstyled", "mt-3");
+        details.specs.forEach(spec => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check-circle text-success"></i> ${spec}`;
+            specList.appendChild(li);
+        });
+
+        // Only remove the old specs if it exists and it's not the back button's container
+        const descriptionContainer = document.getElementById('detailDescription');
+        const oldSpecList = descriptionContainer.nextElementSibling;
+        if (oldSpecList && oldSpecList.tagName.toLowerCase() === 'ul') {
+            oldSpecList.remove();
+        }
+
+        // Insert the new specs list
+        descriptionContainer.insertAdjacentElement("afterend", specList);
 
         // Show detailed view and hide grid
         document.getElementById('doorGrid').style.display = 'none';

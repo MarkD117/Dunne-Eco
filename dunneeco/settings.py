@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'gallery',
     'downloads',
     'doors',
+    'stairs',
 
     # Extra
     'crispy_forms',

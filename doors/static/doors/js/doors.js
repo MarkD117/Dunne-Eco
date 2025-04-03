@@ -110,20 +110,41 @@ document.querySelectorAll('.nav-link').forEach(button => {
         const firstVisibleCard = document.querySelector(`.door-item.${filter}`);
         if (firstVisibleCard) {
             const type = firstVisibleCard.querySelector('.card').getAttribute('data-type');
+            const details = descriptions[type] || {
+                title: "No Title Available",
+                description: "No description available.",
+                specs: []
+            };
 
-            // Check if the description exists for the type
-            const description = descriptions[type];
-            if (description) {
-                document.getElementById('detailImage').src = firstVisibleCard.querySelector('img').src;
-                document.getElementById('detailTitle').textContent = firstVisibleCard.querySelector('.product-overlay-title').textContent;
-                document.getElementById('detailDescription').textContent = description;
+            // Set image, title, and description
+            document.getElementById('detailImage').src = firstVisibleCard.querySelector('img').src;
+            document.getElementById('detailTitle').textContent = details.title;
+            document.getElementById('detailDescription').textContent = details.description;
 
-                // Show detailed view
-                document.getElementById('doorGrid').style.display = 'none';
-                document.getElementById('detailedView').classList.remove('d-none');
-            } else {
-                document.getElementById('detailDescription').textContent = "No description available.";
+            // Populate specs list
+            const specList = document.createElement('ul');
+            specList.classList.add("list-unstyled", "mt-3");
+            details.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle text-success"></i> ${spec}`;
+                specList.appendChild(li);
+            });
+
+            // Only remove the old specs if it exists and it's not the back button's container
+            const descriptionContainer = document.getElementById('detailDescription');
+            const oldSpecList = descriptionContainer.nextElementSibling;
+            if (oldSpecList && oldSpecList.tagName.toLowerCase() === 'ul') {
+                oldSpecList.remove();
             }
+
+            // Insert the new specs list
+            descriptionContainer.insertAdjacentElement("afterend", specList);
+
+            // Show detailed view
+            document.getElementById('doorGrid').style.display = 'none';
+            document.getElementById('detailedView').classList.remove('d-none');
+        } else {
+            document.getElementById('detailDescription').textContent = "No description available.";
         }
     });
 });

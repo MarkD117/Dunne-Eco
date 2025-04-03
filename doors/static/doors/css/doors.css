@@ -9,6 +9,24 @@
 
 /* ----- Available Products Section ----- */
 
+/* Make the <li> a flex container */
+ul.list-unstyled li {
+    display: flex;
+    align-items: flex-start; /* Align the text and icon to the top */
+}
+
+/* List icon styling */
+ul.list-unstyled li i {
+    margin-top: 5px;
+    margin-right: 10px; /* Space between the icon and text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+
+/* Prevent the text from wrapping under the icon */
+ul.list-unstyled li span {
+    white-space: nowrap;
+}
+
 .door-item {
     display: block;
     cursor: pointer;

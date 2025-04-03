@@ -1,3 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def door_builders(request):
+    """ This view returns the stairs page """
+    return render(request, 'stairs/stairs.html')

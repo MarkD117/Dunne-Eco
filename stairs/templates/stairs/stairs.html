@@ -6,6 +6,23 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    #hero-single {
+        background-image: url('{{ MEDIA_URL }}stairs/stairs-hero-image.webp');
+        /* background-image: url('{{ MEDIA_URL }}stairs/stairs-hero-image.jpg'); */
+    }
+</style>
+<!-- Hero Section -->
+<section id="hero-single" class="text-center">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        <h1 class="text-uppercase" data-aos="fade-left">Bespoke Built Stairs</h1>
+        <h2 data-aos="fade-right">Precision-crafted wooden and steel staircases.</h2>
+        <div class="doors-hero-btn-container" data-aos="fade-up" data-aos-delay="50">
+            <a href="{% url 'contact-form' %}" class="me-2">Get A Quote</a>
+            <a href="#available-products" class="ms-2 smooth-scroll">Our Range</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

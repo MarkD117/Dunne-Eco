@@ -1,0 +1,8 @@
+.stairs-hero-btn-container a:hover {
+    transform: scale(1.10);
+    transition: var(--transition);
+}
+
+.section-subtitle {
+    max-width: 800px !important;
+}

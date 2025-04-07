@@ -6,6 +6,23 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    #hero-single {
+        background-image: url('{{ MEDIA_URL }}windows/windows-hero-image6.jpg');
+        /* background-image: url('{{ MEDIA_URL }}windows/windows-hero-image7.jpg'); */
+    }
+</style>
+<!-- Hero Section -->
+<section id="hero-single" class="text-center">
+    <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+        <h1 class="text-uppercase" data-aos="fade-left">Tailored Window Solutions</h1>
+        <h2 data-aos="fade-right">Bespoke windows designed to fit any space.</h2>
+        <div class="doors-hero-btn-container" data-aos="fade-up" data-aos-delay="50">
+            <a href="{% url 'contact-form' %}" class="me-2">Get A Quote</a>
+            <a href="#available-products" class="ms-2 smooth-scroll">Our Range</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

@@ -41,6 +41,125 @@
         </div>
     </div>
 </section>
+
+<!-- Available Products Section -->
+
+<section id="available-products" class="section-padding bg-light border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">What Do We Offer?</h1>
+                    <div class="line"></div>
+                    <p class="section-subtitle">Explore our range of premium stair designs, crafted to complement every space and style.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="stairsFilter" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-filter="all">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="wooden">Wooden</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="steel">Steel</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="cladded">Cladded</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="winder">Winder</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="paddle">Paddle</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="attic">Attic</button>
+            </li>
+        </ul>
+
+        <!-- Product Grid -->
+        <div class="row justify-content-center" id="stairsGrid">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item wooden" data-aos="fade-up">
+                <div class="card" data-type="wooden">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}stairs/wooden-stairs.webp" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Wooden Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item steel" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="steel">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}stairs/steel-stairs.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Steel Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item cladded" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="cladded">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}stairs/cladded-stairs.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Concrete Clad Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item winder" data-aos="fade-up">
+                <div class="card" data-type="winder">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}stairs/winder-stairs.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Winder Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item paddle" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="paddle">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}stairs/paddle-stairs.png" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Paddle Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item attic" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="attic">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}doors/internal-door.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Attic Stairs</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed View -->
+        <div class="detailed-view d-none" id="detailedView">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img id="detailImage" src="" class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2 id="detailTitle"></h2>
+                    <p id="detailDescription"></p>
+                    <button class="btn btn-secondary" id="backButton">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

@@ -165,3 +165,31 @@ ul.list-unstyled li span {
 .feature-description {
     font-size: 1rem;
 }
+
+@media (max-width: 991px) {
+    #available-products .nav-pills .nav-link {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #available-products .nav-pills .nav-link {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .stairs-item {
+        width: 90% !important;
+        margin-bottom: 15px;
+    }
+
+    #detailTitle {
+        margin-top: 20px;
+    }
+
+    .feature-item {
+        width: 80%;
+        margin: auto;
+    }
+}

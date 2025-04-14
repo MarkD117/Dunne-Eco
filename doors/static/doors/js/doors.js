@@ -86,7 +86,7 @@ const descriptions = {
     }
 };
 
-// Filter functionality for the first section only
+// Filter functionality
 document.querySelectorAll('#available-products .nav-link').forEach(button => {
     button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
@@ -149,7 +149,7 @@ document.querySelectorAll('#available-products .nav-link').forEach(button => {
     });
 });
 
-// Product card click functionality to open detailed view for the first section
+// Product card click functionality to open detailed view
 document.querySelectorAll('#available-products .card').forEach(card => {
     card.addEventListener('click', () => {
         const type = card.getAttribute('data-type');
@@ -196,7 +196,7 @@ document.querySelectorAll('#available-products .card').forEach(card => {
     });
 });
 
-// Back button to return to product grid for the first section
+// Back button to return to product grid
 document.getElementById('backButton').addEventListener('click', () => {
     document.getElementById('doorGrid').style.display = 'flex';
     document.getElementById('detailedView').classList.add('d-none');

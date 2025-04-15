@@ -3,6 +3,13 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'stairs/css/stairs.css' %}">
+<!-- Flickity CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.min.css">
+{% endblock %}
+
+{% block extra_js %}
+<!-- Flickity JS -->
+<script src="https://cdn.jsdelivr.net/npm/flickity@2/dist/flickity.pkgd.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -136,7 +143,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 stairs-item attic" data-aos="fade-up" data-aos-delay="200">
                 <div class="card" data-type="attic">
                     <div class="product-image-wrapper">
-                        <img src="{{ MEDIA_URL }}doors/internal-door.jpg" class="card-img-top product-card-img" alt="">
+                        <img src="{{ MEDIA_URL }}stairs/attic-stairs.jpg" class="card-img-top product-card-img" alt="">
                         <div class="product-overlay">
                             <h5 class="product-overlay-title">Attic Stairs</h5>
                         </div>
@@ -244,6 +251,66 @@
                     <span class="material-label">Red Deal</span>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Gallery Section -->
+
+<section id="product-gallery" class="section-padding bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">Take A Look</h1>
+                    <div class="line"></div>
+                    <p class="section-subtitle">Explore our range of stairs and find what best suits you.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Wrapper -->
+        <div class="carousel">
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/wooden-stairs1.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Wooden</p>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/steel-carousel.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Steel</p>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/cladded-carousel.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Cladded</p>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/winder-carousel.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Winder</p>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/paddle-carousel.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Paddle</p>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <img src="{{ MEDIA_URL }}stairs/attic-carousel1.jpg" alt="">
+                <div class="image-label">
+                    <p class="image-label-text">Attic</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{% url 'gallery' %}" class="btn btn-primary">View Full Gallery</a>
         </div>
     </div>
 </section>

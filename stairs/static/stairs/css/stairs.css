@@ -268,6 +268,16 @@ ul.list-unstyled li span {
         width: 80%;
         margin: auto;
     }
+
+    .material-label {
+        bottom: 20px;
+        opacity: 1;
+    }
+
+    .wood-materials:hover .material-circle:hover .material-label {
+        bottom: 20px;
+        opacity: 1;
+    }
 }
 
 @media (max-width: 576px) {

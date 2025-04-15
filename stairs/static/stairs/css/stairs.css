@@ -166,6 +166,61 @@ ul.list-unstyled li span {
     font-size: 1rem;
 }
 
+/* ----- Available Materials ----- */
+
+.wood-materials {
+    position: relative;
+}
+
+.material-circle {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s ease, margin 0.3s ease;
+    cursor: pointer;
+    width: 200px;
+    height: 200px;
+}
+
+.material-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.material-label {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: bottom 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Hover effect */
+.wood-materials:hover .material-circle {
+    transform: scale(0.95);
+}
+
+.wood-materials:hover .material-circle:hover {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.wood-materials:hover .material-circle:hover .material-label {
+    bottom: 20px;
+    opacity: 1;
+}
+
 @media (max-width: 991px) {
     #available-products .nav-pills .nav-link {
         padding-left: 10px;

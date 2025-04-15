@@ -221,6 +221,27 @@ ul.list-unstyled li span {
     opacity: 1;
 }
 
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .material-circle {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .material-circle {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .material-circle {
+        width: 220px;
+        height: 220px;
+    }
+}
+
 @media (max-width: 991px) {
     #available-products .nav-pills .nav-link {
         padding-left: 10px;
@@ -246,5 +267,19 @@ ul.list-unstyled li span {
     .feature-item {
         width: 80%;
         margin: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .material-circle {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 408px) {
+    .material-circle {
+        width: 220px;
+        height: 220px;
     }
 }

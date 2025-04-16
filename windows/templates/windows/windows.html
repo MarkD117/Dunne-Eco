@@ -41,6 +41,99 @@
         </div>
     </div>
 </section>
+
+<!-- Available Products Section -->
+
+<section id="available-products" class="section-padding bg-light border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down">
+                <div class="section-title">
+                    <h1 class="display-4 fw-semibold">What Do We Offer?</h1>
+                    <div class="line"></div>
+                    <p class="section-subtitle">Discover our selection of premium windows, designed to enhance every room with style and function.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <ul class="nav nav-pills justify-content-center mb-4" id="windowsFilter" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" data-filter="all">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="pvc">PVC</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="aluminium">Aluminium</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="steel">Steel</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-filter="sash">Sash</button>
+            </li>
+        </ul>
+
+        <!-- Product Grid -->
+        <div class="row justify-content-center" id="windowsGrid">
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 windows-item pvc" data-aos="fade-up">
+                <div class="card" data-type="pvc">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}windows/pvc-profile.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">PVC</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 windows-item aluminium" data-aos="fade-up" data-aos-delay="100">
+                <div class="card" data-type="aluminium">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}windows/aluminium-profile.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Aluminium</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 windows-item steel" data-aos="fade-up" data-aos-delay="200">
+                <div class="card" data-type="steel">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}windows/steel-profile.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Steel</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 mb-4 windows-item sash" data-aos="fade-up" data-aos-delay="300">
+                <div class="card" data-type="sash">
+                    <div class="product-image-wrapper">
+                        <img src="{{ MEDIA_URL }}windows/sash-profile.jpg" class="card-img-top product-card-img" alt="">
+                        <div class="product-overlay">
+                            <h5 class="product-overlay-title">Sash</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed View -->
+        <div class="detailed-view d-none" id="detailedView">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <img id="detailImage" src="" class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-md-6">
+                    <h2 id="detailTitle"></h2>
+                    <p id="detailDescription"></p>
+                    <button class="btn btn-secondary" id="backButton">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block postloadjs %}

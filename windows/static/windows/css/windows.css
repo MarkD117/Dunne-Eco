@@ -166,6 +166,33 @@ ul.list-unstyled li span {
     font-size: 1rem;
 }
 
+/* ----- Window Profiles ----- */
+
+#window-profiles h3 {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+  
+#window-profiles p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.profile-img-wrapper-right,
+.profile-img-wrapper-left {
+    display: flex;
+}
+
+.profile-img-wrapper-right {
+    justify-content: end;
+    align-items: end;
+}
+
+.profile-img-wrapper-left {
+    justify-content: start;
+    align-items: start;
+}
+
 @media (max-width: 991px) {
     #available-products .nav-pills .nav-link {
         padding-left: 10px;
@@ -191,5 +218,15 @@ ul.list-unstyled li span {
     .feature-item {
         width: 80%;
         margin: auto;
+    }
+
+    #window-profiles .row {
+        text-align: center;
+      }
+
+    .profile-img-wrapper-right,
+    .profile-img-wrapper-left {
+        justify-content: center;
+        align-items: center;
     }
 }

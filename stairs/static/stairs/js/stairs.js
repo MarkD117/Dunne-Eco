@@ -11,7 +11,7 @@ const descriptions = {
         ]
     },
     steel: {
-        title: "External Stairs",
+        title: "Steel Stairs",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
         specs: [
             "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",

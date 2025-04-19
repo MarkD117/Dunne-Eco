@@ -1,27 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll function for home page links
-    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
-
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            // Prevent default link behavior
-            event.preventDefault();
-
-            // Get the target element
-            const targetId = link.getAttribute('href').split('#')[1];
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                // Smooth scroll to the target element
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth',
-                });
-            }
-        });
-    });
-});
-
 // Descriptions for each type of door
 const descriptions = {
     internal: {
@@ -204,20 +180,3 @@ document.getElementById('backButton').addEventListener('click', () => {
     document.querySelectorAll('#available-products .nav-link').forEach(link => link.classList.remove('active'));
     document.querySelector('#available-products .nav-link[data-filter="all"]').classList.add('active');
 });
-
-
-// Keep Features & Benefits boxes size consistent
-function equalizeFeatureHeights() {
-    let maxHeight = 0;
-    document.querySelectorAll('.feature-box').forEach(box => {
-        box.style.height = 'auto';
-        if (box.offsetHeight > maxHeight) {
-            maxHeight = box.offsetHeight;
-        }
-    });
-    document.querySelectorAll('.feature-box').forEach(box => {
-        box.style.height = maxHeight + 'px';
-    });
-}
-window.addEventListener('load', equalizeFeatureHeights);
-window.addEventListener('resize', equalizeFeatureHeights);

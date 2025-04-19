@@ -1,4 +1,4 @@
-// Descriptions for each type of windows
+// Descriptions for each type of window
 const descriptions = {
     pvc: {
         title: "PVC Windows",

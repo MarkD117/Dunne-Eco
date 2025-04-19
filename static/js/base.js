@@ -33,6 +33,46 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scroll function for hero buttons
+    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+
+    smoothScrollLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            // Prevent default link behavior
+            event.preventDefault();
+
+            // Get the target element
+            const targetId = link.getAttribute('href').split('#')[1];
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Smooth scroll to the target element
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        });
+    });
+});
+
+// Keep product page Features & Benefits box sizes consistent
+function equalizeFeatureHeights() {
+    let maxHeight = 0;
+    document.querySelectorAll('.feature-box').forEach(box => {
+        box.style.height = 'auto';
+        if (box.offsetHeight > maxHeight) {
+            maxHeight = box.offsetHeight;
+        }
+    });
+    document.querySelectorAll('.feature-box').forEach(box => {
+        box.style.height = maxHeight + 'px';
+    });
+}
+window.addEventListener('load', equalizeFeatureHeights);
+window.addEventListener('resize', equalizeFeatureHeights);
+
 // Initialise bootstrap toasts
 document.querySelectorAll('.toast').forEach(toastElement => {
     var toast = new bootstrap.Toast(toastElement);

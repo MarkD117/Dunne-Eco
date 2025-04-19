@@ -1,26 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scroll function for home page links
-    const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
-
-    smoothScrollLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            // Prevent default link behavior
-            event.preventDefault();
-
-            // Get the target element
-            const targetId = link.getAttribute('href').split('#')[1];
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                // Smooth scroll to the target element
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: 'smooth',
-                });
-            }
-        });
-    });
-
     // Handle hash fragment in URL on page load
     if (window.location.hash) {
         const targetId = window.location.hash.substring(1); // Get the hash without '#'

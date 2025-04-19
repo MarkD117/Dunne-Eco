@@ -239,12 +239,42 @@ ul.list-unstyled li span {
     color: #333;
 }
 
+/* ----- Contact Info ----- */
+
+.page-contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+.page-contact-info i {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-right: 10px;
+}
+
+.page-contact-info a {
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.map-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* ----- Media Queries ----- */
 
 @media (max-width: 991px) {
     #available-products .nav-pills .nav-link {
         padding-left: 10px;
         padding-right: 10px;
+    }
+
+    .page-contact-info {
+        text-align: center;
+    }
+
+    .map-container {
+        margin-top: 10px;
     }
 }
 

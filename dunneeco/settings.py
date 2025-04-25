@@ -16,8 +16,17 @@ import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
+# Security settings for SSL
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',  # Trust all subdomains of gitpod.io
+    'https://dunneeco.ie',  # Trust live domain
+    'https://www.dunneeco.ie',  # Trust live domain with www
 ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

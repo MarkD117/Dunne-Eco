@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+window.addEventListener('load', () => {
+    document.getElementById('hero-single').classList.add('loaded');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll function for hero buttons
     const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');

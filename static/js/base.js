@@ -33,8 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// Add hero single zoom class when loaded
 window.addEventListener('load', () => {
-    document.getElementById('hero-single').classList.add('loaded');
+    document.getElementById('hero-single').classList.add('zoom-loaded');
 });
 
 document.addEventListener('DOMContentLoaded', () => {

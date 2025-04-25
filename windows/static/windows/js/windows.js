@@ -1,7 +1,7 @@
 // Descriptions for each type of window
 const descriptions = {
-    pvc: {
-        title: "PVC Windows",
+    fixed: {
+        title: "Fixed Windows",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
         specs: [
             "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
@@ -10,18 +10,8 @@ const descriptions = {
             "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
         ]
     },
-    aluminium: {
-        title: "Aluminium Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
-        specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
-        ]
-    },
-    steel: {
-        title: "Steel Windows",
+    tiltandturn: {
+        title: "Tilt & Turn Windows",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
         specs: [
             "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
@@ -32,6 +22,16 @@ const descriptions = {
     },
     sash: {
         title: "Sash Windows",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        specs: [
+            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
+            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
+            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
+            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+        ]
+    },
+    bespoke: {
+        title: "Bespoke Windows",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
         specs: [
             "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",

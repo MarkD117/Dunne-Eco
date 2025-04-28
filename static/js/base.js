@@ -10,9 +10,9 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-window.addEventListener('load', function() {
-    AOS.refresh();
-});
+// window.addEventListener('load', function() {
+//     AOS.refresh();
+// });
 
 // Refresh AOS only if Flickity is available
 document.addEventListener("DOMContentLoaded", function () {
@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Add hero single zoom class when loaded
-window.addEventListener('load', () => {
-    document.getElementById('hero-single').classList.add('zoom-loaded');
-});
+// window.addEventListener('load', () => {
+//     document.getElementById('hero-single').classList.add('zoom-loaded');
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll function for hero buttons

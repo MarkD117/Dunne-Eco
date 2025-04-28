@@ -11,7 +11,9 @@ AOS.init({
 });
 
 window.addEventListener('load', function() {
-    AOS.refresh();
+    setTimeout(function() {
+        AOS.refresh();
+    }, 200); // 200 milliseconds delay
 });
 
 // Refresh AOS only if Flickity is available

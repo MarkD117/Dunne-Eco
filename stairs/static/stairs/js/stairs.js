@@ -2,62 +2,62 @@
 const descriptions = {
     wooden: {
         title: "Wooden Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Our wooden stairs combine timeless craftsmanship with durable materials, offering a warm and inviting centerpiece for any home. Available in a range of hardwood and softwood options, each staircase is designed for lasting beauty and strength.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Crafted from premium hardwoods or softwoods",
+            "Bespoke designs to suit traditional and modern interiors",
+            "Smooth, hand-finished surfaces for a refined look",
+            "Optional integrated balustrades and handrails",
         ]
     },
     steel: {
         title: "Steel Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Sleek and contemporary, our steel stairs deliver bold architectural impact without compromising on strength. Perfect for both residential and commercial spaces, they are engineered for durability and customisable to fit your style.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Heavy-duty construction with a slimline aesthetic",
+            "Powder-coated, painted or raw industrial finishes available",
+            "Compatible with glass, timber, or steel balustrades",
+            "Custom-built for interior installations",
         ]
     },
     cladded: {
         title: "Cladded Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Our concrete cladded stairs offer a premium blend of structural strength and luxurious finishes. Ideal for modern homes and commercial spaces, these stairs can be tailored with a variety of cladding materials for a truly bespoke look.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Core structure with stylish cladding in timber, stone, or tiles",
+            "Superior acoustic and vibration resistance",
+            "Perfect for floating or cantilevered stair designs",
+            "Designed for seamless integration into contemporary architecture",
         ]
     },
     winder: {
         title: "Winder Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Maximise space without sacrificing style with our expertly crafted winder stairs. Designed to turn corners elegantly, they offer a practical solution for tighter floor plans while maintaining a high-end finish.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Space-saving design ideal for compact layouts",
+            "Smooth, continuous flow for comfortable use",
+            "Available in timber, steel, or a combination of materials",
+            "Customisable tread and riser finishes",
         ]
     },
     paddle: {
         title: "Paddle Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Our paddle stairs (also known as alternating tread stairs) are the perfect solution for limited spaces where standard stairs are not feasible. Designed for easy and safe access, they offer a smart and stylish alternative.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Ideal for lofts, mezzanines, and compact areas",
+            "Alternating tread design for easier climbing",
+            "Available in timber, steel, or mixed materials",
+            "Custom sizing and handrail options available",
         ]
     },
     attic: {
         title: "Attic Stairs",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Access your attic space safely and effortlessly with our range of high-quality attic stairs. Designed for strength, ease of use, and a minimal footprint, they are a practical addition to any home.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Compact folding or sliding designs",
+            "Insulated hatches available for energy efficiency",
+            "Easy operation with durable, lightweight materials",
+            "Customisable finishes to blend with ceiling decor",
         ]
     }
 };

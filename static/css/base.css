@@ -207,7 +207,7 @@ img {
 }
 
 #hero-single .container {
-    height: 100vh;
+    height: 100vh; /* This is causing issues due to viewport dynamically changing on mobile */
     z-index: 1;
     position: relative;
 }

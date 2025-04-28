@@ -10,6 +10,10 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
+window.addEventListener('load', function() {
+    AOS.refresh();
+});
+
 // Refresh AOS only if Flickity is available
 document.addEventListener("DOMContentLoaded", function () {
     // Check if Flickity is available before initializing

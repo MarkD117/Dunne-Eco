@@ -2,42 +2,42 @@
 const descriptions = {
     fixed: {
         title: "Fixed Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Fixed windows are ideal for maximising natural light and framing beautiful outdoor views. With no moving parts, they offer exceptional energy efficiency and a sleek, minimal design.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Non-opening for maximum insulation and security",
+            "Perfect for feature walls and expansive glazing",
+            "Slim sightlines to maximise light intake",
+            "Customisable shapes and sizes available",
         ]
     },
     tiltandturn: {
         title: "Tilt & Turn Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Our tilt and turn windows offer versatile functionality, combining easy ventilation with secure locking. Their dual-opening action makes them perfect for modern living, offering both style and practicality.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Tilt inwards for ventilation, turn fully for easy cleaning",
+            "Secure multi-point locking systems",
+            "Ideal for contemporary homes and apartments",
+            "Available in timber, aluminium, or composite finishes",
         ]
     },
     sash: {
         title: "Sash Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Bring timeless elegance to your home with our expertly crafted sash windows. Perfect for heritage properties and modern builds alike, they combine traditional aesthetics with modern performance.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Authentic sliding or mock-sash styles available",
+            "Smooth operation with modern counterbalance systems",
+            "Double or triple glazing options for insulation",
+            "Finished in durable, low-maintenance coatings",
         ]
     },
     bespoke: {
         title: "Bespoke Windows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non nibh ligula. Sed sem nisl, ultrices vitae purus eget, lacinia euismod tellus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam .",
+        description: "Our bespoke windows are tailored to your exact requirements, offering complete freedom in design, size, and material choice. Whether you need a unique shape or a specialised finish, we bring your vision to life.",
         specs: [
-            "Spec 1 Spec 1 Spec 1 Spec 1 Spec 1 Spec 1",
-            "Spec 2 Spec 2 Spec 2 Spec 2 Spec 2 Spec 2",
-            "Spec 3 Spec 3 Spec 3 Spec 3 Spec 3 Spec 3",
-            "Spec 4 Spec 4 Spec 4 Spec 4 Spec 4 Spec 4",
+            "Fully customised to any specification",
+            "Available in timber, aluminium, or mixed materials",
+            "Designed to match existing architecture or create a new statement",
+            "Precision craftsmanship for flawless performance",
         ]
     }
 };

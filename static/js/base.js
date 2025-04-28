@@ -37,11 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Add hero single zoom class when loaded
-// window.addEventListener('load', () => {
-//     document.getElementById('hero-single').classList.add('zoom-loaded');
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll function for hero buttons
     const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');

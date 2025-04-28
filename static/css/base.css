@@ -191,8 +191,6 @@ img {
     background-position: center;
     background-size: cover;
     width: 100%;
-    /* Transition for zoom effect */
-    transition: transform 1.5s ease-out;
 }
 
 #hero-single:before {
@@ -213,13 +211,13 @@ img {
 }
 
 #hero-single h1 {
-    font-size: 4.76rem;
+    font-size: 5rem;
     font-weight: bold;
     color: #FDFDF1;
 }
 
 #hero-single h2 {
-    font-size: 1.90rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #FDFDF1;
 }
@@ -231,14 +229,9 @@ img {
     border: 2px solid #FDFDF1;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 13.33px;
+    font-size: 14px;
     text-transform: uppercase;
     padding: 10px 24px;
-}
-
-/* Apply zoom effect when the page is loaded */
-#hero-single.zoom-loaded {
-    transform: scale(1.05);
 }
 
 #hero .carousel-caption a {

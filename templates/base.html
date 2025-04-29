@@ -92,13 +92,13 @@
                         <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#reviews">Testimonials</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="{% url 'doors' %}">Doors</a>
+                        <a class="nav-link mx-lg-2 {% block doors_active %}{% endblock %}" href="{% url 'doors' %}">Doors</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link mx-lg-2" href="#">Windows</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="{% url 'stairs' %}">Stairs</a>
+                        <a class="nav-link mx-lg-2 {% block stairs_active %}{% endblock %}" href="{% url 'stairs' %}">Stairs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-lg-2 {% block history_active %}{% endblock %}" href="{% url 'history' %}">History</a>

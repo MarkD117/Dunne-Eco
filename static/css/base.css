@@ -195,7 +195,7 @@ img {
 
 #hero-single:before {
     background-color: rgba(0, 0, 0, 0.6);
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     content: "";
     position: absolute;
     top: 0;
@@ -205,7 +205,7 @@ img {
 }
 
 #hero-single .container {
-    height: 100vh; /* This is causing issues due to viewport dynamically changing on mobile */
+    height: calc(var(--vh, 1vh) * 100); /* This is causing issues due to viewport dynamically changing on mobile */
     z-index: 1;
     position: relative;
 }
@@ -260,13 +260,13 @@ img {
 
 #hero .carousel-item {
     position: relative;
-    min-height: 30vh;
+    min-height: calc(var(--vh, 1vh) * 30);
     transition: transform 0.8s ease-in-out; /* Ensures smooth sliding */
 }
 
 #hero .carousel-item img {
     width: 100%;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     object-fit: cover;
 }
 
@@ -278,6 +278,13 @@ img {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
     z-index: 1;
     margin-bottom: 12px;
+}
+
+/* Height cap prevents stretching */
+#hero-single:before,
+#hero-single .container,
+#hero .carousel-item img {
+    max-height: 100vh;
 }
 
 /* Gradient overlay from bottom */
@@ -479,7 +486,7 @@ footer .line {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);;
   }
 
 .error-content {
@@ -591,7 +598,7 @@ footer .line {
     }
 
     #hero .carousel-item img {
-        height: 80vh;
+        height: calc(var(--vh, 1vh) * 80);;
     }
 
     #hero .carousel-inner {
@@ -670,7 +677,7 @@ footer .line {
     }
     
     #hero .carousel-item img {
-        height: 40vh;
+        height: calc(var(--vh, 1vh) * 40);;
     }
 
     footer {
@@ -703,10 +710,6 @@ footer .line {
     
     #hero-single h2 {
         font-size: 1.2rem;
-    }
-
-    #hero .carousel-item img {
-        height: 30vh; /* Adjust the height as needed */
     }
 }
 

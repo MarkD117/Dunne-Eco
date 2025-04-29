@@ -16,6 +16,16 @@ window.addEventListener('load', function() {
     }, 200); // 200 milliseconds delay
 });
 
+function setStableViewportHeight() {
+    setTimeout(() => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }, 100); // Delay allows browser chrome to settle
+  }
+  
+  window.addEventListener('load', setStableViewportHeight);
+  window.addEventListener('orientationchange', setStableViewportHeight);
+
 // Refresh AOS only if Flickity is available
 document.addEventListener("DOMContentLoaded", function () {
     // Check if Flickity is available before initializing

@@ -9,5 +9,6 @@ def doors(request):
 
 
 def unavailable_message(request):
+    """ This view returns a temporary unavailable message """
     messages.info(request, 'Unfortunately this feature is currently unavailable! If you would like to spec your own custom door, please contact us!')
     return redirect(reverse('doors'))

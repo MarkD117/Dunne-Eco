@@ -85,18 +85,12 @@
                     <li class="nav-item">
                         <a class="nav-link mx-lg-2 {% block home_active %}{% endblock %}" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mx-lg-2 smooth-scroll" href="{% url 'home' %}#reviews">Testimonials</a>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link mx-lg-2 {% block doors_active %}{% endblock %}" href="{% url 'doors' %}">Doors</a>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="#">Windows</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 {% block windows_active %}{% endblock %}" href="{% url 'windows' %}">Windows</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link mx-lg-2 {% block stairs_active %}{% endblock %}" href="{% url 'stairs' %}">Stairs</a>
                     </li>
@@ -196,10 +190,9 @@
                         <ul class="footer-site-links">
                             <li><a href="{% url 'home' %}">Home</a></li>
                             <li><a href="{% url 'doors' %}">Doors</a></li>
-                            <!-- <li><a href="{% url 'windows' %}">Windows</a></li> -->
+                            <li><a href="{% url 'windows' %}">Windows</a></li>
                             <li><a href="{% url 'stairs' %}">Stairs</a></li>
-                            <!-- <li><a href="{% url 'home' %}#services">Services</a></li>
-                            <li><a href="{% url 'history' %}">History</a></li> -->
+                            <li><a href="{% url 'history' %}">History</a></li>
                             <li><a href="{% url 'gallery' %}">Gallery</a></li>
                             <li><a href="{% url 'downloads-list' %}">Downloads</a></li>
                             <li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>

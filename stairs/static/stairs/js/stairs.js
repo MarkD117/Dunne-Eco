@@ -52,12 +52,12 @@ const descriptions = {
     },
     attic: {
         title: "Attic Stairs",
-        description: "Access your attic space safely and effortlessly with our range of high-quality attic stairs. Designed for strength, ease of use, and a minimal footprint, they are a practical addition to any home.",
+        description: "Our custom-built attic stairs are permanent, space-efficient staircases designed to provide safe and reliable access to attic spaces. Built to suit each project, they're ideal for areas where standard stairs won't fit but lasting access is still required.",
         specs: [
-            "Compact folding or sliding designs",
-            "Insulated hatches available for energy efficiency",
-            "Easy operation with durable, lightweight materials",
-            "Customisable finishes to blend with ceiling decor",
+            "Fixed staircase design - no folding or retractable parts",
+            "Tailored to fit tight spaces and awkward layouts",
+            "Built for everyday use with durable materials",
+            "Available in timber, steel, or mixed finishes to match your interior",
         ]
     }
 };

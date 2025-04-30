@@ -26,7 +26,7 @@ const descriptions = {
         specs: [
             "Authentic sliding or mock-sash styles available",
             "Smooth operation with modern counterbalance systems",
-            "Double or triple glazing options for insulation",
+            "Double glazing options for insulation",
             "Finished in durable, low-maintenance coatings",
         ]
     },

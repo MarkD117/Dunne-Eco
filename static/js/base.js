@@ -16,6 +16,7 @@ window.addEventListener('load', function() {
     }, 200); // 200 milliseconds delay
 });
 
+// Lock hero height to prevent stretching
 function setStableViewportHeight() {
     setTimeout(() => {
       const vh = window.innerHeight * 0.01;

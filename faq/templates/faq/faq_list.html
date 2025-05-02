@@ -12,25 +12,38 @@
             </div>
         </div>
 
-        <form method="get" class="row g-3 mb-4">
-            <div class="col-md-4">
-                <input type="text" name="q" value="{{ query|default_if_none:'' }}" class="form-control" placeholder="Search questions...">
+        <form method="get" class="mb-4 d-flex flex-column flex-md-row align-items-md-center gap-3">
+            <!-- Search Bar (takes more space) -->
+            <div class="px-3 py-1 rounded-pill flex-grow-1 d-flex align-items-center shadow-sm" style="min-height: 46px; background-color: #E8E8E8;">
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control border-0 bg-transparent shadow-none"
+                    placeholder="Search questions..."
+                    value="{{ request.GET.q|default_if_none:'' }}"
+                    aria-label="Search FAQs"
+                >
+                <button class="btn border-0 bg-transparent" type="submit">
+                    <i class="fas fa-search text-muted"></i>
+                </button>
             </div>
-            <div class="col-md-4">
-                <select name="category" class="form-select">
+        
+            <!-- Category Filter (takes less space) -->
+            <div class="px-3 py-1 rounded-pill flex-grow-0 flex-md-grow-0 d-flex align-items-center shadow-sm" style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
+                <select
+                    name="category"
+                    class="form-select border-0 bg-transparent shadow-none"
+                    onchange="this.form.submit()"
+                >
                     <option value="">All Categories</option>
-                    {% for cat in categories %}
-                        <option value="{{ cat.id }}" {% if cat.id|stringformat:"s" == selected_category|default_if_none:'' %}selected{% endif %}>
-                            {{ cat.name }}
+                    {% for category in categories %}
+                        <option value="{{ category.id }}" {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
+                            {{ category.name }}
                         </option>
                     {% endfor %}
                 </select>
             </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Filter</button>
-            </div>
         </form>
-
         <div class="accordion" id="faqAccordion" aria-label="FAQ Accordion">
             {% for faq in page_obj %}
             <div class="accordion-item">

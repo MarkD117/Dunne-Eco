@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <section id="faq-section" class="section-padding">
     <div class="container my-5">
         <div class="row">
-            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+            <div class="col-12 text-center">
                 <div class="section-title">
                     <h1 class="display-4 fw-semibold">Frequently Asked Questions</h1>
                     <div class="line"></div>
@@ -11,7 +12,6 @@
                 </div>
             </div>
         </div>
-
         <form method="get" class="mb-4 d-flex flex-column flex-md-row align-items-md-center gap-3">
             <!-- Search Bar (takes more space) -->
             <div class="px-3 py-1 rounded-pill flex-grow-1 d-flex align-items-center shadow-sm" style="min-height: 46px; background-color: #E8E8E8;">
@@ -44,6 +44,7 @@
                 </select>
             </div>
         </form>
+        <!-- Question Accordion -->
         <div class="accordion" id="faqAccordion" aria-label="FAQ Accordion">
             {% for faq in page_obj %}
             <div class="accordion-item">
@@ -66,6 +67,7 @@
             <p>No FAQs found.</p>
             {% endfor %}
         </div>
+        <!-- FAQ Page Navigation -->
         <nav aria-label="FAQ pagination">
             <ul class="pagination justify-content-center mt-4">
                 {% with base_query="" %}

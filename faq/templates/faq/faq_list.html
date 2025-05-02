@@ -47,27 +47,36 @@
         </div>
         <nav aria-label="FAQ pagination">
             <ul class="pagination justify-content-center mt-4">
-                {% if page_obj.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?q={{ query }}&category={{ selected_category }}&page={{ page_obj.previous_page_number }}">Previous</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled"><span class="page-link">Previous</span></li>
-                {% endif %}
+                {% with base_query="" %}
+                    {% if query %}
+                        {% with base_query=base_query|add:"&q="|add:query %}{% endwith %}
+                    {% endif %}
+                    {% if selected_category %}
+                        {% with base_query=base_query|add:"&category="|add:selected_category %}{% endwith %}
+                    {% endif %}
         
-                {% for num in page_obj.paginator.page_range %}
-                <li class="page-item {% if page_obj.number == num %}active{% endif %}">
-                    <a class="page-link" href="?q={{ query }}&category={{ selected_category }}&page={{ num }}">{{ num }}</a>
-                </li>
-                {% endfor %}
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{{ base_query }}">Previous</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                    {% endif %}
         
-                {% if page_obj.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?q={{ query }}&category={{ selected_category }}&page={{ page_obj.next_page_number }}">Next</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled"><span class="page-link">Next</span></li>
-                {% endif %}
+                    {% for num in page_obj.paginator.page_range %}
+                        <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                            <a class="page-link" href="?page={{ num }}{{ base_query }}">{{ num }}</a>
+                        </li>
+                    {% endfor %}
+        
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{{ base_query }}">Next</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">Next</span></li>
+                    {% endif %}
+                {% endwith %}
             </ul>
         </nav>
     </div>

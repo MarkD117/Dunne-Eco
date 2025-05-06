@@ -114,11 +114,19 @@
                     {% endif %}
         
                     {% for num in page_obj.paginator.page_range %}
-                        <li class="page-item {% if page_obj.number == num %}active{% endif %}">
-                            <a class="page-link" href="?page={{ num }}{{ base_query }}">{{ num }}</a>
-                        </li>
+                        {% if num >= page_obj.number|add:"-1" and num <= page_obj.number|add:"1" %}
+                            <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}{{ base_query }}">{{ num }}</a>
+                            </li>
+                        {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                            <li class="page-item d-none d-sm-inline {% if page_obj.number == num %}active{% endif %}">
+                                <a class="page-link" href="?page={{ num }}{{ base_query }}">{{ num }}</a>
+                            </li>
+                        {% elif num == page_obj.number|add:"-2" or num == page_obj.number|add:"2" %}
+                            <li class="page-item disabled d-none d-md-inline"><span class="page-link">…</span></li>
+                        {% endif %}
                     {% endfor %}
-        
+                            
                     {% if page_obj.has_next %}
                         <li class="page-item">
                             <a class="page-link" href="?page={{ page_obj.next_page_number }}{{ base_query }}">

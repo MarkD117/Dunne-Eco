@@ -76,3 +76,15 @@
     color: #adb5bd;
     cursor: not-allowed;
 }
+
+@media (max-width: 390px){
+    .pagination .page-link {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 379px){
+    .pagination .page-link {
+        font-size: 12px;
+    }
+}

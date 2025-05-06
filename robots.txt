@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /admin/
+Allow: *.css
+Allow: *.js
+Sitemap: https://dunneeco.ie/sitemap.xml

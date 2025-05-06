@@ -88,7 +88,15 @@
                 </div>
             </div>
             {% empty %}
-            <p>No FAQs found.</p>
+            {% if query %}
+                    <div class="text-center mt-4">
+                        No FAQs found for "<strong>{{ query }}</strong>". Please try again.
+                    </div>
+                {% else %}
+                    <div class="text-center mt-4">
+                        No FAQs available at the moment.
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
 

@@ -1,9 +1,11 @@
 from django.contrib import admin
 from .models import FAQ, Category
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
+
 
 @admin.register(FAQ)
 class FAQAdmin(admin.ModelAdmin):

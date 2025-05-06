@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
@@ -12,7 +13,11 @@ class Category(models.Model):
 
 
 class FAQ(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='faqs')
+    category = models.ForeignKey(
+            Category,
+            on_delete=models.CASCADE,
+            related_name='faqs'
+        )
     question = models.CharField(max_length=255)
     answer = models.TextField()
     is_active = models.BooleanField(default=True)

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.db.models import Q
 from .models import FAQ, Category
 
+
 def faq_list(request):
     query = request.GET.get('q')
     category_id = request.GET.get('category')
@@ -35,4 +36,3 @@ def faq_list(request):
         'query': query,
     }
     return render(request, 'faq/faq_list.html', context)
-

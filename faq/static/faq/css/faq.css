@@ -44,3 +44,35 @@
     overflow: hidden;
     border: none;
 }
+
+/* Custom Pagination Styling */
+.pagination .page-item {
+    margin: 0 4px;
+}
+
+.pagination .page-link {
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    color: var(--bs-dark);
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.pagination .page-link:hover {
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--bs-primary);
+    color: #fff;
+    font-weight: 600;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #adb5bd;
+    cursor: not-allowed;
+}

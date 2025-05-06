@@ -1,3 +1,5 @@
+/* ----- Chevron Styling ----- */
+
 /* Remove Bootstrap's default accordion chevron */
 .custom-accordion .accordion-button {
     --bs-accordion-btn-icon: none;
@@ -26,6 +28,8 @@
     transform: rotate(180deg);
 }
 
+/* ----- Accordion Styling ----- */
+
 /* Subtle hover effect */
 .custom-accordion .accordion-button:hover {
     background-color: #f8f9fa;
@@ -45,7 +49,8 @@
     border: none;
 }
 
-/* Custom Pagination Styling */
+/* ----- Pagination Styling ----- */
+
 .pagination .page-item {
     margin: 0 4px;
 }
@@ -76,6 +81,8 @@
     color: #adb5bd;
     cursor: not-allowed;
 }
+
+/* ----- Media Queries ----- */
 
 @media (max-width: 390px){
     .pagination .page-link {

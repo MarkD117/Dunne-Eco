@@ -13,23 +13,37 @@
             </div>
         </div>
         <form method="get" class="mb-4 d-flex flex-column flex-md-row align-items-md-center gap-3">
-            <!-- Search Bar (takes more space) -->
-            <div class="px-3 py-1 rounded-pill flex-grow-1 d-flex align-items-center shadow-sm" style="min-height: 46px; background-color: #E8E8E8;">
+            <!-- Search Bar -->
+            <div class="px-3 py-1 rounded-pill flex-grow-1 d-flex align-items-center shadow-sm position-relative" style="min-height: 46px; background-color: #E8E8E8;">
                 <input
+                    id="faq-search-input"
                     type="text"
                     name="q"
                     class="form-control border-0 bg-transparent shadow-none"
+                    style="padding-right: 68px;"
                     placeholder="Search questions..."
                     value="{{ request.GET.q|default_if_none:'' }}"
                     aria-label="Search FAQs"
                 >
-                <button class="btn border-0 bg-transparent" type="submit">
+        
+                <!-- Clear Icon -->
+                <span
+                    id="clear-search"
+                    class="position-absolute end-0 pe-3 me-5 text-muted"
+                    style="cursor: pointer; display: none;"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+        
+                <!-- Search Button -->
+                <button class="btn border-0 bg-transparent position-absolute end-0 ps-0 me-2" type="submit">
                     <i class="fas fa-search text-muted"></i>
                 </button>
             </div>
         
-            <!-- Category Filter (takes less space) -->
-            <div class="px-3 py-1 rounded-pill flex-grow-0 flex-md-grow-0 d-flex align-items-center shadow-sm" style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
+            <!-- Category Filter -->
+            <div class="px-3 py-1 rounded-pill flex-grow-0 flex-md-grow-0 d-flex align-items-center shadow-sm"
+                 style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
                 <select
                     name="category"
                     class="form-select border-0 bg-transparent shadow-none"
@@ -43,7 +57,7 @@
                     {% endfor %}
                 </select>
             </div>
-        </form>
+        </form>        
         <!-- Question Accordion -->
         <div class="accordion" id="faqAccordion" aria-label="FAQ Accordion">
             {% for faq in page_obj %}
@@ -104,4 +118,27 @@
         </nav>
     </div>
 </section>
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    const searchInput = document.getElementById('faq-search-input');
+    const clearIcon = document.getElementById('clear-search');
+
+    function toggleClearIcon() {
+        clearIcon.style.display = searchInput.value.trim() ? 'inline' : 'none';
+    }
+
+    // Show/hide icon on input
+    searchInput.addEventListener('input', toggleClearIcon);
+    document.addEventListener('DOMContentLoaded', toggleClearIcon);
+
+    // Clear input on click
+    clearIcon.addEventListener('click', () => {
+        searchInput.value = '';
+        toggleClearIcon();
+        searchInput.form.submit(); // Auto-submit form after clearing
+    });
+</script>
+
 {% endblock %}

@@ -57,6 +57,29 @@ ul.list-unstyled li span {
     object-fit: cover;
 }
 
+/* Product Icon Box */
+
+#windowsGrid .card .iconbox {
+    background-color: var(--primary);
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--transition);
+    opacity: 0;
+}
+
+#windowsGrid .card .iconbox:hover {
+    background-color: white;
+    color: var(--primary);
+}
+
+#windowsGrid .card:hover .iconbox {
+    opacity: 1;
+    top: 50%;
+}
+
 #available-products .nav-link::before {
     height: 0;
 }
@@ -276,6 +299,11 @@ ul.list-unstyled li span {
 
     .map-container {
         margin-top: 10px;
+    }
+
+    /* Prevents Icon Box from showing on smaller screens */
+    #windowsGrid .card:hover .iconbox {
+        opacity: 0 !important;
     }
 }
 

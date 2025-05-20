@@ -225,6 +225,10 @@ document.querySelectorAll('#available-products .btn-see-more').forEach(button =>
     });
 });
 
+// Prevents card iconbox from jumping to top of page
+document.querySelectorAll('.iconbox').forEach(icon => {
+    icon.addEventListener('click', e => e.preventDefault());
+});
 
 // Back button to return to product grid
 document.getElementById('backButton').addEventListener('click', () => {

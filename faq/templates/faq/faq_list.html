@@ -83,7 +83,7 @@
                      data-bs-parent="#faqAccordion"
                      role="region">
                     <div class="accordion-body text-dark px-4 py-3 bg-white">
-                        {{ faq.answer|linebreaks }}
+                        {{ faq.answer|safe }}
                     </div>
                 </div>
             </div>

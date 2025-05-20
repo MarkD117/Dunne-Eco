@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_recaptcha',
     'storages',
+    'django_summernote',
 ]
 
 MIDDLEWARE = [

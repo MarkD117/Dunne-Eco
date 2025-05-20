@@ -350,7 +350,7 @@ ul.list-unstyled li span {
     }
 
     /* Prevents Icon Box from showing on smaller screens */
-    #doorGrid .card:hover .iconbox {
+    #stairsGrid .card:hover .iconbox {
         opacity: 0 !important;
     }
 }

@@ -172,6 +172,7 @@ document.querySelectorAll('#available-products .card').forEach(card => {
     });
 });
 
+// 'See More' button functionality to open correct detail view
 document.querySelectorAll('#available-products .btn-see-more').forEach(button => {
     button.addEventListener('click', () => {
         const type = button.getAttribute('data-type');
@@ -183,7 +184,7 @@ document.querySelectorAll('#available-products .btn-see-more').forEach(button =>
         document.getElementById('detailedView').classList.add('d-none');
         document.getElementById('doorGrid').style.display = 'flex';
 
-        // Show the detailed view of the first card matching the type
+        // Show the detailed view of the card matching the data type of clicked button
         const firstVisibleCard = document.querySelector(`#available-products .door-item .card[data-type="${type}"]`);
         if (firstVisibleCard) {
             const details = descriptions[type] || {

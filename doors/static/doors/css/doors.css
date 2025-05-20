@@ -61,6 +61,8 @@ ul.list-unstyled li span {
     object-fit: cover;
 }
 
+/* Product Icon Box */
+
 #doorGrid .card .iconbox {
     background-color: var(--primary);
     color: white;
@@ -303,6 +305,11 @@ ul.list-unstyled li span {
 
     .map-container {
         margin-top: 10px;
+    }
+
+    /* Prevents Icon Box from showing on smaller screens */
+    #doorGrid .card:hover .iconbox {
+        opacity: 0 !important;
     }
 }
 

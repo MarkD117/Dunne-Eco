@@ -43,6 +43,10 @@ ul.list-unstyled li span {
     transform: scale(1.05);
 }
 
+.btn-see-more:hover {
+    transform: scale(1.05);
+}
+
 /* Ensure all cards are the same height and remove extra space */
 .windows-item .card {
     display: flex;

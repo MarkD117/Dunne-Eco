@@ -219,6 +219,8 @@ document.querySelectorAll('#available-products .btn-see-more').forEach(button =>
             // Show detailed view
             document.getElementById('doorGrid').style.display = 'none';
             document.getElementById('detailedView').classList.remove('d-none');
+            // Scroll smoothly into the detailed view
+            document.getElementById('detailedView').scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
             document.getElementById('detailDescription').textContent = "No description available.";
         }

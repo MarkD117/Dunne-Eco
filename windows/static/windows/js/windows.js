@@ -152,6 +152,11 @@ document.querySelectorAll('#available-products .card').forEach(card => {
     });
 });
 
+// Prevents card iconbox from jumping to top of page
+document.querySelectorAll('.iconbox').forEach(icon => {
+    icon.addEventListener('click', e => e.preventDefault());
+});
+
 // Back button to return to product grid
 document.getElementById('backButton').addEventListener('click', () => {
     document.getElementById('windowsGrid').style.display = 'flex';

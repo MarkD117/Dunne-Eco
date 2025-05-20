@@ -172,6 +172,60 @@ document.querySelectorAll('#available-products .card').forEach(card => {
     });
 });
 
+document.querySelectorAll('#available-products .btn-see-more').forEach(button => {
+    button.addEventListener('click', () => {
+        const type = button.getAttribute('data-type');
+
+        // Show all cards and hide detailed view in the first section
+        document.querySelectorAll('#available-products .door-item').forEach(item => {
+            item.style.display = 'block';
+        });
+        document.getElementById('detailedView').classList.add('d-none');
+        document.getElementById('doorGrid').style.display = 'flex';
+
+        // Show the detailed view of the first card matching the type
+        const firstVisibleCard = document.querySelector(`#available-products .door-item .card[data-type="${type}"]`);
+        if (firstVisibleCard) {
+            const details = descriptions[type] || {
+                title: "No Title Available",
+                description: "No description available.",
+                specs: []
+            };
+
+            // Set image, title, and description
+            document.getElementById('detailImage').src = firstVisibleCard.querySelector('img').src;
+            document.getElementById('detailTitle').textContent = details.title;
+            document.getElementById('detailDescription').textContent = details.description;
+
+            // Populate specs list
+            const specList = document.createElement('ul');
+            specList.classList.add("list-unstyled", "mt-3");
+            details.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check-circle text-success"></i> ${spec}`;
+                specList.appendChild(li);
+            });
+
+            // Only remove the old specs if it exists and it's not the back button's container
+            const descriptionContainer = document.getElementById('detailDescription');
+            const oldSpecList = descriptionContainer.nextElementSibling;
+            if (oldSpecList && oldSpecList.tagName.toLowerCase() === 'ul') {
+                oldSpecList.remove();
+            }
+
+            // Insert the new specs list
+            descriptionContainer.insertAdjacentElement("afterend", specList);
+
+            // Show detailed view
+            document.getElementById('doorGrid').style.display = 'none';
+            document.getElementById('detailedView').classList.remove('d-none');
+        } else {
+            document.getElementById('detailDescription').textContent = "No description available.";
+        }
+    });
+});
+
+
 // Back button to return to product grid
 document.getElementById('backButton').addEventListener('click', () => {
     document.getElementById('doorGrid').style.display = 'flex';

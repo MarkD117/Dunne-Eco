@@ -27,36 +27,34 @@
             <div class="sort-selector mb-4">
                 <form method="get">
                     <div class="px-3 py-1 rounded-pill flex-grow-0 flex-md-grow-0 d-flex align-items-center shadow-sm"
-                         style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
-                        <select
-                            name="category"
-                            class="form-select border-0 bg-transparent shadow-none"
-                            onchange="this.form.submit()"
-                            style="padding-right: 2.5rem;"
-                        >
-                            <option value="">All Categories</option>
-                            {% for category in categories %}
-                                <option value="{{ category.slug }}" {% if category.slug == selected_category %}selected{% endif %}>
-                                    {{ category.name }}
-                                </option>
+                        style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
+                        <select id="category-dropdown" class="form-select border-0 bg-transparent shadow-none"
+                            style="padding-right: 2.5rem;" aria-label="Filter by category">
+                            <option value="{% url 'gallery:gallery' %}" {% if not category %}selected{% endif %}>
+                                All Categories
+                            </option>
+                            {% for cat in categories %}
+                            <option value="{{ cat.get_absolute_url }}"
+                                {% if category and cat.slug == category.slug %}selected{% endif %}>
+                                {{ cat.name }}
+                            </option>
                             {% endfor %}
                         </select>
                     </div>
                 </form>
             </div>
         </div>
-        {% for category in categories %}
-        <!-- If a category is selected, only show that category -->
-        {% if not selected_category or category.slug == selected_category %}
+        {% for cat in categories %}
+        {% if not category or cat.slug == category.slug %}
         <div class="row" data-aos="fade-down" data-aos-delay="150">
             <div class="category-section my-5">
                 <div class="gallery-category-heading-wrapper">
                     <hr class="category-hr-left">
-                    <h2 class="gallery-category-heading" id="{{ category.slug }}">{{ category.name }}</h2>
+                    <h2 class="gallery-category-heading" id="{{ cat.slug }}">{{ cat.name }}</h2>
                     <hr class="category-hr-right">
                 </div>
                 <div class="gallery-grid">
-                    {% for image in category.images.all %}
+                    {% for image in cat.images.all %}
                     <div class="gallery-image-wrapper">
                         <a href="{{ image.image.url }}" data-fancybox="gallery" data-caption="{{ image.title }}">
                             <div class="gallery-image-container">
@@ -85,5 +83,12 @@
 <script>
     // Initialize Fancy Box
     Fancybox.bind("[data-fancybox='gallery']");
+
+    document.getElementById('category-dropdown').addEventListener('change', function () {
+        const selectedUrl = this.value;
+        if (selectedUrl) {
+            window.location.href = selectedUrl;
+        }
+    });
 </script>
 {% endblock %}

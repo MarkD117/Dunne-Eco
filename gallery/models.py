@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -17,6 +18,9 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+    
+    def get_absolute_url(self):
+        return reverse('gallery:category_detail', args=[self.slug])
 
 
 class Image(models.Model):

@@ -1,15 +1,26 @@
 from django.db import models
+from django.utils.text import slugify
+from django.urls import reverse
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=254, unique=True, null=True, editable=False)
 
-    class Meta:
-        verbose_name_plural = 'Categories'
-        ordering = ['name']
+    def save(self, *args, **kwargs):
+        # Generate slug from name if it is not set
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def get_absolute_url(self):
+        return reverse('faq:category_detail', kwargs={'slug': self.slug})
 
 
 class FAQ(models.Model):
@@ -20,7 +31,7 @@ class FAQ(models.Model):
         )
     question = models.CharField(max_length=255)
     answer = models.TextField()
-    is_active = models.BooleanField(default=True)
+    published = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

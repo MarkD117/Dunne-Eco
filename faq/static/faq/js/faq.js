@@ -15,3 +15,14 @@ clearIcon.addEventListener('click', () => {
     toggleClearIcon();
     searchInput.form.submit(); // Auto-submit form after clearing
 });
+
+document.getElementById('category-dropdown').addEventListener('change', function() {
+    const selectedUrl = this.value;
+
+    // Preserve the search query if present
+    const searchParams = new URLSearchParams(window.location.search);
+    const searchQuery = searchParams.get('q');
+    const finalUrl = searchQuery ? `${selectedUrl}?q=${encodeURIComponent(searchQuery)}` : selectedUrl;
+
+    window.location.href = finalUrl;
+});

@@ -47,18 +47,17 @@
             </div>
         
             <!-- Category Filter -->
-            <div class="px-3 py-1 rounded-pill flex-grow-0 flex-md-grow-0 d-flex align-items-center shadow-sm"
-                 style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
-                <select
-                    name="category"
-                    class="form-select border-0 bg-transparent shadow-none"
-                    onchange="this.form.submit()"
-                >
-                    <option value="">All Categories</option>
-                    {% for category in categories %}
-                        <option value="{{ category.id }}" {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>
-                            {{ category.name }}
-                        </option>
+            <div class="px-3 py-1 rounded-pill flex-grow-0 d-flex align-items-center shadow-sm"
+                style="min-height: 46px; min-width: 200px; background-color: #E8E8E8;">
+                <select id="category-dropdown" class="form-select border-0 bg-transparent shadow-none"
+                    aria-label="Filter by category">
+                    <option value="{% url 'faq:faq_list' %}" {% if not category %}selected{% endif %}>
+                        All Categories
+                    </option>
+                    {% for cat in categories %}
+                    <option value="{{ cat.get_absolute_url }}" {% if category and cat == category %}selected{% endif %}>
+                        {{ cat.name }}
+                    </option>
                     {% endfor %}
                 </select>
             </div>

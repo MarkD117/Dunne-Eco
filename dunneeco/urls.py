@@ -19,6 +19,19 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import handler404
+from django.contrib.sitemaps.views import sitemap
+from django.views.decorators.cache import cache_page
+from .sitemaps import (
+    StaticViewSitemap,
+    GalleryCategorySitemap,
+    FAQCategorySitemap,
+)
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'gallery': GalleryCategorySitemap,
+    'faq': FAQCategorySitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,12 +40,18 @@ urlpatterns = [
     path('', include('home.urls')),
     path('history', include('history.urls')),
     path('contact/', include('contact.urls')),
-    path('gallery', include('gallery.urls')),
-    path('downloads', include('downloads.urls')),
+    path('gallery/', include('gallery.urls', namespace='gallery')),
+    path('downloads/', include('downloads.urls')),
     path('doors', include('doors.urls')),
     path('stairs', include('stairs.urls')),
     path('windows', include('windows.urls')),
-    path('faq/', include('faq.urls')),
+    path('faq/', include('faq.urls', namespace='faq')),
+    path(
+        'sitemap.xml',
+        cache_page(60 * 60)(sitemap),  # Cache for 1 hour
+        {'sitemaps': sitemaps},
+        name='sitemap'
+    ),
     # Using static function to add media url
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

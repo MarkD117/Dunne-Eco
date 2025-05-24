@@ -1,0 +1,32 @@
+{# Load custom template tag to help build query strings (e.g., ?q=search&category=xyz) #}
+{% load query_helpers %}
+
+{# Check if pagination is active and a page_obj is available #}
+{% if page_obj %}
+  
+  {# Get the full site URL without the current path and query string (e.g., https://example.com) #}
+  {% with base_url=request.build_absolute_uri|cut:request.get_full_path %}
+
+    {# Use custom tag to build query string from current filters (e.g., &q=wood&category=doors) #}
+    {% build_querystring query selected_category as base_query %}
+
+    {# --- Canonical Link --- #}
+    {# For SEO: only include `?q=...&category=...` on the first page, not ?page=1 #}
+    {% if page_obj.number == 1 %}
+      <link rel="canonical" href="{{ base_url }}{{ request.path }}{% if base_query %}?{{ base_query|slice:'1:' }}{% endif %}">
+    {% else %}
+      {# For other pages, include the current page number in the query string #}
+      <link rel="canonical" href="{{ base_url }}{{ request.path }}?page={{ page_obj.number }}{{ base_query }}">
+    {% endif %}
+
+    {# --- Prev/Next Links for Pagination --- #}
+    {% if page_obj.has_previous %}
+      <link rel="prev" href="{{ base_url }}{{ request.path }}?page={{ page_obj.previous_page_number }}{{ base_query }}">
+    {% endif %}
+
+    {% if page_obj.has_next %}
+      <link rel="next" href="{{ base_url }}{{ request.path }}?page={{ page_obj.next_page_number }}{{ base_query }}">
+    {% endif %}
+
+  {% endwith %}
+{% endif %}

@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'django_recaptcha',
     'storages',
     'django_summernote',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

@@ -4,8 +4,8 @@ from django.urls import reverse
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=254, unique=True, null=True, editable=False)
+    name = models.CharField(max_length=254, unique=True)
+    slug = models.SlugField(max_length=254, unique=True, blank=True)
 
     def save(self, *args, **kwargs):
         # Generate slug from name if it is not set

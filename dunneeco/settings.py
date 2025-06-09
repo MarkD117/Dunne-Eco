@@ -135,7 +135,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 # Allows authentication using usernames OR emails
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'

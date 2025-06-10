@@ -12,5 +12,6 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
     list_display = ('title', 'category', 'uploaded_at')
+    list_per_page = 20
     list_filter = ('category',)
     search_fields = ('title', 'category__name')

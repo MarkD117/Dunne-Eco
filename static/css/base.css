@@ -333,6 +333,7 @@ img {
     color: var(--primary);
     font-size: 34px;
     flex: none;
+    border-radius: 10px;
 }
 
 /* ----- Footer ----- */

@@ -77,6 +77,12 @@
         {% endfor %}
     </div>
 </section>
+<!-- Back to top button -->
+<div class="top-button rounded-circle shadow">
+    <a class="top-link d-flex h-100 text-white text-decoration-none">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>
+</div>
 {% endblock %}
 {% block postloadjs %}
 {{ block.super }}
@@ -89,6 +95,14 @@
         if (selectedUrl) {
             window.location.href = selectedUrl;
         }
+    });
+
+    // When back to top button clicked, window scrolls to top
+    $('.top-link').click(function (e) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 </script>
 {% endblock %}

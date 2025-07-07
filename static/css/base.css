@@ -379,7 +379,7 @@ footer .line {
     margin-bottom: 24px;
 }
 
-.social-icons a {
+.footer-social-icons a {
     width: 40px;
     height: 40px;
     display: inline-flex;
@@ -390,7 +390,7 @@ footer .line {
     transition: var(--transition);
 }
 
-.social-icons a:hover {
+.footer-social-icons a:hover {
     background-color: var(--primary);
     color: white;
 }
@@ -566,6 +566,11 @@ footer .line {
     #hero-single h1 {
         font-size: 4.5rem;
     }
+
+    .footer-social-icons a {
+        width: 38px;
+        height: 38px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -592,6 +597,11 @@ footer .line {
     .navbar-nav {
         text-align: center;
         padding-bottom: 16px;
+    }
+
+    .footer-social-icons a {
+        width: 45px;
+        height: 45px;
     }
     
     #hero-single h2 {

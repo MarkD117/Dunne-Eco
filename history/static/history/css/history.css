@@ -1,3 +1,7 @@
+.legacy-img {
+    border-radius: 10px;
+}
+
 /* ----- Timeline ----- */
 
 #timeline {
@@ -109,6 +113,10 @@
 }
 
 /* ----- Heritage Gallery ----- */
+
+.heritage-item {
+    border-radius: 6px;
+}
 
 .heritage-item .iconbox {
     background-color: var(--primary);

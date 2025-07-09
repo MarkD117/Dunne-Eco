@@ -469,6 +469,95 @@ footer .line {
     color: #0d6efd;
 }
 
+/* ----- Allauth Templates ----- */
+
+.accounts-side-bg {
+    background-image: radial-gradient(circle at 21% 15%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1)
+    45%,transparent 45%, transparent 83%,transparent 83%, transparent 100%),radial-gradient(circle at 84% 23%,
+    hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 68%,transparent 68%, transparent 93%,transparent 93%, transparent
+    100%),radial-gradient(circle at 7% 76%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 52%,transparent 52%,
+    transparent 75%,transparent 75%, transparent 100%),radial-gradient(circle at 59% 77%, hsla(210,0%,82%,0.1) 0%,
+    hsla(210,0%,82%,0.1) 87%,transparent 87%, transparent 93%,transparent 93%, transparent 100%),radial-gradient(circle
+    at 59% 5%, hsla(210,0%,82%,0.1) 0%, hsla(210,0%,82%,0.1) 54%,transparent 54%, transparent 56%,transparent 56%,
+    transparent 100%),linear-gradient(60deg, rgb(0,197,19),rgb(47,145,255));
+}
+
+.allauth-inner-content-container p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+/* setting all input borders to gray with 10px radius */
+
+.allauth-inner-content-container input[type="text"],
+.allauth-inner-content-container input[type="email"],
+.allauth-inner-content-container input[type="password"] {
+    border: solid 1px #7c7c7c !important;
+    border-radius: 10px !important;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Hide labels on everything except for the remember me checkbox
+   on login page as all other inputs will have placeholders */
+
+.allauth-inner-content-container label:not([for='id_remember']) {
+    display: none;
+}
+
+#id_remember {
+    margin-right: 10px;
+}
+
+.allauth-inner-content-container label[for="id_remember"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+/* ensure placeholders are same color as rest of site */
+
+.allauth-inner-content-container input::placeholder {
+    color: #aab7c4;
+}
+
+/* Updating allauth default buttons and link color */
+
+.allauth-inner-content-container button,
+.allauth-inner-content-container input[type='submit'] {
+	/* btn bootstrap style */
+	display: inline-block;
+    font-weight: 400;
+    color: #fbfbfe;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 20px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-inner-content-container button:hover,
+.allauth-inner-content-container input[type='submit']:hover {	
+	color: var(--primary);
+    background-color: #fff;
+    border-color: var(--primary);
+}
+
+.allauth-inner-content-container a {
+	color: var(--primary); /* text-info */
+}
+
 /* ----- Error 404 page ----- */
 
 #error404 {

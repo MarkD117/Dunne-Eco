@@ -1,0 +1,15 @@
+{% extends "contact/email_templates/base_email.html" %}
+
+{% block email_content %}
+<p>Hello Team,</p>
+<p>You have received a new contact form submission:</p>
+
+<p><strong>Name:</strong> {{ name }}</p>
+<p><strong>Email:</strong> {{ email }}</p>
+<p><strong>Phone:</strong> {{ phone|default:"N/A" }}</p>
+<p><strong>Subject:</strong> {{ subject }}</p>
+<p><strong>Message:</strong> {{ message }}</p>
+
+<hr>
+<p>Reply to this user directly at <a href="mailto:{{ email }}">{{ email }}</a>.</p>
+{% endblock %}

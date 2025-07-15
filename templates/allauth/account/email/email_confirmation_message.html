@@ -1,4 +1,4 @@
-{% extends "account/email/base_email.html" %}
+{% extends "account/email/accounts_base_email.html" %}
 {% block content %}
 <h2>Hello from Dunne Eco 👋</h2>
 <p>Hi {{ user.get_full_name|default:user.username }},</p>

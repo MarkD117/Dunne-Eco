@@ -1,0 +1,14 @@
+{% extends "contact/email_templates/base_email.html" %}
+
+{% block email_content %}
+<p>Hello {{ name }},</p>
+<p>Thank you for reaching out! We've received your message and will respond shortly.</p>
+
+<p><strong>Your Message:</strong></p>
+<p><strong>Subject:</strong> {{ subject }}</p>
+<p><strong>Message:</strong> {{ message }}</p>
+
+<p>If you need assistance, please contact us at <a href="mailto:{{ contact_email }}">{{ contact_email }}</a>.</p>
+
+<p>Best regards,<br>The Dunne Eco Team</p>
+{% endblock %}

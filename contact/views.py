@@ -2,11 +2,13 @@ import logging
 import requests
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
 from django.conf import settings
 from datetime import datetime
+from django.utils.timezone import now
 from .forms import ContactForm
 import os
 
@@ -36,8 +38,8 @@ def contact(request):
 
             # Ensure reCAPTCHA passes & can adjust threshold if necessary
             recaptcha_passed = result_json.get('success')
-            recaptcha_score = result_json.get('score', 0) < 0.5
-            if not recaptcha_passed or recaptcha_score:
+            recaptcha_score = result_json.get('score', 0)
+            if not recaptcha_passed or recaptcha_score < 0.5:
                 messages.error(
                     request, 'ReCAPTCHA verification failed. Please try again.'
                 )
@@ -62,13 +64,7 @@ def contact(request):
             ]
 
             try:
-                send_mail(
-                    subject,
-                    message,
-                    from_email,
-                    recipient_list,
-                    fail_silently=False
-                )
+                _send_owner_notification_email(contact_message)
                 _send_confirmation_email(contact_message)
                 messages.success(
                     request, 'Your message has been sent to the team!'
@@ -95,6 +91,59 @@ def contact(request):
     }
     return render(request, 'contact/contact.html', context)
 
+def _send_owner_notification_email(contact_message):
+    """Send notification email to the site owner."""
+    context = {
+        'name': contact_message.name,
+        'email': contact_message.email,
+        'phone': contact_message.phone,
+        'subject': contact_message.subject,
+        'message': contact_message.message,
+        'current_year': now().year
+    }
+    subject = f"New Contact Form Submission: {contact_message.subject}"
+    html_content = render_to_string('contact/email_templates/owner_notification_body.html', context)
+
+    send_mail(
+        subject,
+        '',
+        os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com'),
+        [os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com')],
+        html_message=html_content,
+        fail_silently=False
+    )
+
+def _send_confirmation_email(contact_message):
+    """Send a confirmation email to the user who submitted the contact form."""
+    user_email = contact_message.email
+    context = {
+        'name': contact_message.name,
+        'subject': contact_message.subject,
+        'message': contact_message.message,
+        'contact_email': os.environ.get('EMAIL_GENERAL_CONTACT', 'info@dunneeco.com'),
+        'current_year': datetime.now().year,
+    }
+
+    subject = render_to_string(
+        'contact/email_templates/confirmation_email_subject.txt', context
+    ).strip()
+
+    html_content = render_to_string(
+        'contact/email_templates/confirmation_email_body.html', context
+    )
+    text_content = render_to_string(
+        'contact/email_templates/confirmation_email_body.txt', context
+    )
+
+    email = EmailMultiAlternatives(
+        subject, text_content,
+        os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com'),
+        [user_email]
+    )
+
+    email.attach_alternative(html_content, "text/html")
+    email.send()
+
 
 def preview_confirmation_email(request):
     context = {
@@ -106,7 +155,6 @@ def preview_confirmation_email(request):
     }
     html_content = render_to_string('contact/email_templates/confirmation_email_body.html', context)
     return HttpResponse(html_content)
-
 
 def preview_owner_email(request):
     context = {

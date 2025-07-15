@@ -1,10 +1,12 @@
 import logging
 import requests
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.http import HttpResponse
 from django.conf import settings
+from datetime import datetime
 from .forms import ContactForm
 import os
 
@@ -94,30 +96,27 @@ def contact(request):
     return render(request, 'contact/contact.html', context)
 
 
-def _send_confirmation_email(contact_message):
-    """Send a confirmation email to the user who submitted the contact form."""
-    user_email = contact_message.email
+def preview_confirmation_email(request):
+    context = {
+        'name': 'John Doe',
+        'subject': 'New Front Door',
+        'message': 'Hi, I was just wondering what price it would be to get a a front door like the one in your gallery. Its the sage green wardour style door. Would I be able to add glass panels to both sides of the door, and what options is there for glass on the top of the door? Thanks',
+        'contact_email': 'info@dunneeco.com',
+        'current_year': 2025,
+    }
+    html_content = render_to_string('contact/email_templates/confirmation_email_body.html', context)
+    return HttpResponse(html_content)
 
-    subject = render_to_string(
-        'contact/email_templates/confirmation_email_subject.txt'
-    ).strip()
 
-    body = render_to_string(
-        'contact/email_templates/confirmation_email_body.txt',
-        {
-            'name': contact_message.name,
-            'subject': contact_message.subject,
-            'message': contact_message.message,
-            'contact_email': os.environ.get(
-                'EMAIL_GENERAL_CONTACT', 'info@dunneeco.com'
-            ),
-        }
-    )
-
-    send_mail(
-        subject,
-        body,
-        os.environ.get('EMAIL_HOST_USER', 'noreply@dunneeco.com'),
-        [user_email],
-        fail_silently=False
-    )
+def preview_owner_email(request):
+    context = {
+        'name': 'John Doe',
+        'email': 'johndoe@gmail.com',
+        'phone': '087 265 6783',
+        'subject': 'New Front Door',
+        'message': 'Hi, I was just wondering what price it would be to get a a front door like the one in your gallery. Its the sage green wardour style door. Would I be able to add glass panels to both sides of the door, and what options is there for glass on the top of the door? Thanks',
+        'contact_email': 'info@dunneeco.com',
+        'current_year': 2025,
+    }
+    html_content = render_to_string('contact/email_templates/owner_notification_body.html', context)
+    return HttpResponse(html_content)

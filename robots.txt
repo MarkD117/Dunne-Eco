@@ -3,4 +3,4 @@ Disallow: /accounts/
 Disallow: /admin/
 Allow: *.css
 Allow: *.js
-Sitemap: https://dunneeco.ie/sitemap.xml
+Sitemap: https://www.dunneeco.ie/sitemap.xml

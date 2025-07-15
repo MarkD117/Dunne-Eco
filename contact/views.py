@@ -14,7 +14,7 @@ from .forms import ContactForm
 logger = logging.getLogger(__name__)
 
 # Configurable reCAPTCHA threshold
-RECAPTCHA_THRESHOLD = getattr(settings, 'RECAPTCHA_THRESHOLD', 0.5)
+RECAPTCHA_THRESHOLD = settings.RECAPTCHA_THRESHOLD
 
 
 def contact(request):

@@ -266,3 +266,6 @@ else:
 
 RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_SITE_KEY')
 RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
+# reCAPTCHA score threshold for form validation
+RECAPTCHA_THRESHOLD = float(os.environ.get('RECAPTCHA_THRESHOLD', 0.5))
+

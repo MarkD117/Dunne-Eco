@@ -17,11 +17,19 @@ if os.path.isfile('env.py'):
     import env
 
 # Security settings for SSL
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+if 'DEVELOPMENT' in os.environ:
+    # Local development: no HTTPS redirect, use insecure cookies
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_PROXY_SSL_HEADER = None
+else:
+    # Production: force HTTPS and secure cookies
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.gitpod.io',  # Trust all subdomains of gitpod.io

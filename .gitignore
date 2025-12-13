@@ -10,3 +10,4 @@ cloudinary_python.txt
 dunneeco.csr
 dunneeco.key
 server.crt
+.venv/

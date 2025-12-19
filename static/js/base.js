@@ -119,6 +119,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Christmas Holiday Banner
+    const christmasBanner = document.getElementById('christmasBanner');
+
+    if (christmasBanner) {
+        document.body.classList.add('banner-visible');
+
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // scrolling down and past 50px -> hide banner
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                christmasBanner.classList.add('hidden');
+                document.body.classList.remove('banner-visible');
+            }
+            // scrolling up OR near the top -> show banner again
+            else if (scrollTop < lastScrollTop || scrollTop <= 0) {
+                christmasBanner.classList.remove('hidden');
+                document.body.classList.add('banner-visible');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    }
+
     // Handles clicking hamburger nav menu icon on mobile screens
     const toggler = document.querySelector(".custom-nav-toggler");
     toggler?.addEventListener("click", function () {

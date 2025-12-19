@@ -79,6 +79,73 @@ img {
     color: white;
 }
 
+/* ----- Christmas Banner ----- */
+
+.christmas-banner {
+    z-index: 1040;
+    transition: transform 0.3s ease;
+    background-image: linear-gradient(
+        90deg,
+        rgb(37, 163, 10),
+        rgb(66, 158, 40),
+        rgb(255, 0, 0)
+    );
+    will-change: transform;
+}
+
+/* slide banner off the top when hidden */
+.christmas-banner.hidden {
+    transform: translateY(-100%);
+}
+
+/* push navbar down when banner is visible */
+body.banner-visible .navbar {
+    top: 40px;
+}
+
+/* default: desktop text visible, ticker hidden */
+.banner-ticker {
+    display: none;
+}
+
+.banner-text {
+    display: inline;
+}
+
+/* Show ticker up to 930px */
+@media (max-width: 1060px) {
+
+    .banner-text {
+        display: none;
+    }
+
+    .banner-ticker {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .ticker-track {
+        display: inline-flex;
+        white-space: nowrap;
+        animation: banner-scroll 20s linear infinite;
+    }
+
+    .ticker-item {
+        flex-shrink: 0;
+        padding-right: 4rem;
+    }
+}
+
+@keyframes banner-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
 /*  ----- Navbar -----  */
 
 .navbar {

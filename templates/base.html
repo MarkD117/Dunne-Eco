@@ -63,6 +63,11 @@
 </head>
 
 <body>
+    <style>
+    .christmas-banner {
+        background-image: url('{{ MEDIA_URL }}base/christmas-banner-bg.jpg');
+    }
+    </style>
     <!-- Christmas Holiday Banner -->
     <div id="christmasBanner" class="christmas-banner text-white py-2 fixed-top">
         <div class="container-fluid">
@@ -72,7 +77,7 @@
                     <!-- Desktop / larger screens - static banner -->
                     <div class="banner-text">
                         <i class="fa-solid fa-candy-cane"></i>
-                        <strong> Happy Christmas from all at Dunne Eco!</strong>
+                        <strong class="text-uppercase"> Happy Christmas from all at Dunne Eco!</strong>
                         &nbsp;|&nbsp; Fri 19th Dec: 9am-1pm
                         &nbsp;|&nbsp; Closed: 20th Dec - 4th Jan
                         &nbsp;|&nbsp; Reopen: Mon 5th Jan, 9am
